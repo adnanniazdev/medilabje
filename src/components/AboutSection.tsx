@@ -10,44 +10,7 @@ const AboutSection: FC = () => {
       {/* Overlapping Content */}
       <div className="relative z-10">
 
-        
-        {/* MediLab Description Section */}
-        <div className="py-16 px-4" style={{ background: 'var(--section-gradient-primary)' }}>
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
-              {/* Text Content */}
-              <div className="lg:w-1/2 text-white mb-8 lg:mb-0">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                  MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond
-                </h2>
-              </div>
-              
-              {/* Logo */}
-              <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                  <Image
-                    src="/images/medilab-logo.png"
-                    alt="MediLab Logo"
-                    width={200}
-                    height={100}
-                    className="object-contain"
-                    onError={(e) => {
-                      // Fallback to text logo if image not found
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const parent = target.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `
-                          <div class="text-white text-4xl font-bold">
-                            Medi<span style="color: var(--accent-color);">Lab</span>
-                          </div>
-                        `;
-                      }
-                    }}
-                  />
-              </div>
-            </div>
-          </div>
-        </div>
+
 
         {/* Services Section */}
         <div className="bg-gray-50 py-16 px-4">

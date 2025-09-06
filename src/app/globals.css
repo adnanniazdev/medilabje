@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,0,1;wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,0,1;wght@100;300;400;500;700;900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -13,6 +14,10 @@
   /* Section Background Gradients */
   --section-gradient-light: linear-gradient(to right, #E8F6F6, #DBF1F1, #CDECEC);
   --section-gradient-primary: linear-gradient(to right, #1EB6B9, #1F97B9);
+
+  /* Font Variables */
+  --font-primary: 'Open Sans', Arial, Helvetica, sans-serif;
+  --font-secondary: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 @theme inline {
@@ -32,9 +37,37 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary); /* Open Sans as default */
 }
 
 * {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary); /* Open Sans as default */
+}
+
+/* Font utility classes */
+.font-primary {
+  font-family: var(--font-primary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+/* Specific usage examples */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary); /* Roboto for headings */
+}
+
+p, span, div {
+  font-family: var(--font-primary); /* Open Sans for body text */
+}
+
+/* Button and UI elements */
+button, .btn {
+  font-family: var(--font-secondary); /* Roboto for buttons */
+}
+
+/* Navigation and menu items */
+nav, .nav, .menu {
+  font-family: var(--font-secondary); /* Roboto for navigation */
 }

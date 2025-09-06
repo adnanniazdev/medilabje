@@ -13,7 +13,7 @@ const FeaturesSection: FC = () => {
     {
       icon: Smile,
       title: "Be In Control",
-      description: "Be in control of your own health and prevent future diseases"
+      description: "Be in control of your own health and prevent future illnesses"
     },
     {
       icon: BarChart3,
@@ -38,21 +38,21 @@ const FeaturesSection: FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-gray-100 to-gray-200 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="w-full bg-[#E8F6F6] py-20">
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div key={index} className="flex items-start space-x-4">
+              <div key={index} className="flex items-start space-x-6">
                 {/* Icon Circle */}
-                <div className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--light-accent)' }}>
-                  <IconComponent className="w-8 h-8" style={{ color: 'var(--primary-color)' }} />
+                <div className="flex-shrink-0 w-[80px] h-[80px] bg-[#B8E6E6] rounded-full flex items-center justify-center">
+                  <IconComponent className="w-8 h-8 text-[#1F97B9]" />
                 </div>
                 
                 {/* Content */}
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <div className="flex-1 pt-2">
+                  <h3 className="text-xl font-semibold text-gray-700 mb-3">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
