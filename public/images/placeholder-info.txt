@@ -1,0 +1,23 @@
+Placeholder Images for MediLab Hero Section
+
+The following images need to be added to this directory:
+
+1. hero-slide-1.jpg - Medical laboratory technician working with microscope
+   - Suggested size: 1920x800px
+   - Theme: Professional lab technician examining samples under microscope
+   - Colors: Clean whites, medical blues, professional lighting
+
+2. hero-slide-2.jpg - Laboratory equipment and analysis
+   - Suggested size: 1920x800px  
+   - Theme: Modern laboratory equipment, test tubes, analysis machines
+   - Colors: Clean, sterile environment with medical equipment
+
+3. hero-slide-3.jpg - Professional medical consultation
+   - Suggested size: 1920x800px
+   - Theme: Doctor or medical professional consulting with patient/reviewing results
+   - Colors: Professional, trustworthy, healthcare setting
+
+For now, the component will show broken image placeholders until these images are added.
+You can use stock photos from sites like Unsplash, Pexels, or your own medical laboratory photos.
+
+Make sure images are optimized for web (compressed) and follow medical/healthcare professional aesthetic.
