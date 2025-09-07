@@ -1,276 +1,197 @@
+'use client';
+
 import { FC } from 'react';
+import PageHero from '@/components/PageHero';
+import Image from 'next/image';
+import ServicesOverviewSection from '@/components/ServicesOverviewSection';
 
 const ServicesPage: FC = () => {
   return (
-    <div className="min-h-screen">
+    <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-500 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Comprehensive laboratory services designed for your convenience
-          </p>
-        </div>
-      </section>
+      <PageHero heading="Services" />
 
-      {/* Requesting & Reporting Options Section */}
+      {/* Requesting & Reporting Options Section - Z Pattern 1 */}
       <section id="requesting-reporting" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: 'var(--primary-color)' }}>
-            Requesting & Reporting Options
-          </h2>
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <p className="text-gray-600 text-center mb-8">
-              Multiple convenient ways to request tests and receive your results.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-                  Test Requesting
-                </h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--primary-color)' }}></span>
-                    Online test ordering system
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--primary-color)' }}></span>
-                    Phone-based test requests
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--primary-color)' }}></span>
-                    Healthcare provider integration
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--primary-color)' }}></span>
-                    Walk-in test requests
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-                  Result Reporting
-                </h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--accent-color)' }}></span>
-                    Secure online portal access
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--accent-color)' }}></span>
-                    Email result notifications
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--accent-color)' }}></span>
-                    Direct physician reporting
-                  </li>
-                  <li className="flex items-start">
-                    <span className="w-2 h-2 rounded-full mt-2 mr-3" style={{ backgroundColor: 'var(--accent-color)' }}></span>
-                    Mobile app notifications
-                  </li>
-                </ul>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Content Left */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+                Requesting & Reporting Options
+              </h2>
+              <p className="text-gray-600 mb-6">
+                For clinicians using MediLab service we offer an electronic results transfer system
+                through LabCollector.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Manual request form requesting option also available with printed results
+                reporting.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Results will be sent in encrypted format to any number of predetermined email
+                addresses. Copy reports will be emailed automatically to email addresses on the
+                system.
+              </p>
+              <p className="text-gray-600 mb-4">
+                For private patients, please contact us directly.
+              </p>
+              <p className="text-gray-600">
+                For more information please contact us at <a href="mailto:info@medilab.je" className="text-blue-600 hover:underline">info@medilab.je</a>
+              </p>
+            </div>
+            {/* Image Right */}
+            <div>
+              <img
+                src="/images/lab1.avif"
+                alt="Laboratory technician working with microscope"
+                className="w-full h-96 object-cover rounded-lg shadow-md"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkxhYm9yYXRvcnkgVGVjaG5pY2lhbjwvdGV4dD4KPHN2Zz4K';
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Postal Services Section */}
+      {/* Postal Services Section - Z Pattern 2 */}
       <section id="postal-services" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: 'var(--primary-color)' }}>
-            Postal Services
-          </h2>
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <p className="text-gray-600 text-center mb-8">
-              Convenient postal services for sample collection and result delivery.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6 border rounded-lg">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--primary-color)' }}>
-                  <span className="text-white font-bold text-xl">📦</span>
-                </div>
-                <h3 className="font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>Sample Collection Kits</h3>
-                <p className="text-sm text-gray-600">
-                  Home collection kits delivered to your door with all necessary materials and instructions.
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image Left */}
+            <div>
+              <img
+                src="/images/heamotology.avif"
+                alt="Laboratory test tubes and samples"
+                className="w-full h-96 object-cover rounded-lg shadow-md"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkxhYm9yYXRvcnkgU2FtcGxlczwvdGV4dD4KPHN2Zz4K';
+                }}
+              />
+            </div>
+            {/* Content Right */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+                Postal Services
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Postal pathology services should be considered by all practices in Jersey who
+                require a rapid delivery service to the UK referral laboratories.
+              </p>
+              <p className="text-gray-600 mb-6">
+                MediLab offers a postal referral service for clients in Jersey requiring samples to
+                be sent off island using Royal Mail Tracked 24 and DHL Tracked.
+              </p>
+              <div className="bg-blue-50 p-4 rounded-lg mb-6">
+                <p className="text-gray-700 mb-4">
+                  Charges with Royal Mail mean that ALL pathology postal specimens now made up
+                  with Tracked 24 returns. This provides a particularly suitable method of transport
+                  for any healthcare organisation.
                 </p>
               </div>
-              <div className="text-center p-6 border rounded-lg">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--accent-color)' }}>
-                  <span className="text-white font-bold text-xl">🚚</span>
-                </div>
-                <h3 className="font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>Sample Transport</h3>
-                <p className="text-sm text-gray-600">
-                  Secure and temperature-controlled transportation of samples to our laboratory.
-                </p>
-              </div>
-              <div className="text-center p-6 border rounded-lg">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--primary-color)' }}>
-                  <span className="text-white font-bold text-xl">📄</span>
-                </div>
-                <h3 className="font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>Result Delivery</h3>
-                <p className="text-sm text-gray-600">
-                  Secure postal delivery of test results and reports directly to your address.
-                </p>
-              </div>
+              <p className="text-gray-600 mb-4">
+                Postal pathology with Tracked 24 returns provides:
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Simple and convenient sample handling throughout the UK for most tests.</li>
+                <li>• It is not suitable for microbiology or coagulation samples.</li>
+                <li>• Scope for large and small numbers of samples.</li>
+                <li>• Next morning delivery via Royal Mail or DHL.</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sample Collection Section */}
+      {/* Sample Collection Section - Z Pattern 3 */}
       <section id="sample-collection" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: 'var(--primary-color)' }}>
-            Sample Collection
-          </h2>
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <p className="text-gray-600 text-center mb-8">
-              Professional sample collection services with multiple convenient options.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                    In-Laboratory Collection
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Visit our state-of-the-art collection facilities with experienced phlebotomists.
-                  </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Professional phlebotomy services</li>
-                    <li>• Comfortable collection environment</li>
-                    <li>• Immediate sample processing</li>
-                    <li>• Extended operating hours</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                    Mobile Collection
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    On-site collection services at your home, office, or healthcare facility.
-                  </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Home visit services</li>
-                    <li>• Corporate health programs</li>
-                    <li>• Healthcare facility partnerships</li>
-                    <li>• Flexible scheduling</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                    Self-Collection Kits
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Easy-to-use collection kits for specific tests that can be performed at home.
-                  </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Detailed collection instructions</li>
-                    <li>• Pre-paid return shipping</li>
-                    <li>• Quality control measures</li>
-                    <li>• Customer support available</li>
-                  </ul>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                    Specialized Collections
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Specialized collection procedures for complex or sensitive tests.
-                  </p>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li>• Timed collections</li>
-                    <li>• Special handling requirements</li>
-                    <li>• Pediatric collections</li>
-                    <li>• Geriatric considerations</li>
-                  </ul>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Content Left */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+                Sample Collection
+              </h2>
+              <p className="text-gray-600 mb-6">
+                MediLab provides a dedicated medical sample collection service on a scheduled
+                or ad hoc basis from practices in Jersey.
+              </p>
+              <p className="text-gray-600 mb-6">
+                High-risk samples should be clearly labelled and packed separately from other
+                samples.
+              </p>
+              <p className="text-gray-600 mb-6">
+                MediLab Polices cannot transport samples containing Hazard Group 4 pathogens,
+                such as Ebola fever or Viral haemorrhagic fever.
+              </p>
+              <p className="text-gray-600">
+                We also offer an on-site phlebotomy service, to allow sample collection and
+                processing to be efficient and time effective.
+              </p>
+            </div>
+            {/* Image Right */}
+            <div>
+              <Image
+                src="/images/sample-collection.avif"
+                alt="Healthcare professional with laptop and medical equipment"
+                className="w-full h-96 object-cover rounded-lg shadow-md"
+                width={500}
+                height={400}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkhlYWx0aGNhcmUgUHJvZmVzc2lvbmFsPC90ZXh0Pgo8L3N2Zz4K';
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Testing Section */}
-      <section id="testing" className="py-16 bg-gray-50">
+       {/* Sample Collection Section - Z Pattern 3 */}
+      <section id="sample-collection" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8" style={{ color: 'var(--primary-color)' }}>
-            Testing
-          </h2>
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <p className="text-gray-600 text-center mb-8">
-              Advanced laboratory testing with state-of-the-art equipment and quality assurance.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center p-4">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--primary-color)' }}>
-                  <span className="text-white font-bold">🔬</span>
-                </div>
-                <h3 className="font-semibold mb-2" style={{ color: 'var(--primary-color)' }}>Advanced Technology</h3>
-                <p className="text-xs text-gray-600">Latest laboratory equipment and methodologies</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--accent-color)' }}>
-                  <span className="text-white font-bold">✓</span>
-                </div>
-                <h3 className="font-semibold mb-2" style={{ color: 'var(--primary-color)' }}>Quality Control</h3>
-                <p className="text-xs text-gray-600">Rigorous quality assurance protocols</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--primary-color)' }}>
-                  <span className="text-white font-bold">⚡</span>
-                </div>
-                <h3 className="font-semibold mb-2" style={{ color: 'var(--primary-color)' }}>Fast Turnaround</h3>
-                <p className="text-xs text-gray-600">Rapid processing and result delivery</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--accent-color)' }}>
-                  <span className="text-white font-bold">🏆</span>
-                </div>
-                <h3 className="font-semibold mb-2" style={{ color: 'var(--primary-color)' }}>Accredited</h3>
-                <p className="text-xs text-gray-600">Fully accredited laboratory services</p>
-              </div>
+          <div className="grid md:grid-cols-2 gap-12 ">
+             {/* Image Left */}
+            <div>
+              <Image
+                src="/images/sample-collection.avif"
+                alt="Healthcare professional with laptop and medical equipment"
+                className="w-full h-96 object-cover rounded-lg shadow-md"
+                width={500}
+                height={400}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkhlYWx0aGNhcmUgUHJvZmVzc2lvbmFsPC90ZXh0Pgo8L3N2Zz4K';
+                }}
+              />
             </div>
-            
-            <div className="mt-12 grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h4 className="font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>Testing Capabilities</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• Clinical Chemistry</li>
-                  <li>• Hematology</li>
-                  <li>• Immunology</li>
-                  <li>• Microbiology</li>
-                  <li>• Molecular Diagnostics</li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <h4 className="font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>Specialized Testing</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• Hormone Analysis</li>
-                  <li>• Genetic Testing</li>
-                  <li>• Allergy Testing</li>
-                  <li>• Toxicology</li>
-                  <li>• Therapeutic Drug Monitoring</li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <h4 className="font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>Quality Standards</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>• ISO 15189 Accredited</li>
-                  <li>• CAP Certified</li>
-                  <li>• CLIA Compliant</li>
-                  <li>• External Quality Assurance</li>
-                  <li>• Continuous Improvement</li>
-                </ul>
-              </div>
+            {/* Content Right */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+                Testing
+              </h2>
+              <p className="text-gray-600 mb-6">
+               We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
+              </p>
+              <a
+                href="mailto:info@medilab.je"
+                className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+              >
+                CONTACT US
+              </a>
+
             </div>
+           
           </div>
         </div>
       </section>
-    </div>
+
+      <ServicesOverviewSection/>
+    </>
   );
 };
 
