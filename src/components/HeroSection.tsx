@@ -122,7 +122,7 @@ const HeroSection: FC = () => {
         </div>
       </section>
 
-      <div className="py-16 px-4" style={{ background: 'var(--section-gradient-primary)' }}>
+  <div className="py-16 px-4" style={{ background: 'var(--section-gradient-primary)' }}>
   <div className="max-w-7xl mx-auto">
     <div className="flex flex-col lg:flex-row items-center">
       {/* Text Content */}

@@ -1,234 +1,106 @@
+"use client"
 import { FC } from 'react';
+import PageHero from '@/components/PageHero';
+import SectionComponent from '@/components/SectionComponent';
+import ServicesOverviewSection from '@/components/ServicesOverviewSection';
+import Image from 'next/image';
 
 const NewsPage: FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-500 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">News & Updates</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Stay informed about the latest developments at MediLab
-          </p>
-        </div>
-      </section>
+      <PageHero heading="News" />
 
       {/* News Articles Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* News Article 1 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">March 15, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  New Advanced Testing Equipment Installed
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  MediLab has invested in state-of-the-art laboratory equipment to enhance our testing 
-                  capabilities and reduce turnaround times for our patients.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
 
-            {/* News Article 2 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">March 8, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  Extended Operating Hours Announced
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  To better serve our community, MediLab is extending our operating hours on weekdays 
-                  and introducing weekend services for urgent testing needs.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
+      <SectionComponent
+        title="October 2024"
+        image="/images/news-2.avif"
+        imageAlt="New Advanced Testing Equipment Installed"
 
-            {/* News Article 3 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">February 28, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  ISO 15189 Accreditation Renewed
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  MediLab has successfully renewed its ISO 15189 accreditation, demonstrating our 
-                  continued commitment to quality and excellence in laboratory services.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
+      >
+        <p className="text-gray-600 mb-4">
+          Medilab is offering Allergy testing for food and common allergies. An allergy is a response or hypersensitivity to a substance that would normally be harmless but it produces a reaction in your body. Did you know 6% of the Jersey population has food allergies, making it essential to know your allergy status?
+        </p>
 
-            {/* News Article 4 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">February 20, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  New Home Collection Service Launched
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  We are pleased to announce the launch of our new home collection service, bringing 
-                  convenient laboratory testing directly to your doorstep.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
+      </SectionComponent>
+      <SectionComponent
+        title="May 2024"
+        image="/images/news-1.avif"
+        imageAlt="New Advanced Testing Equipment Installed"
+        reverse
+      >
+        <p className='text-gray-600 mb-4'> MediLab Ltd has updated several important Cardiac markers. One test of vital importance, which can significantly improve patient outcomes is our test for Heart-Type Fatty Acid-Binding Protein (H-FABP). This test is able to help aid diagnostically with differentiating between coronary pain and non-cardiac chest pain. </p>
 
-            {/* News Article 5 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">February 12, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  Partnership with Local Healthcare Providers
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  MediLab has established new partnerships with local healthcare providers to enhance 
-                  patient care and streamline laboratory services across Jersey.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
+        <p className='text-gray-600 mb-4'> H-FABP is released into the bloodstream within 30 minutes of a heart attack, and is also released from the heart during the early stages of a heart attack. Due to its small size, it can be detected when the heart cells are being damaged, rather than at the stage when cell death has already occurred (current troponin test). The test can also be used to identify people who are at high risk of heart attack in the near future. </p>
 
-            {/* News Article 6 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">News Image</span>
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">January 30, 2024</div>
-                <h3 className="text-xl font-semibold mb-3" style={{ color: 'var(--primary-color)' }}>
-                  Staff Training Program Completed
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Our team has completed an intensive training program on the latest laboratory 
-                  techniques and quality assurance protocols to ensure the highest standards of service.
-                </p>
-                <a 
-                  href="#" 
-                  className="text-sm font-medium transition-colors duration-200"
-                  style={{ color: 'var(--primary-color)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                >
-                  Read More →
-                </a>
-              </div>
-            </article>
-          </div>
+        <p className='text-gray-600 mb-4'> MediLab is pleased to offer this test along with several other Cardiac markers. </p>
+      </SectionComponent>
+      <SectionComponent
+        title="March 2024"
+        image="/images/calendar.avif"
+        imageAlt="New Advanced Testing Equipment Installed"
+      >
+        <p className='text-gray-600 mb-4'> We listened to customer feedback and wanted to make our booking process easier! We have now built in an online booking calendar to our website to make booking your health check even easier. </p>
+      </SectionComponent>
+      <SectionComponent
+        title="February 2024"
+        image="/images/virology.avif"
+        imageAlt="New Advanced Testing Equipment Installed"
+        reverse
+      >
+        <p className='text-gray-600 mb-4'> MediLab is proud to include Lipoproteins as part of our testing regime, extending our repetoire to meet our customers needs. The test set includes Lipoprotein (a) Lp(a), Apolipoprotein A (Apo A) , Apolipoprotein B (Apo B).</p>
+        <p className='text-gray-600 mb-4'>Lipoproteins are particles made of protein and fats (lipids). They carry cholesterol through your bloodstream to your cells. A lipoprotein (a) blood test can give you a more accurate understanding of your risk than a routine cholesterol test that only measures your total LDL and HDL cholesterol level. That’s because a routine cholesterol test may show that your LDL cholesterol level is “healthy,” but if a large percentage of your LDL cholesterol is carried by lipoprotein (a) particles, your risk for heart disease and stroke could still be high. </p>
+      </SectionComponent>
+      <SectionComponent
+        title="January 2024"
+        image="/images/lab1.avif"
+        imageAlt="New Advanced Testing Equipment Installed"
+      >
+        <p className='text-gray-600 mb-4'>MediLab has acheieved a new milestone by upgrading our Quality Management System to a state of the art software provided by our new partner who is trusted by laboratory and quality managers at some of the world’s best known healthcare and research facilities.</p>
+        <p className='text-gray-600 mb-4'>This allows MediLab to digitise, streamline and improve the day to day management of quality and compliance providing us with the tools to meet our regulatory compliance requirements. </p>
+      </SectionComponent>
 
-          {/* Pagination */}
-          <div className="flex justify-center mt-12">
-            <nav className="flex space-x-2">
-              <button 
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100"
-                disabled
-              >
-                Previous
-              </button>
-              <button 
-                className="px-3 py-2 rounded-md text-sm font-medium text-white"
-                style={{ backgroundColor: 'var(--primary-color)' }}
-              >
-                1
-              </button>
-              <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">
-                2
-              </button>
-              <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">
-                3
-              </button>
-              <button className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100">
-                Next
-              </button>
-            </nav>
+      <ServicesOverviewSection />
+
+       <div className="py-16 px-4" style={{ background: 'var(--section-gradient-primary)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center">
+            {/* Text Content */}
+            <div className="lg:w-1/2 text-white mb-8 lg:mb-0">
+              <h2 className="text-3xl lg:text-4xl font-secondary font-light mb-6 leading-tight">
+                MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond
+              </h2>
+            </div>
+      
+            {/* Logo */}
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+              <Image
+                src="/images/medilab-logo.png"
+                alt="MediLab Logo"
+                width={350}
+                height={180}
+                className="object-contain max-w-full h-auto"
+                onError={(e) => {
+                  // Fallback to text logo if image not found
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = `
+                      <div class="text-white text-5xl lg:text-6xl font-bold">
+                        Medi<span style="color: var(--accent-color);">Lab</span>
+                      </div>
+                    `;
+                  }
+                }}
+              />
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+      
 
-      {/* Newsletter Signup */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--primary-color)' }}>
-            Stay Updated
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Subscribe to our newsletter to receive the latest news and updates from MediLab.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button 
-              className="px-6 py-3 rounded-lg text-white font-medium transition-colors duration-200"
-              style={{ backgroundColor: 'var(--primary-color)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--accent-color)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--primary-color)')}
-            >
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
