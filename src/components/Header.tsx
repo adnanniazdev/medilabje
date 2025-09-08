@@ -2,7 +2,7 @@
 
 import { FC, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Facebook, Twitter, ChevronDown, Menu, X } from 'lucide-react';
+import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
 interface DropdownItem {
@@ -25,6 +25,7 @@ const Header: FC = () => {
   const navItems: NavItem[] = [
     {
       label: 'Tests',
+      href: '/tests',
       dropdown: [
         { label: 'Tests A-Z', href: '/tests#tests-a-z' },
         { label: 'Test Profiles', href: '/tests#test-profiles' },
@@ -44,6 +45,7 @@ const Header: FC = () => {
     },
     {
       label: 'Services',
+      href: '/services',
       dropdown: [
         { label: 'Requesting & Reporting Options', href: '/services#requesting-reporting' },
         { label: 'Postal Services', href: '/services#postal-services' },
@@ -53,6 +55,7 @@ const Header: FC = () => {
     },
     {
       label: 'About Us',
+      href: '/about',
       dropdown: [
         { label: 'About MediLab', href: '/about#about-medilab' },
         { label: 'Our Team', href: '/about#our-team' },
@@ -65,6 +68,7 @@ const Header: FC = () => {
     },
     {
       label: 'Patients',
+      href: '/patients',
       dropdown: [
         { label: 'Covid Policy', href: '/patients#covid-policy' },
         { label: 'Patient Reception', href: '/patients#patient-reception' },
@@ -81,7 +85,15 @@ const Header: FC = () => {
     setActiveDropdown(activeDropdown === label ? null : label);
   };
 
-  // Close dropdown when clicking outside
+  const handleMouseEnter = (label: string) => {
+    setActiveDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null);
+  };
+
+  // Close dropdown when clicking outside (keep for mobile)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
@@ -122,10 +134,12 @@ const Header: FC = () => {
                 key={item.label}
                 className="relative"
                 ref={el => { dropdownRefs.current[item.label] = el; }}
+                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
+                onMouseLeave={() => item.dropdown && handleMouseLeave()}
               >
                 {item.dropdown ? (
-                  <button
-                    onClick={() => handleDropdownToggle(item.label)}
+                  <Link
+                    href={item.href!}
                     className="flex items-center text-gray-700 px-3 py-2 text-sm font-medium transition-colors duration-200"
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = activeDropdown === item.label ? 'var(--primary-color)' : '')}
@@ -138,7 +152,7 @@ const Header: FC = () => {
                         activeDropdown === item.label ? 'rotate-180' : ''
                       }`}
                     />
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     href={item.href!}
@@ -152,16 +166,14 @@ const Header: FC = () => {
 
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-gray-700 rounded-md shadow-lg border border-gray-600 py-2 z-50">
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.label}
                         href={dropdownItem.href}
                         target={dropdownItem.external ? '_blank' : undefined}
                         rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                        className="block px-4 py-2 text-sm text-white hover:bg-gray-600 transition-colors duration-200"
                         onClick={() => setActiveDropdown(null)}
                       >
                         {dropdownItem.label}
@@ -176,24 +188,28 @@ const Header: FC = () => {
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4">
             <Link
-              href="#"
+              href="https://www.facebook.com/medilabjersey"
               className="transition-colors duration-200"
               style={{ color: 'var(--primary-color)' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
               aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Facebook size={20} />
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/medilabjersey"
               className="transition-colors duration-200"
               style={{ color: 'var(--primary-color)' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-              aria-label="Twitter"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Twitter size={20} />
+              <Linkedin size={20} />
             </Link>
           </div>
 
