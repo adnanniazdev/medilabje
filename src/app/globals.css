@@ -10,7 +10,9 @@
 
   /* MediLab Color Scheme */
   --primary-color: #1F97B9;
+  --primary-light: #6EC1E4;
   --secondary-color: #526371;
+  --secondary-light: #7e7e7e;
   --accent-color: #1EB6B9;
   --light-accent: #E6F7F8;
 
@@ -173,9 +175,19 @@ th {
 .text-secondary {
   color: var(--secondary-color) !important;
 }
+
+.text-primary-light {
+  color: var(--primary-light) !important;
+}
+
+.text-secondary-light {
+  color: var(--secondary-light) !important;
+}
+
 .bg-primary {
   background-color: var(--primary-color) !important;
 }
+
 .bg-secondary {
   background-color: #262626 !important;
 }

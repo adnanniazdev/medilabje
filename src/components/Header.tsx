@@ -133,7 +133,7 @@ const Header: FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={100} height={100} />
+              <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={120} height={120} />
             </Link>
           </div>
 
@@ -157,8 +157,8 @@ const Header: FC = () => {
                 }}
               >
                 {/* Parent Link */}
-                <Link
-                  href={item.href!}
+                <button
+                  // href={item.href!}
                   className="flex items-center text-secondary px-3 py-2 text-md font-bold transition-colors duration-200"
                   onMouseEnter={() => handleMouseEnter(item.label)}
                   style={{
@@ -169,7 +169,7 @@ const Header: FC = () => {
                   }}
                 >
                   {item.label}
-                </Link>
+                </button>
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.label && (
                   <div className="absolute top-full left-0 mt-2.5 w-64 bg-secondary shadow-lg border border-gray-600 py-2 z-50"
@@ -206,7 +206,7 @@ const Header: FC = () => {
                               <Link
                                 key={nestedItem.label}
                                 href={nestedItem.href}
-                                style={{ color: '#7e7e7e' }}
+                                style={{ color: '#7e7e7e'}}
                                 onMouseEnter={(e) => {
                                   e.currentTarget.style.color = 'white';
                                 }}
