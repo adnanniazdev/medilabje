@@ -25,6 +25,7 @@ const Header: FC = () => {
   const navItems: NavItem[] = [
     {
       label: 'Tests',
+      href: '/specialities',
       dropdown: [
         { label: 'Tests A-Z', href: '/tests#tests-a-z' },
         { label: 'Test Profiles', href: '/tests#test-profiles' },
@@ -40,10 +41,16 @@ const Header: FC = () => {
     },
     {
       label: 'Specialities',
-      href: '/specialities'
+      href: '/specialities',
+      dropdown: [
+        { label: 'Haematology', href: '/specialities#haematology' },
+        { label: 'Chemistry', href: '/specialities#chemistry' },
+        { label: 'Virology', href: '/specialities#virology' },
+      ]
     },
     {
       label: 'Services',
+      href: '/specialities',
       dropdown: [
         { label: 'Requesting & Reporting Options', href: '/services#requesting-reporting' },
         { label: 'Postal Services', href: '/services#postal-services' },
@@ -53,6 +60,7 @@ const Header: FC = () => {
     },
     {
       label: 'About Us',
+      href: '/specialities',
       dropdown: [
         { label: 'About MediLab', href: '/about#about-medilab' },
         { label: 'Our Team', href: '/about#our-team' },
@@ -65,6 +73,7 @@ const Header: FC = () => {
     },
     {
       label: 'Patients',
+      href: '/specialities',
       dropdown: [
         { label: 'Covid Policy', href: '/patients#covid-policy' },
         { label: 'Patient Reception', href: '/patients#patient-reception' },
@@ -111,7 +120,7 @@ const Header: FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-             <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={100} height={100} />
+              <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={100} height={100} />
             </Link>
           </div>
 
@@ -126,23 +135,17 @@ const Header: FC = () => {
                 {item.dropdown ? (
                   <button
                     onClick={() => handleDropdownToggle(item.label)}
-                    className="flex items-center text-gray-700 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = activeDropdown === item.label ? 'var(--primary-color)' : '')}
-                    style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : '' }}
+                    className="flex items-center text-primary bg-primary font-bold px-3 py-2 text-md transition-colors duration-200 hover:text-primary"
+                    onMouseOver={() => handleDropdownToggle(item.label)}
+                    //style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : 'var(--secondary-color)' }}
                   >
                     {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={`ml-1 transition-transform duration-200 ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`}
-                    />
+
                   </button>
                 ) : (
                   <Link
                     href={item.href!}
-                    className="text-gray-700 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                    className="text-secondary px-3 py-2 text-sm font-medium transition-colors duration-200"
                     onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = '')}
                   >
@@ -152,7 +155,7 @@ const Header: FC = () => {
 
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-secondary rounded-md shadow-lg border border-gray-200 py-2 z-50">
                     {item.dropdown.map((dropdownItem) => (
                       <Link
                         key={dropdownItem.label}
@@ -230,12 +233,11 @@ const Header: FC = () => {
                         style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : '' }}
                       >
                         {item.label}
-                        <ChevronDown
+                        {/* <ChevronDown
                           size={16}
-                          className={`transition-transform duration-200 ${
-                            activeDropdown === item.label ? 'rotate-180' : ''
-                          }`}
-                        />
+                          className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''
+                            }`}
+                        /> */}
                       </button>
                       {activeDropdown === item.label && (
                         <div className="pl-4 space-y-1">
