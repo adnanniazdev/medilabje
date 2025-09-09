@@ -10,6 +10,7 @@ interface Testimonial {
   title: string;
   content: string;
   rating: number;
+  tagline:string;
   avatar?: string;
 }
 
@@ -20,23 +21,26 @@ const TestimonialsSection: FC = () => {
     {
       id: 1,
       name: "Nick Campbell",
-      title: "Water and current Scottish heavyweight Champion, Nick is also a former Scotland Clan XV international rugby player, playing rugby union for the Glasgow Warriors and the Jersey Reds.",
-      content: "I wanted to take a moment to express my utmost satisfaction with my recent experience at MediLab, located at Strive. The service was incredibly professional and efficient, and I thought I'd share my thoughts. I was able to explain all the information on the blood report and patiently answered all my questions I had. It's an impressive service. Based on my experience I am going to try and make it a regular occurrence. I really feel it will make a massive difference in my training. I wouldn't hesitate to recommend MediLab to family and friends who are in need of nutritional testing, vital blood work done. Thanks again to all the team at MediLab.",
+      title: "Nick Campbell, boxer and current Scottish Heavyweight Champion. Nick is also a former Scotland Club XV international rugby union player, playing rugby union for the Glasgow Warriors and the Jersey Reds.",
+      content: "I wanted to take a moment to express my utmost satisfaction with my recent experience at Medilab, located at Strive. The service was incredibly professional and went above and beyond to assist me. They took time to explain all the information on the blood report and patiently answered all questions I had. It's an impressive service. Based on my experience I am going to try and make it a regular occurrence, I really feel it will make a massive difference in my training. I wouldn't hesitate to recommend MediLab to family and friends who are in need or interested in having their blood work done. Thanks again to all the team at MediLab.",
+      tagline:"Absolutely the best ever",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      // avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
     },
     {
       id: 2,
-      name: "Sarah Johnson",
+      name: "Salwa El Jurdi",
       title: "Healthcare Professional",
-      content: "I had to have some tests carried out and was a little nervous, but MediLab is absolutely amazing! They are so friendly and really took the stress out of me. Having my blood work tested, I can't praise them enough, not to mention how quick I got my results reported! Highly recommended... 10 out of 10! ❤️",
+      content: "I had to have some tests carried out and was a little nervous, but MediLab is absolutely amazing! They are so friendly and really took the stress out of me. Having my blood work tested, I can't praise them enough, not to mention how quick I got my results' reported! Highly recommended.. 10 out of 10 ❤️",
+      tagline:"So pleased with the service",
       rating: 5
     },
     {
       id: 3,
-      name: "Michael Thompson",
+      name: "Anon",
       title: "Fitness Enthusiast",
-      content: "The comprehensive health screening at MediLab gave me insights I never had before. The staff was professional, the facility was clean, and the results were delivered promptly. This has helped me optimize my training and nutrition significantly.",
+      content: "It is important that we all take responsibility for our own good health, and Medilab offer a range of blood screening tests for a great variety of conditions by way of a health check. I had the Mediwoman test, with a follow up consultation with their expert haematologist, who explained my results clearly. The service was very good, from first contact, very prompt responses and pleasant staff.",
+      tagline:"Very good and comprehensive service.",
       rating: 5
     }
   ];
@@ -122,9 +126,7 @@ const TestimonialsSection: FC = () => {
               </div>
 
               <h4 className="text-lg font-medium text-gray-800 mb-4">
-                {testimonials[currentSlide].rating === 5
-                  ? "Absolutely the best ever"
-                  : "So pleased with the service"}
+                {testimonials[currentSlide].tagline}
               </h4>
             </div>
 
@@ -138,46 +140,6 @@ const TestimonialsSection: FC = () => {
               </p>
             </div>
           </div>
-
-          {/* Next Testimonial Preview (if exists) */}
-          {testimonials.length > 1 && (
-            <div className="bg-white bg-opacity-80 rounded-lg shadow-lg p-6 max-w-sm w-full max-h-[70vh] overflow-y-auto hidden lg:block">
-              <div className="text-center">
-                <div
-                  className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "var(--light-accent)" }}
-                >
-                  <User className="w-8 h-8" style={{ color: "var(--primary-color)" }} />
-                </div>
-
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  So pleased with the service
-                </h3>
-
-                {/* Rating Stars */}
-                <div className="flex justify-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  I had to have some tests carried out and was a little nervous,
-                  but MediLab is absolutely amazing! They are so friendly and
-                  really took the stress out of me...
-                </p>
-
-                <div className="mt-4">
-                  <p className="text-xs font-medium" style={{ color: "var(--primary-color)" }}>
-                    Sarah El Jundi
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Navigation Arrows */}
