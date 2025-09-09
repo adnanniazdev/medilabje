@@ -18,7 +18,7 @@ const CorporateInformationPage: FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Parallax Background */}
-      <section className="relative min-h-[70vh] overflow-hidden">
+      <section className="relative min-h-[100vh] overflow-hidden">
         {/* Parallax Background */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
@@ -28,11 +28,10 @@ const CorporateInformationPage: FC = () => {
             backgroundAttachment: "fixed",
           }}
         ></div>
-
         {/* Content */}
-        <div className="relative z-10 h-auto flex flex-col  items-center px-4">
-          <div className="max-w-7xl mx-auto w-full bg-[#0CB2AC] p-6 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+        <div className="relative z-10 h-auto flex flex-col my-16  items-center px-4">
+          <div className="max-w-7xl mx-auto w-full bg-[#0CB2AC]  mb-12 p-6 text-center">
+            <h1 className="text-4xl  font-bold text-white">
               Corporate Information
             </h1>
           </div>
@@ -46,15 +45,15 @@ const CorporateInformationPage: FC = () => {
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-6 py-7 cursor-pointer text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <span className="text-4xl font-medium text-gray-800">
+                  <span className="text-4xl font-thin text-gray-800">
                     {item.title}
                   </span>
                   {openAccordion === item.id ? (
-                    <Minus className="w-8 h-8 text-[#1F97B9]" />
+                    <Minus className="w-8 h-8 text-[#1F97B9] " />
                   ) : (
-                    <Plus className="w-8 h-8 text-[#1F97B9]" />
+                    <Plus className="w-8 h-8 text-[#1F97B9] " />
                   )}
                 </button>
 
