@@ -1,11 +1,21 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const SectionComponent = ({ 
-  title, 
-  titleColor = "text-[#1F97B9]", 
-  image, 
-  imageAlt = "", 
+interface SectionComponentProps {
+  title: string;
+  titleColor?: string;
+  image: string;
+  imageAlt?: string;
+  children: ReactNode;
+  reverse?: boolean;
+  className?: string;
+}
+
+const SectionComponent: React.FC<SectionComponentProps> = ({
+  title,
+  titleColor = "text-[#1F97B9]",
+  image,
+  imageAlt = "",
   children,
   reverse = false,
   className = ""

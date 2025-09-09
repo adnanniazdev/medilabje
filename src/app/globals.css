@@ -2,17 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import "tailwindcss";
 
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
   /* MediLab Color Scheme */
   --primary-color: #1F97B9;
-  --primary-light: #6EC1E4;
-  --secondary-color: #526371;
-  --secondary-light: #7e7e7e;
   --accent-color: #1EB6B9;
   --light-accent: #E6F7F8;
 
@@ -37,15 +32,11 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-primary) !important;
-  /* Open Sans as default */
+  font-family: var(--font-primary) !important; /* Open Sans as default */
 }
 
-*,
-*::before,
-*::after {
-  font-family: inherit;
-  /* Inherit from body */
+*, *::before, *::after {
+  font-family: inherit; /* Inherit from body */
 }
 
 /* Font utility classes */
@@ -58,36 +49,22 @@ body {
 }
 
 /* Specific usage examples with higher specificity */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-secondary) !important;
-  /* Roboto for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary) !important; /* Roboto for headings */
 }
 
-p,
-span,
-div {
-  font-family: var(--font-primary);
-  /* Open Sans for body text */
+p, span, div {
+  font-family: var(--font-primary); /* Open Sans for body text */
 }
 
 /* Button and UI elements */
-button,
-.btn {
-  font-family: var(--font-secondary);
-  /* Roboto for buttons */
+button, .btn {
+  font-family: var(--font-secondary); /* Roboto for buttons */
 }
 
 /* Navigation and menu items */
-nav,
-.nav,
-.menu {
-  font-family: var(--font-secondary) !important;
-  /* Roboto for navigation */
+nav, .nav, .menu {
+  font-family: var(--font-secondary) !important; /* Roboto for navigation */
 }
 
 /* Override Tailwind's default font classes */
@@ -96,16 +73,7 @@ nav,
 }
 
 /* Ensure all text elements use our custom fonts */
-.text-xs,
-.text-sm,
-.text-base,
-.text-lg,
-.text-xl,
-.text-2xl,
-.text-3xl,
-.text-4xl,
-.text-5xl,
-.text-6xl {
+.text-xs, .text-sm, .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
   font-family: inherit !important;
 }
 
@@ -114,28 +82,13 @@ nav,
 /* * { font-family: var(--font-primary) !important; background: rgba(255,0,0,0.1) !important; } */
 
 /* Force Roboto on headings and navigation */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-nav a,
-.nav a,
-.menu a {
-  font-family: var(--font-secondary) !important;
-  /* Roboto */
+h1, h2, h3, h4, h5, h6, nav a, .nav a, .menu a {
+  font-family: var(--font-secondary) !important; /* Roboto */
 }
 
 /* Force Open Sans on body text */
-p,
-span,
-div,
-li,
-td,
-th {
-  font-family: var(--font-primary) !important;
-  /* Open Sans */
+p, span, div, li, td, th {
+  font-family: var(--font-primary) !important; /* Open Sans */
 }
 
 /* Custom font weight classes */
@@ -162,32 +115,6 @@ th {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.text-primary {
-  color: var(--primary-color) !important;
-}
-
-.text-secondary {
-  color: var(--secondary-color) !important;
-}
-
-.text-primary-light {
-  color: var(--primary-light) !important;
-}
-
-.text-secondary-light {
-  color: var(--secondary-light) !important;
-}
-
-.bg-primary {
-  background-color: var(--primary-color) !important;
-}
-
-.bg-secondary {
-  background-color: #262626 !important;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
