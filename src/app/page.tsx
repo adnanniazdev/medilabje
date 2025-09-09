@@ -1,3 +1,4 @@
+import "./globals.css";
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import TestsSection from '@/components/TestsSection';

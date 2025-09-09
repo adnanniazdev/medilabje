@@ -2,12 +2,13 @@
 
 import { FC, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin, ChevronRight, ChevronLeft } from 'lucide-react';
 import Image from 'next/image';
 
 interface DropdownItem {
   label: string;
   href: string;
+  dropdown?: DropdownItem[]
   external?: boolean;
 }
 
@@ -20,7 +21,9 @@ interface NavItem {
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeNestedDropdown, setActiveNestedDropdown] = useState<string | null>(null);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  let closeTimeout: NodeJS.Timeout;
 
   const navItems: NavItem[] = [
     {
@@ -28,20 +31,28 @@ const Header: FC = () => {
       href: '/tests',
       dropdown: [
         { label: 'Tests A-Z', href: '/tests#tests-a-z' },
-        { label: 'Test Profiles', href: '/tests#test-profiles' },
+        {
+          label: 'Test Profiles', href: '/tests#test-profiles', dropdown: [
+            { label: 'Male Health', href: '/male-health' },
+            { label: 'Female Health', href: '/female-health' },
+            { label: 'General Health', href: '/general-health' },
+            { label: 'Athlete Health', href: '/athlete-health' },
+          ]
+        },
         { label: 'Specimens', href: '/tests#specimens' },
         { label: 'Sample Requirements', href: '/tests#sample-requirements' },
         { label: 'Request Forms', href: '/tests#request-forms' },
         { label: 'Helpful Information', href: '/tests#helpful-information' },
-        { label: 'Male Health', href: '/male-health' },
-        { label: 'Female Health', href: '/female-health' },
-        { label: 'General Health', href: '/general-health' },
-        { label: 'Athlete Health', href: '/athlete-health' },
       ]
     },
     {
       label: 'Specialities',
-      href: '/specialities'
+      href: '/specialities',
+      dropdown: [
+        { label: 'Haematology', href: '/specialities#haematology' },
+        { label: 'Chemistry', href: '/specialities#chemistry' },
+        { label: 'Virology', href: '/specialities#virology' },
+      ]
     },
     {
       label: 'Services',
@@ -92,7 +103,6 @@ const Header: FC = () => {
   const handleMouseLeave = () => {
     setActiveDropdown(null);
   };
-
   // Close dropdown when clicking outside (keep for mobile)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -123,7 +133,7 @@ const Header: FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-             <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={100} height={100} />
+              <Image src={'/images/header-logo.png'} alt="MediLab Logo" width={120} height={120} />
             </Link>
           </div>
 
@@ -133,60 +143,94 @@ const Header: FC = () => {
               <div
                 key={item.label}
                 className="relative"
-                ref={el => { dropdownRefs.current[item.label] = el; }}
-                onMouseEnter={() => item.dropdown && handleMouseEnter(item.label)}
-                onMouseLeave={() => item.dropdown && handleMouseLeave()}
+                ref={(el) => {
+                  dropdownRefs.current[item.label] = el;
+                }}
+                onMouseEnter={() => {
+                  clearTimeout(closeTimeout);
+                  handleMouseEnter(item.label);
+                }}
+                onMouseLeave={() => {
+                  closeTimeout = setTimeout(() => {
+                    setActiveDropdown(null);
+                  }, 100); // 100ms delay
+                }}
               >
-                {item.dropdown ? (
-                  <Link
-                    href={item.href!}
-                    className="flex items-center text-gray-700 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = activeDropdown === item.label ? 'var(--primary-color)' : '')}
-                    style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : '' }}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={`ml-1 transition-transform duration-200 ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </Link>
-                ) : (
-                  <Link
-                    href={item.href!}
-                    className="text-gray-700 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '')}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-
+                {/* Parent Link */}
+                <button
+                  // href={item.href!}
+                  className="flex items-center text-secondary px-3 py-2 text-md font-bold transition-colors duration-200"
+                  onMouseEnter={() => handleMouseEnter(item.label)}
+                  style={{
+                    color:
+                      activeDropdown === item.label
+                        ? "var(--primary-color)"
+                        : "var(--secondary-color)",
+                  }}
+                >
+                  {item.label}
+                </button>
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-gray-700 rounded-md shadow-lg border border-gray-600 py-2 z-50">
+                  <div className="absolute top-full left-0 mt-2.5 w-64 bg-secondary shadow-lg border border-gray-600 py-2 z-50"
+                  >
                     {item.dropdown.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.label}
-                        href={dropdownItem.href}
-                        target={dropdownItem.external ? '_blank' : undefined}
-                        rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
-                        className="block px-4 py-2 text-sm text-white hover:bg-gray-600 transition-colors duration-200"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        {dropdownItem.label}
-                      </Link>
+                      <div key={dropdownItem.label}
+                        className="relative group">
+                        <Link
+                          href={dropdownItem.href}
+                          target={dropdownItem.external ? "_blank" : undefined}
+                          rel={dropdownItem.external ? "noopener noreferrer" : undefined}
+                          style={{ color: '#7e7e7e' }}
+                          className="flex justify-between px-4 py-2 text-sm transition-colors duration-200"
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.color = 'white';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color = '#7e7e7e';
+                          }}
+                        >
+                          {dropdownItem.label}
+                          {dropdownItem?.dropdown && <ChevronLeft
+                            size={16}
+                            className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''
+                              }`}
+                          />}
+
+                        </Link>
+
+                        {/* Nested dropdown if exists */}
+                        {dropdownItem?.dropdown && (
+                          <div className="absolute top-0 left-full w-64 bg-secondary shadow-lg border border-gray-600 py-2 hidden group-hover:block">
+                            {dropdownItem.dropdown.map((nestedItem) => (
+                              <Link
+                                key={nestedItem.label}
+                                href={nestedItem.href}
+                                style={{ color: '#7e7e7e'}}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.color = 'white';
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.color = '#7e7e7e';
+                                }}
+                                className="block px-4 py-2 text-sm hover:bg-primary transition-colors duration-200"
+                              >
+                                {nestedItem.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}
               </div>
             ))}
+
           </nav>
 
           {/* Social Media Icons */}
-          <div className="flex items-center space-x-4">
+          < div className="flex items-center space-x-4" >
             <Link
               href="https://www.facebook.com/medilabjersey"
               className="transition-colors duration-200"
@@ -246,12 +290,11 @@ const Header: FC = () => {
                         style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : '' }}
                       >
                         {item.label}
-                        <ChevronDown
+                        {/* <ChevronDown
                           size={16}
-                          className={`transition-transform duration-200 ${
-                            activeDropdown === item.label ? 'rotate-180' : ''
-                          }`}
-                        />
+                          className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''
+                            }`}
+                        /> */}
                       </button>
                       {activeDropdown === item.label && (
                         <div className="pl-4 space-y-1">
@@ -292,7 +335,7 @@ const Header: FC = () => {
           </div>
         )}
       </div>
-    </header>
+    </header >
   );
 };
 
