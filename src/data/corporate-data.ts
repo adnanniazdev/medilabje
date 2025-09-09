@@ -42,7 +42,6 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 1.10 MEDILAB laboratories may use external laboratories to undertake the Tests.
 
- 
 
 2 SUPPLY OF CONSUMABLES
 
@@ -84,7 +83,6 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 (ii) the healthcare professionals use the Consumables in accordance with any instructions relating to the use of the Consumables provided by MEDILAB and in any event with the degree of skill and care reasonably to be expected of a healthcare professional experienced in the use of such Consumables.
 
- 
 
 3 PRICE AND PAYMENT TERMS
 
@@ -96,7 +94,6 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 3.4 Without affecting any of its other rights, MEDILAB may suspend or cease provision of the Services and / or Consumables if the Client fails to pay an invoice due to MEDILAB, or if the total of the sums payable by the Client to MEDILAB under any agreements between the Client and MEDILAB meets or exceeds any credit limit that MEDILAB communicates to the Client from time to time.
 
- 
 
 4 CONFIDENTIALITY
 
@@ -108,7 +105,6 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 4.2 The restrictions in clause 4.1 will not apply to information which: (i) was in MEDILABs possession prior to disclosure by the Client; or (ii) is now or hereafter comes into the public domain other than by default of MEDILAB; or (iii) was lawfully received by MEDILAB from a third party acting in good faith having a right of further disclosure; or (iv) is required by law to be disclosed by MEDILAB; or (v) which is required by a regulatory or accreditation body to be disclosed to it for the purpose of regulating or accrediting the MEDILAB ltd.
 
- 
 
 5 CLIENT RESPONSIBILITIES
 
@@ -120,8 +116,6 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 5.4 The Client will provide MEDILAB with any information reasonably necessary for performing the Services and / or supplying Consumables, including by ensuring that the Pathology Request contains sufficient information regarding the Sample, the relevant patient, and the persons to whom the Test results are to be reported, and will ensure that any information the Client provides to MEDILAB in connection with the Services and / or Consumables is accurate and complete.
 
- 
-
 6 LIABILITY
 
 6.1 Nothing in the Agreement will limit or exclude liability for death or personal injury caused by negligence or any other liability that cannot be limited or excluded under Applicable Law.
@@ -132,13 +126,10 @@ The definitions which apply to these Terms and Conditions are set out in clause 
 
 6.4 All of the warranties which MEDILAB gives in relation to the Services and / or the Consumables are expressly set out in these Terms and Conditions. All other warranties, whether implied or express, are excluded from the Agreement where it is lawful to exclude them.
 
- 
-
 7 FORCE MAJEURE 
 
 If the performance of any obligation under the Agreement (except for an obligation to pay) is prevented, restricted or interfered with by reason of circumstances beyond the reasonable control of that party obliged to perform it (a ‘Force Majeure Event’), the party so affected will be excused from any resulting failure or delay in performance, and the time for performance will be extended by an amount of time equal to the duration of the Force Majeure Event. The party so affected will use reasonable endeavours to mitigate the effect of the Force Majeure Event on its performance of its obligations. If the Force Majeure Event delays or prevents performance of a party’s obligations for more than three months, either party may terminate the Agreement on written notice to the other.
 
- 
 
 8 DATA PROCESSOR AND DATA CONTROLLER
 
@@ -148,7 +139,6 @@ If the performance of any obligation under the Agreement (except for an obligati
 
 8.3 The Client will comply with the Data Protection Laws in relation to the Protected Data, and ensure that all instructions given by it to MEDILAB in respect of Protected Data will at all times be in accordance with Data Protection Laws.
 
- 
 
 9 DATA PROCESSING INSTRUCTIONS
 
@@ -160,13 +150,11 @@ If the performance of any obligation under the Agreement (except for an obligati
 
 9.4 MEDILAB will promptly inform the Client if MEDILAB becomes aware of a Processing Instruction that, in MEDILAB’s opinion, infringes Data Protection Laws. MEDILAB will have no liability for any processing in accordance with those Processing Instructions after giving the notice. MEDILAB’s obligations under this clause 9.4 do not limit the Client’s obligations under clause 8.3.
 
- 
 
 10 DATA SECURITY MEASURES 
 
 In relation to the processing of the Protected Data, MEDILAB will implement and maintain, at its cost and expense, appropriate technical and organisational measures to ensure for the Protected Data a level of security appropriate to the risks presented by the processing, taking into account the state of the art, the cost of implementation and the nature, scope, context and purpose of the processing of the Protected Data, as well as the risk of varying likelihood and severity of the rights and freedoms of natural persons.
 
- 
 
 11 USING STAFF AND OTHER PROCESSORS
 
@@ -176,7 +164,6 @@ In relation to the processing of the Protected Data, MEDILAB will implement and 
 
 11.3 MEDILAB will ensure that all persons authorised to process Protected Data are subject to a binding obligation to keep the Protected Data confidential (except where disclosure is required in accordance with Applicable Law, in which case MEDILAB will, where practicable and not prohibited by Applicable Law, notify the Client of any such requirement before such disclosure).
 
- 
 
 12 ASSISTANCE WITH THE CLIENT’S COMPLIANCE AND DATA SUBJECT RIGHTS
 
@@ -184,7 +171,6 @@ In relation to the processing of the Protected Data, MEDILAB will implement and 
 
 12.2 MEDILAB will provide such assistance as the Client reasonably requires (taking into account the nature of processing and the information available to MEDILAB) to the Client in ensuring compliance with the Client’s obligations under Data Protection Laws with respect to: (i) security of processing, (ii) data protection impact assessments, (iii) prior consultation with the relevant regulator regarding high risk processing, and (iv) notifications to the regulator and/or communications to data subjects by the Client in response to any Personal Data Breach. The Client will pay MEDILAB’s charges for providing the assistance in this clause 12, such charges to be calculated on a time and materials basis at MEDILAB’s applicable daily or hourly rates in force from time to time.
 
- 
 
 13 INTERNATIONAL DATA TRANSFERS
 
@@ -194,7 +180,6 @@ In relation to the processing of the Protected Data, MEDILAB will implement and 
 
 13.2.1 the Client will enter into (or where relevant use reasonable endeavours to procure that the applicable third party recipient of the Protected Data enters into) standard data protection clauses with MEDILAB authorised under the Data Protection Laws for the international transfer of personal data that provide sufficient safeguards for the relevant transfer, on terms acceptable to MEDILAB (acting reasonably); and 13.2.2 where the data protection clauses referred to in clause 13.2.1 are not entered into, the Client will procure that prior to the transfer the relevant data subjects provide valid consent to the transfer for the purposes of the Jersey Data Protection Laws, and the Client will provide evidence of such consents to MEDILAB on request.
 
- 
 
 14 RECORDS, INFORMATION AND AUDIT
 
@@ -202,19 +187,16 @@ In relation to the processing of the Protected Data, MEDILAB will implement and 
 
 14.2 MEDILAB will, in accordance with the Data Protection Laws, make available to the Client such information as is reasonably necessary to demonstrate MEDILAB’s compliance with its obligations as a processor under these Terms and Conditions and the Data Protection Laws, and allow for and contribute to audits, including inspections, by the Client (or another auditor mandated by the Client) for this purpose, subject to the Client: 14.2.1 giving MEDILAB reasonable prior notice of such information request, audit and/or inspection required by the Client; 14.2.2 ensuring that all information obtained or generated by the Client or its auditor(s) in connection with such information requests, inspections and audits is kept strictly confidential (save for disclosure to the relevant regulator or as otherwise required by Applicable Law); and 14.2.3 ensuring that such audit or inspection is undertaken during normal business hours, with minimal disruption to MEDILAB’s business, any Sub-Processor’s business and the business of other customers of MEDILAB.
 
- 
 
 15 BREACH NOTIFICATION 
 
 MEDILAB will, without undue delay, notify the Client of a personal data breach involving the Protected Data, and provide the Client with details of the personal data breach.
 
- 
 
 16 DELETION OR RETURN OF PROTECTED DATA AND COPIES 
 
 MEDILAB will, at the Client’s written request, either delete or return all of the Protected Data to the Client in such form as the Client reasonably requests within a reasonable time after the end of the provision of the relevant Services related to processing, and delete existing copies (unless storage of any data is required by Applicable Law, in which case MEDILAB will inform the Client of any such requirement). Where MEDILAB will process that Protected Data as controller under clause 17, MEDILAB may retain the Protected Data.
 
- 
 
 17 PROTECTED DATA THAT MEDILAB PROCESSES AS A CONTROLLER
 
@@ -226,7 +208,6 @@ MEDILAB will, at the Client’s written request, either delete or return all of 
 
 17.2 When MEDILAB processes personal data on its own behalf as controller, it will do so in accordance with the obligations of data controllers under the Data Protection Laws and with the applicable terms of the Agreement.
 
- 
 
 18 GENERAL
 
@@ -256,9 +237,7 @@ MEDILAB will, at the Client’s written request, either delete or return all of 
 
 18.8 Third parties The Agreement is not intended to create any rights for, nor be enforceable by, any third party except as set out in clause 6, and where the Client and MEDILAB Laboratory Limited agree that these Terms and Conditions will apply to any Orders.
 
-18.9 Governing law The Agreement and any dispute arising out of or in connection with it (including non-contractual disputes and claims) or its subject matter or formation will be governed by and construed in accordance with Jersey law and each of the parties submits to the exclusive jurisdiction of the Jersey Courts.
-
- 
+18.9 Governing law The Agreement and any dispute arising out of or in connection with it (including non-contractual disputes and claims) or its subject matter or formation will be governed by and construed in accordance with Jersey law and each of the parties submits to the exclusive jurisdiction of the Jersey Courts. 
 
 19 INTERPRETATION
 
