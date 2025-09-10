@@ -5,17 +5,18 @@ import Image from 'next/image';
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-gray-700 text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+    <footer className="text-white py-12 px-4" style={{backgroundColor: '#3e4144'}}>
+      <div className=" max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Section - Logo and Description */}
           <div className="md:col-span-1">
+            <p className='font-bold'>MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond</p>
             <div className="mb-6">
               <Image
                 src="/images/medilab-logo.png"
                 alt="MediLab Logo"
-                width={150}
-                height={75}
+                width={350}
+                height={155}
                 className="object-contain mb-4"
                 onError={(e) => {
                   // Fallback to text logo if image not found
