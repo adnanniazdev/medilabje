@@ -7,10 +7,28 @@ type SampleTubeSelection = {
     image: string;
     invention: string;
     test_points: string[],
-    width: number
+    width: number,
+    height: number
 
 };
 
+type TestProfile = {
+    title: string;
+    href: string; // optional if you want navigation
+}
+
+interface MaleHealthTest {
+    title: string;
+    image: string;
+    description: string;
+    fees: string;
+    href: string; // optional for Learn More link
+}
+
+type MediManPackage = {
+    title: string;
+    tests: string[]
+}
 export const tests_list: TestCategory[] = [
     {
         report_type: "Haematology",
@@ -127,7 +145,8 @@ export const sample_tube_selection: SampleTubeSelection[] = [
             'Sickle cell screening, blood film morphology',
             'Purple cap'
         ],
-        width: 60
+        width: 90,
+        height: 488
     },
     {
         title: "Plain Tube",
@@ -138,7 +157,8 @@ export const sample_tube_selection: SampleTubeSelection[] = [
             'Uric acid, RF, Ca, Mg, VitD & PTH, Vit E, Thyroid, B12 & Fol, hormones, Iron profile & Ferritin, CRP, Immunoglobulin',
             'Yellow cap'
         ],
-        width: 80
+        width: 90,
+        height: 602
     },
     {
         title: "Sodium Citrate Tube",
@@ -151,7 +171,8 @@ export const sample_tube_selection: SampleTubeSelection[] = [
             'Clotting Factors',
             "Light blue cap"
         ],
-        width: 50
+        width: 90,
+        height: 428
     },
     {
         title: "Sodium Fluoride Tube",
@@ -161,6 +182,171 @@ export const sample_tube_selection: SampleTubeSelection[] = [
             "Plasma Glucose",
             'Grey cap'
         ],
-        width: 30
+        width: 90,
+        height: 326
+    }
+];
+
+export const test_profiles: TestProfile[] = [
+    { title: "Male Health", href: "/male-health" },
+    { title: "Female Health", href: "/female-health" },
+    { title: "General Health", href: "/general-health" },
+    { title: "Athlete Health", href: "/athlete-health" },
+];
+
+export const male_health_tests: MaleHealthTest[] = [
+    {
+        title: "PROSTATE-SPECIFIC ANTIGEN (PSA)",
+        image: "/images/test-images/ML-prost.avif",
+        description: "Check your Prostate health with a specific Prostate-antigen test detected in the blood. This can show any Prostate abnormality",
+        fees: "£40",
+        href: "/male-health/#PSA"
+
+    },
+    {
+        title: "MEDIMALE BASIC",
+        image: "/images/test-images/ML-male.avif",
+        description: "Male hormone test to measure your Testosterone level, find out about how this can affect your health and take control",
+        fees: "£120",
+        href: "/male-health/#MediMaleBasic"
+    },
+    {
+        title: "MEDIMAN",
+        image: "/images/test-images/ML-man.avif",
+        description: "Get a deep insight into your health and wellbeing with our simple blood test. This allows you to take control and invest in the future of your health to prevent future illnesses. We recommend repeat testing 6 monthly to track data trends and identify areas of improvement",
+        fees: "£345",
+        href: "/male-health/#MediMan"
+    },
+
+];
+
+export const mediManPackage: MediManPackage[] = [
+    {
+        title: "Full Blood Count",
+        tests: [
+            "Haemoglobin",
+            "Haematocrit",
+            "Mean Cell Haemoglobin (MCH)",
+            "Mean Cell Haemoglobin Concentration (MCHC)",
+            "Red Blood Cell Mean Cell Volume (MCV)",
+            "Red Blood Cell Count",
+            "Basophil Count",
+            "Eosinophil Count",
+            "Lymphocyte Count",
+            "Monocyte Count",
+            "Neutrophil Count",
+            "White Blood Cell Count",
+            "Platelet Count"
+        ]
+    },
+    {
+        title: "Iron Status",
+        tests: ["Iron", "Ferritin", "Transferrin", "Transferrin Saturation"]
+    },
+    {
+        title: "Heart Health",
+        tests: [
+            "Total Cholesterol",
+            "LDL Cholesterol",
+            "HDL Cholesterol",
+            "Total Cholesterol / HDL Cholesterol Ratio",
+            "Triglycerides",
+            "Lipoprotein (a)"
+        ]
+    },
+    {
+        title: "Diabetes Health",
+        tests: ["Glucose", "HbA1c"]
+    },
+    {
+        title: "Metabolic Syndrome",
+        tests: ["Glucose", "HDL Cholesterol", "Triglycerides", "HbA1c"]
+    },
+    {
+        title: "Kidney Health",
+        tests: [
+            "Creatinine",
+            "Estimated Glomerular Filtration Rate (eGFR)",
+            "Calcium (adjusted)",
+            "Chloride",
+            "Magnesium",
+            "Phosphate",
+            "Potassium",
+            "Sodium",
+            "Urea",
+            "Uric Acid"
+        ]
+    },
+    {
+        title: "Liver Health",
+        tests: [
+            "Alanine Aminotransferase (ALT)",
+            "Alkaline Phosphatase (ALP)",
+            "Aspartate Aminotransferase (AST)",
+            "Gamma-Glutamyltransferase (GGT)",
+            "Total Bilirubin",
+            "Albumin",
+            "Ferritin"
+        ]
+    },
+    {
+        title: "Pancreatic Health",
+        tests: ["Pancreatic Amylase"]
+    },
+    {
+        title: "Nutritional Health",
+        tests: [
+            "Albumin",
+            "Calcium (adjusted)",
+            "Magnesium",
+            "Iron",
+            "Folic acid",
+            "Vitamin B12",
+            "Vitamin D"
+        ]
+    },
+    {
+        title: "Muscle & Joint Health",
+        tests: [
+            "Creatine Kinase 1",
+            "Uric Acid",
+            "Rheumatoid Factor (RF)"
+        ]
+    },
+    {
+        title: "Bone Health",
+        tests: [
+            "Alkaline Phosphatase (ALP)",
+            "Calcium (adjusted)",
+            "Phosphate",
+            "Vitamin D",
+            "Parathyroid Hormone (PTH) – optional"
+        ]
+    },
+    {
+        title: "Infection & Inflammation",
+        tests: [
+            "C-Reactive Protein (CRP)",
+            "Rheumatoid Factor (RF)",
+            "Albumin",
+            "Ferritin",
+            "Antistreptolysin O (ASO)"
+        ]
+    },
+    {
+        title: "Thyroid",
+        tests: [
+            "Thyroid Stimulating Hormone (TSH)",
+            "Free Thyroxine (FT4) – optional",
+            "Free Tri-iodothyronine (FT3) – optional"
+        ]
+    },
+    {
+        title: "Hormonal Health",
+        tests: ["Testosterone"]
+    },
+    {
+        title: "Prostate Health",
+        tests: ["Total Prostate Specific Antigen (TPSA)"]
     }
 ];
