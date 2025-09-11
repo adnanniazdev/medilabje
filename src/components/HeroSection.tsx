@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import HighlightSection from './HighlightSection';
 
 interface HeroSlide {
   id: number;
@@ -113,51 +114,15 @@ const HeroSection: FC = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide
-                  ? 'bg-white'
-                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                ? 'bg-white'
+                : 'bg-white bg-opacity-50 hover:bg-opacity-75'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>
       </section>
-
-  <div className="py-16 px-4" style={{ background: 'var(--section-gradient-primary)' }}>
-  <div className="max-w-7xl mx-auto">
-    <div className="flex flex-col lg:flex-row items-center">
-      {/* Text Content */}
-      <div className="lg:w-1/2 text-white mb-8 lg:mb-0">
-        <h2 className="text-3xl lg:text-4xl font-secondary font-light mb-6 leading-tight">
-          MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond
-        </h2>
-      </div>
-
-      {/* Logo */}
-      <div className="lg:w-1/2 flex justify-center lg:justify-end">
-        <Image
-          src="/images/medilab-logo.png"
-          alt="MediLab Logo"
-          width={350}
-          height={180}
-          className="object-contain max-w-full h-auto"
-          onError={(e) => {
-            // Fallback to text logo if image not found
-            const target = e.target as HTMLImageElement;
-            target.style.display = 'none';
-            const parent = target.parentElement;
-            if (parent) {
-              parent.innerHTML = `
-                <div class="text-white text-5xl lg:text-6xl font-bold">
-                  Medi<span style="color: var(--accent-color);">Lab</span>
-                </div>
-              `;
-            }
-          }}
-        />
-      </div>
-    </div>
-  </div>
-</div>
+      <HighlightSection />
     </>
   );
 };

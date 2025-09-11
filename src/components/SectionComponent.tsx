@@ -1,17 +1,29 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const SectionComponent = ({ 
-  title, 
-  titleColor = "text-[#1F97B9]", 
-  image, 
-  imageAlt = "", 
+interface SectionComponentProps {
+  id?:string;
+  title: string;
+  titleColor?: string;
+  image: string;
+  imageAlt?: string;
+  children: ReactNode;
+  reverse?: boolean;
+  className?: string;
+}
+
+const SectionComponent: React.FC<SectionComponentProps> = ({
+  id,
+  title,
+  titleColor = "text-[#1F97B9]",
+  image,
+  imageAlt = "",
   children,
   reverse = false,
   className = ""
 }) => {
   return (
-    <div className={`w-full max-w-6xl mx-auto p-10 ${className}`}>
+    <section id={id} className={`w-full max-w-6xl mx-auto p-10 ${className}`}>
       <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}  gap-8 lg:gap-12`}>
         
         {/* Content Section */}
@@ -27,7 +39,7 @@ const SectionComponent = ({
         
         {/* Image Section */}
         <div className="flex-1">
-          <div className="w-full aspect-[4/3] lg:aspect-square rounded-lg overflow-hidden shadow-lg">
+          <div className="w-full aspect-[4/3]  overflow-hidden shadow-lg">
             <Image
               src={image} 
               alt={imageAlt}
@@ -37,9 +49,8 @@ const SectionComponent = ({
             />
           </div>
         </div>
-        
       </div>
-    </div>
+    </section>
   );
 };
 

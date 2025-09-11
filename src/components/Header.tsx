@@ -73,8 +73,8 @@ const Header: FC = () => {
         { label: 'Quality Assurance', href: '/about#quality-assurance' },
         { label: 'Accreditation', href: '/about#accreditation' },
         { label: 'News', href: '/news' },
-        { label: 'Strive Health Club', href: 'https://strivehealthclub.com', external: true },
-        { label: 'Corporate Information', href: '/corporate-info' },
+        { label: 'Strive Health Club', href: 'https://strive.je/', external: true },
+        { label: 'Corporate Information', href: '/corporate-information' },
       ]
     },
     {
@@ -157,8 +157,8 @@ const Header: FC = () => {
                 }}
               >
                 {/* Parent Link */}
-                <button
-                  // href={item.href!}
+                <Link
+                  href={item.href!}
                   className="flex items-center text-secondary px-3 py-2 text-md font-bold transition-colors duration-200"
                   onMouseEnter={() => handleMouseEnter(item.label)}
                   style={{
@@ -169,7 +169,7 @@ const Header: FC = () => {
                   }}
                 >
                   {item.label}
-                </button>
+                </Link>
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.label && (
                   <div className="absolute top-full left-0 mt-2.5 w-64 bg-secondary shadow-lg border border-gray-600 py-2 z-50"
