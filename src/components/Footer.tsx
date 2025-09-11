@@ -77,7 +77,7 @@ const Footer: FC = () => {
               <p className="font-medium text-white">MEDILAB LTD</p>
               <p>Medical Suite 2</p>
               <p>Strive Health Club</p>
-              <p>L'Avenue de la Reine Elizabeth II</p>
+              <p>L&apos;Avenue de la Reine Elizabeth II</p>
               <p>St Peter</p>
               <p>Jersey</p>
               <p>JE3 7BH</p>

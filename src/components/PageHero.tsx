@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeroSection = ({ heading }:any) => {
+const HeroSection = ({ heading }:{heading:string}) => {
   return (
     <section
       className="relative h-48 bg-fixed bg-center bg-cover flex items-center justify-center"

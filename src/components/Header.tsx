@@ -74,7 +74,7 @@ const Header: FC = () => {
         { label: 'Accreditation', href: '/about#accreditation' },
         { label: 'News', href: '/news' },
         { label: 'Strive Health Club', href: 'https://strivehealthclub.com', external: true },
-        { label: 'Corporate Information', href: '/corporate-info' },
+        { label: 'Corporate Information', href: '/corporate-information' },
       ]
     },
     {
