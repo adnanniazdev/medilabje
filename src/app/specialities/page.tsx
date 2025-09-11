@@ -1,6 +1,9 @@
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import SectionComponent from '@/components/SectionComponent';
+import ServicesOverviewSection from '@/components/ServicesOverviewSection';
+import Image from 'next/image';
+import HighlightSection from '@/components/HighlightSection';
 
 const SpecialitiesPage: FC = () => {
   return (
@@ -67,6 +70,8 @@ const SpecialitiesPage: FC = () => {
 
       </SectionComponent>
 
+      <ServicesOverviewSection />
+      <HighlightSection />
     </div>
   );
 };
