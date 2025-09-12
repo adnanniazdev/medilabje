@@ -200,9 +200,18 @@ th {
 .border-primary-light {
   border-color: var(--primary-light) !important;
 }
+
 .bg-primary-light {
   background-color: var(--primary-light) !important;
 }
+
 .bg-secondary-light {
   background-color: var(--secondary-light) !important;
+}
+
+::selection {
+  background: var(--primary-dark);
+  /* blue */
+  color: white;
+  /* text color */
 }
