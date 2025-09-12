@@ -77,31 +77,18 @@ const TestsSection: FC = () => {
   const TestCard: FC<{ test: Test }> = ({ test }) => (
     <a
       href={test.url}
-      className="flex flex-col items-center p-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 group"
+      className="flex flex-col items-center p-4 rounded-lg  transition-colors duration-200 group"
     >
-      <div className="w-20 h-20 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-200">
+      <div className="w-40 h-40 flex items-center justify-center mb-3  ">
         <Image
           src={test.icon}
           alt={test.name}
-          width={80}
-          height={80}
+          width={160}
+          height={160}
           className="object-contain"
-          onError={(e) => {
-            // Fallback to a simple colored circle with text
-            const target = e.target as HTMLImageElement;
-            target.style.display = 'none';
-            const parent = target.parentElement;
-            if (parent) {
-              parent.innerHTML = `
-                <div class="w-20 h-20 rounded-full flex items-center justify-center text-white text-sm font-bold" style="background-color: var(--primary-color); border: 3px solid var(--primary-color);">
-                  ${test.name.substring(0, 2).toUpperCase()}
-                </div>
-              `;
-            }
-          }}
         />
       </div>
-      <span className="text-sm font-medium text-gray-700 text-center group-hover:text-gray-900">
+      <span className="text-xl font-semibold text-secondary-light text-center group-hover:text-primary">
         {test.name}
       </span>
     </a>
