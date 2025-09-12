@@ -17,6 +17,8 @@ const TestsSection: FC = () => {
   const [maleHealthSlide, setMaleHealthSlide] = useState(0);
   const [femaleHealthSlide, setFemaleHealthSlide] = useState(0);
   const [generalHealthSlide, setGeneralHealthSlide] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+
 
   const tests: Test[] = [
     // Male Health Tests
@@ -25,21 +27,27 @@ const TestsSection: FC = () => {
     { id: 'medimalebasic', name: 'MediMale Basic', icon: '/images/test-images/ML-male.avif', url: '/male-health#MediMaleBasic', category: 'male-health' },
     { id: 'mediathlete', name: 'MediAthlete', icon: '/images/test-images/ML-ath.avif', url: '/male-health#MediAthlete', category: 'male-health' },
 
-    // Female Health Tests
-    { id: 'medimother', name: 'MediMother', icon: '/images/test-images/ML-preg.avif', url: '/female-health#MediMother', category: 'female-health' },
-    { id: 'mediwoman', name: 'MediWoman', icon: '/images/test-images/ML-woman.avif', url: '/female-health#MediWoman', category: 'female-health' },
-    { id: 'medifemalebasic', name: 'MediFemale Basic', icon: '/images/test-images/ML-fem.avif', url: '/female-health#MediFemaleBasic', category: 'female-health' },
-    { id: 'pcos', name: 'PCOS', icon: '/images/test-images/ML-ovary.avif', url: '/female-health#PCOS', category: 'female-health' },
-    { id: 'medifertility', name: 'MediFertility', icon: '/images/test-images/ML-fert.avif', url: '/female-health#MediFertility', category: 'female-health' },
-    { id: 'earlypregnancy', name: 'Early Pregnancy', icon: '/images/test-images/ML-early.avif', url: '/female-health#EarlyPregnancy', category: 'female-health' },
-    { id: 'medimenopause', name: 'MediMenopause', icon: '/images/test-images/ML-meno.avif', url: '/female-health#MediMenopause', category: 'female-health' },
-    { id: 'amh', name: 'AMH', icon: '/images/test-images/ML-amh.avif', url: '/female-health#AMH', category: 'female-health' },
-
     // General Health Tests
     { id: 'thyroid', name: 'Thyroid', icon: '/images/test-images/ML-thy.avif', url: '/general-health#Thyroid', category: 'general-health' },
     { id: 'medivitamin', name: 'MediVitamin', icon: '/images/test-images/ML-vita.avif', url: '/general-health#MediVitamin', category: 'general-health' },
+
+    { id: 'medimother', name: 'MediMother', icon: '/images/test-images/ML-preg.avif', url: '/female-health#MediMother', category: 'female-health' },
+    { id: 'mediwoman', name: 'MediWoman', icon: '/images/test-images/ML-woman.avif', url: '/female-health#MediWoman', category: 'female-health' },
+    { id: 'medifemalebasic', name: 'MediFemale Basic', icon: '/images/test-images/ML-fem.avif', url: '/female-health#MediFemaleBasic', category: 'female-health' },
+
+
     { id: 'medidiscover', name: 'MediDiscover', icon: '/images/test-images/ML-disc.avif', url: '/general-health#MediDiscover', category: 'general-health' },
+    { id: 'pcos', name: 'PCOS', icon: '/images/test-images/ML-ovary.avif', url: '/female-health#PCOS', category: 'female-health' },
     { id: 'mediessential', name: 'MediEssential', icon: '/images/test-images/ML-ess.avif', url: '/general-health#MediEssential', category: 'general-health' },
+
+    { id: 'medimenopause', name: 'MediMenopause', icon: '/images/test-images/ML-meno.avif', url: '/female-health#MediMenopause', category: 'female-health' },
+
+    { id: 'amh', name: 'AMH', icon: '/images/test-images/ML-amh.avif', url: '/female-health#AMH', category: 'female-health' },
+    { id: 'medifertility', name: 'MediFertility', icon: '/images/test-images/ML-fert.avif', url: '/female-health#MediFertility', category: 'female-health' },
+    { id: 'earlypregnancy', name: 'Early Pregnancy', icon: '/images/test-images/ML-early.avif', url: '/female-health#EarlyPregnancy', category: 'female-health' },
+
+
+
   ];
 
   // Group tests by category for mobile slides
@@ -77,9 +85,11 @@ const TestsSection: FC = () => {
   const TestCard: FC<{ test: Test }> = ({ test }) => (
     <a
       href={test.url}
-      className="flex flex-col items-center p-4 rounded-lg  transition-colors duration-200 group"
+      className="flex flex-col items-center p-1 rounded-lg transition-colors duration-200 group"
+      onMouseEnter={() => setHoveredCard(test.id)}
+      onMouseLeave={() => setHoveredCard(null)}
     >
-      <div className="w-40 h-40 flex items-center justify-center mb-3  ">
+      <div className="w-40 h-40 flex items-center justify-center mb-3">
         <Image
           src={test.icon}
           alt={test.name}
@@ -88,7 +98,13 @@ const TestsSection: FC = () => {
           className="object-contain"
         />
       </div>
-      <span className="text-xl font-semibold text-secondary-light text-center group-hover:text-primary">
+
+      <span
+        className="text-xl font-semibold text-center transition-colors duration-200"
+        style={{
+          color: hoveredCard === test.id ? "var(--primary-color)" : "var(--secondary-light)",
+        }}
+      >
         {test.name}
       </span>
     </a>
@@ -133,11 +149,10 @@ const TestsSection: FC = () => {
         {tests.map((_, index) => (
           <div
             key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-200 ${
-              index === currentSlide
+            className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentSlide
                 ? 'w-4'
                 : 'bg-gray-300'
-            }`}
+              }`}
             style={{
               backgroundColor: index === currentSlide ? 'var(--primary-color)' : undefined
             }}
@@ -148,16 +163,16 @@ const TestsSection: FC = () => {
   );
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-18 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Tests</h2>
+          <h2 className="text-3xl md:text-5xl font-normal text-secondary mb-4">Our Tests</h2>
         </div>
 
         {/* Desktop Grid View */}
         <div className="hidden md:block">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
             {tests.map((test) => (
               <TestCard key={test.id} test={test} />
             ))}
