@@ -1,65 +1,48 @@
+import HealthComponent from '@/components/HealthComponent';
+import { general_health_tests, GeneralHealthContent } from '@/utils/constans';
 import { FC } from 'react';
 
 const GeneralHealthPage: FC = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8">General Health Tests</h1>
-        
-        <div className="space-y-8">
-          {/* Thyroid */}
-          <section id="Thyroid" className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-              Thyroid
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Comprehensive thyroid function testing including TSH, T3, T4, and thyroid antibodies to assess thyroid health.
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-sm text-gray-500">Coming soon - detailed test information and booking options.</p>
-            </div>
-          </section>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-[url('/images/test-bg-img.jpg')] object-contain text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Female Health</h1>
+        </div>
+      </section>
+      <div className="px-4 py-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {general_health_tests.map((test) => (
+            <div
+              key={test.title}
+              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
+            >
+              {/* Image */}
+              <img
+                src={test.image}
+                alt={test.title}
+                className="w-full h-48 object-contain"
+              />
 
-          {/* MediVitamin */}
-          <section id="MediVitamin" className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-              MediVitamin
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Complete vitamin and mineral deficiency screening to optimize your nutritional health and wellbeing.
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-sm text-gray-500">Coming soon - detailed test information and booking options.</p>
-            </div>
-          </section>
+              {/* Content */}
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="text-xl font-semibold text-primary-light mb-2">{test.title}</h3>
+                <p className="text-sm text-gray-600 mb-3 flex-1">{test.description}</p>
+                <p className="text-4xl font-semibold text-secondary mb-4">{test.fees}</p>
 
-          {/* MediDiscover */}
-          <section id="MediDiscover" className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-              MediDiscover
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Comprehensive health discovery package for those seeking a complete overview of their current health status.
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-sm text-gray-500">Coming soon - detailed test information and booking options.</p>
+                <a
+                  href={test.href}
+                  className="mt-auto inline-block text-white bg-primary-dark transition-colors duration-200 text-center py-3 px-3"
+                >
+                  LEARN MORE
+                </a>
+              </div>
             </div>
-          </section>
-
-          {/* MediEssential */}
-          <section id="MediEssential" className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--primary-color)' }}>
-              MediEssential
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Essential health screening covering the most important markers for overall health and disease prevention.
-            </p>
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <p className="text-sm text-gray-500">Coming soon - detailed test information and booking options.</p>
-            </div>
-          </section>
+          ))}
         </div>
       </div>
+      <HealthComponent HealthContent={GeneralHealthContent} />
     </div>
   );
 };
