@@ -8,7 +8,7 @@ import HighlightSection from '@/components/HighlightSection';
 
 const NewsPage: FC = () => {
   return (
-    <div className="min-h-screen">
+    <>
       {/* Hero Section */}
       <PageHero heading="News" />
 
@@ -71,7 +71,7 @@ const NewsPage: FC = () => {
       <HighlightSection/>
       
 
-    </div>
+    </>
   );
 };
 
