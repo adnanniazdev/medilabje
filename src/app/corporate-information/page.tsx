@@ -57,18 +57,21 @@ const CorporateInformationPage: FC = () => {
                       {item.title}
                     </span>
                     {openAccordions.includes(item.id) ? (
-                      <Minus className="w-8 h-8 text-[#1F97B9]" />
+                      <Minus className="w-10 h-10 text-secondary font-black" strokeWidth={4} />
                     ) : (
-                      <Plus className="w-8 h-8 text-[#1F97B9]" />
+                      <Plus className="w-10 h-10 text-secondary font-black" strokeWidth={4} />
                     )}
                   </button>
 
                   {openAccordions.includes(item.id) && (
                     <div className="px-6 pb-6">
                       <div className="px-6 pb-6">
-                        <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
-                          {item.content}
-                        </div>
+                        <div 
+                          className=" text-secondary-light leading-relaxed"
+                          dangerouslySetInnerHTML={{ 
+                            __html: item.content.replace(/\n/g, '<br/>')
+                          }}
+                        />
                       </div>
                     </div>
                   )}
@@ -78,38 +81,6 @@ const CorporateInformationPage: FC = () => {
           </div>
         </section>
       {/* </div> */}
-
-      {/* <div className={`w-full max-w-6xl mx-auto p-10 `}>
-          <div className={`flex gap-2`}>
-            
-            <div className="flex-1">
-              <div className="w-full aspect-[4/3] lg:aspect-square rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={"/images/lab1.avif"} 
-                  alt={"Micorscope"}
-                  width={550}
-                  height={350}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            <div className="flex-1">
-              <div className="w-full aspect-[4/3] lg:aspect-square rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src={"/images/lab3.avif"} 
-                  alt={"test-tubes"}
-                  width={550}
-                  height={350}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-          </div>
-        </div> */}
-
-
       <div className="w-full bg-white py-3 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex gap-0">

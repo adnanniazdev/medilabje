@@ -120,7 +120,7 @@ const ServicesPage: FC = () => {
                 MediLab Polices cannot transport samples containing Hazard Group 4 pathogens,
                 such as Ebola fever or Viral haemorrhagic fever.
               </p>
-              <p className="text-gray-600">
+              <p className="">
                 We also offer an on-site phlebotomy service, to allow sample collection and
                 processing to be efficient and time effective.
               </p>
