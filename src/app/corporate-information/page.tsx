@@ -20,7 +20,6 @@ const CorporateInformationPage: FC = () => {
 
   return (
     <>
-      {/* <div className="min-h-screen"> */}
         {/* Hero Section with Parallax Background */}
         <section className="relative min-h-[80vh] overflow-hidden">
           {/* Parallax Background */}
@@ -53,7 +52,12 @@ const CorporateInformationPage: FC = () => {
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full px-6 py-7 cursor-pointer text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
                   >
-                    <span className="text-4xl !font-thin font-sans text-gray-800">
+                    <span 
+                      className="text-4xl text-secondary-light"
+                      style={{  
+                        fontWeight: 300 
+                      }}
+                    >
                       {item.title}
                     </span>
                     {openAccordions.includes(item.id) ? (
@@ -63,18 +67,24 @@ const CorporateInformationPage: FC = () => {
                     )}
                   </button>
 
-                  {openAccordions.includes(item.id) && (
+                  <div 
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      openAccordions.includes(item.id) 
+                        ? 'max-h-[3000px] opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
                     <div className="px-6 pb-6">
                       <div className="px-6 pb-6">
                         <div 
-                          className=" text-secondary-light leading-relaxed"
+                          className="text text-secondary-light leading-relaxed"
                           dangerouslySetInnerHTML={{ 
                             __html: item.content.replace(/\n/g, '<br/>')
                           }}
                         />
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
             </div>
