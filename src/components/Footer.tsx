@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer: FC = () => {
   return (
@@ -11,32 +12,16 @@ const Footer: FC = () => {
           {/* Left Section - Logo and Description */}
           <div className="md:col-span-1">
             <p className='font-bold'>MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond</p>
-            <div className="mb-6">
+            <div className="">
               <Image
                 src="/images/medilab-logo.png"
                 alt="MediLab Logo"
                 width={350}
                 height={155}
-                className="object-contain mb-4"
-                onError={(e) => {
-                  // Fallback to text logo if image not found
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `
-                      <div class="text-white text-3xl font-bold mb-4">
-                        Medi<span style="color: var(--accent-color);">Lab</span>
-                      </div>
-                    `;
-                  }
-                }}
+                className="object-contain"
               />
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond
-            </p>
-            <p className="text-sm font-medium" style={{ color: 'var(--primary-color)' }}>
+            <p className="text-sm font-bold" >
               WHERE YOUR HEALTH CHECK IS OUR PRIORITY
             </p>
           </div>
@@ -44,37 +29,55 @@ const Footer: FC = () => {
           {/* Middle Section - Corporate Information */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-6">Corporate Information</h3>
-            <ul className="space-y-3 text-sm text-gray-300">
+            <ul className="space-y-3 text-white">
               <li>
-                <a href="/medilab-t&cs" className="hover:text-white transition-colors duration-200">
+                <Link 
+                  href="/medilab-t&cs" 
+                  className="text-white hover:underline transition-colors duration-200"
+                  style={{ '--hover-color': 'var(--primary-color)' } as React.CSSProperties}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                >
                   Medilab T&Cs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy-policy" className="hover:text-white transition-colors duration-200">
+                <Link 
+                  href="/privacy-policy" 
+                  className="text-white hover:underline transition-colors duration-200"
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/health-safety-statement" className="hover:text-white transition-colors duration-200">
+                <Link 
+                  href="/health-safety-statement" 
+                  className="text-white hover:underline transition-colors duration-200"
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                >
                   Health and Safety Statement
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/website-t&cs-policies" className="hover:text-white transition-colors duration-200">
+                <Link 
+                  href="/website-t&cs-policies" 
+                  className="text-white hover:underline transition-colors duration-200"
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+                >
                   Website T&Cs and Policies
-                </a>
+                </Link>
               </li>
             </ul>
-            <div className="mt-6 text-xs text-gray-400">
-              <p>Web design by Shiny Koala</p>
-            </div>
           </div>
 
           {/* Right Section - Main Laboratory */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold mb-6">Main Laboratory</h3>
-            <div className="text-sm text-gray-300 space-y-1">
+            <div className="  space-y-1">
               <p className="font-medium text-white">MEDILAB LTD</p>
               <p>Medical Suite 2</p>
               <p>Strive Health Club</p>
@@ -83,7 +86,7 @@ const Footer: FC = () => {
               <p>Jersey</p>
               <p>JE3 7BH</p>
               <div className="mt-4">
-                <p>Email: <a href="mailto:info@medilab.je" className="hover:text-white transition-colors duration-200" style={{ color: 'var(--primary-color)' }}>info@medilab.je</a></p>
+                <p>Email: <a href="mailto:info@medilab.je" className="hover:text-white transition-colors duration-200">info@medilab.je</a></p>
               </div>
             </div>
           </div>
