@@ -30,11 +30,11 @@ const AboutSection: FC = () => {
                     }}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold  mb-3">
+                <div className="py-8">
+                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
                     Understanding Your Health
                   </h3>
-                  <p className="text-secondary-light text-sm leading-relaxed">
+                  <p className="text-secondary-light text-sm !font-secondary leading-relaxed">
                     Here at MediLab we love to help you understand your health, 
                     allowing you to make informed decisions and take control. 
                     We offer a wide range of test profiles to cover every aspect of 
@@ -57,8 +57,8 @@ const AboutSection: FC = () => {
                     }}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold  mb-3">
+                <div className="py-8">
+                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
                     Our Laboratory
                   </h3>
                   <p className="text-secondary-light text-sm leading-relaxed">
