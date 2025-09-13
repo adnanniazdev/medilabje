@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import ServicesOverviewSection from '@/components/ServicesOverviewSection';
 import PageHero from '@/components/PageHero';
+import Link from 'next/link';
 
 const PatientsPage: FC = () => {
   return (
@@ -123,12 +124,12 @@ const PatientsPage: FC = () => {
                 To arrange an appointment please contact us.
               </p>
 
-              <a
+              <Link
                 href="mailto:info@medilab.je"
-                className="inline-block bg-[#1FB9B9] hover:bg-[#27C2C2] text-white font-normal py-5 px-8  transition-colors duration-200 tracking-[2.7px]"
+                className="inline-block bg-[#1FB9B9] hover:bg-[#27C2C2] text-white font-semibold py-4 px-8  transition-colors duration-200"
               >
                 CONTACT US
-              </a>
+              </Link>
             </div>
             <div>
               <Image

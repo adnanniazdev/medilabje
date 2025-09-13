@@ -3,7 +3,8 @@
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import Image from 'next/image';
-import ServicesOverviewSection from '@/components/ServicesOverviewSection';
+import Link from 'next/link';
+import FeaturesSection from '@/components/FeaturesSection';
 
 const ServicesPage: FC = () => {
   return (
@@ -14,26 +15,26 @@ const ServicesPage: FC = () => {
       {/* Requesting & Reporting Options Section - Z Pattern 1 */}
       <section id="requesting-reporting" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-4 items-center">
             {/* Content Left */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+            <div className='text-secondary-light'>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
                 Requesting & Reporting Options
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 For clinicians using MediLab service we offer an electronic results transfer system
                 through LabCollector.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 Manual request form requesting option also available with printed results
                 reporting.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 Results will be sent in encrypted format to any number of predetermined email
                 addresses. Copy reports will be emailed automatically to email addresses on the
                 system.
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className=" mb-4">
                 For private patients, please contact us directly.
               </p>
               <p className="text-gray-600">
@@ -45,11 +46,7 @@ const ServicesPage: FC = () => {
               <img
                 src="/images/lab1.avif"
                 alt="Laboratory technician working with microscope"
-                className="w-full h-96 object-cover rounded-lg shadow-md"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkxhYm9yYXRvcnkgVGVjaG5pY2lhbjwvdGV4dD4KPHN2Zz4K';
-                }}
+                className="w-full h-96 object-cover  shadow-md"
               />
             </div>
           </div>
@@ -57,45 +54,41 @@ const ServicesPage: FC = () => {
       </section>
 
       {/* Postal Services Section - Z Pattern 2 */}
-      <section id="postal-services" className="py-16 bg-gray-50">
+      <section id="postal-services" className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-4 ">
             {/* Image Left */}
             <div>
               <img
                 src="/images/heamotology.avif"
                 alt="Laboratory test tubes and samples"
-                className="w-full h-96 object-cover rounded-lg shadow-md"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkxhYm9yYXRvcnkgU2FtcGxlczwvdGV4dD4KPHN2Zz4K';
-                }}
+                className="w-full h-96 object-cover shadow-md"
               />
             </div>
             {/* Content Right */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+            <div className='text-secondary-light'>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
                 Postal Services
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 Postal pathology services should be considered by all practices in Jersey who
                 require a rapid delivery service to the UK referral laboratories.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 MediLab offers a postal referral service for clients in Jersey requiring samples to
                 be sent off island using Royal Mail Tracked 24 and DHL Tracked.
               </p>
-              <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                <p className="text-gray-700 mb-4">
+              {/* <div className="bg-blue-50 p-4 rounded-lg mb-6"> */}
+                <p className=" mb-6">
                   Charges with Royal Mail mean that ALL pathology postal specimens now made up
                   with Tracked 24 returns. This provides a particularly suitable method of transport
                   for any healthcare organisation.
                 </p>
-              </div>
-              <p className="text-gray-600 mb-4">
+              {/* </div> */}
+              <p className=" mb-6">
                 Postal pathology with Tracked 24 returns provides:
               </p>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-2 ">
                 <li>• Simple and convenient sample handling throughout the UK for most tests.</li>
                 <li>• It is not suitable for microbiology or coagulation samples.</li>
                 <li>• Scope for large and small numbers of samples.</li>
@@ -109,21 +102,21 @@ const ServicesPage: FC = () => {
       {/* Sample Collection Section - Z Pattern 3 */}
       <section id="sample-collection" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-4 ">
             {/* Content Left */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+            <div className='text-secondary-light'>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
                 Sample Collection
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 MediLab provides a dedicated medical sample collection service on a scheduled
                 or ad hoc basis from practices in Jersey.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 High-risk samples should be clearly labelled and packed separately from other
                 samples.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-6">
                 MediLab Polices cannot transport samples containing Hazard Group 4 pathogens,
                 such as Ebola fever or Viral haemorrhagic fever.
               </p>
@@ -137,13 +130,9 @@ const ServicesPage: FC = () => {
               <Image
                 src="/images/sample-collection.avif"
                 alt="Healthcare professional with laptop and medical equipment"
-                className="w-full h-96 object-cover rounded-lg shadow-md"
+                className="w-full h-96 object-cover  shadow-md"
                 width={500}
                 height={400}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkhlYWx0aGNhcmUgUHJvZmVzc2lvbmFsPC90ZXh0Pgo8L3N2Zz4K';
-                }}
               />
             </div>
           </div>
@@ -151,38 +140,33 @@ const ServicesPage: FC = () => {
       </section>
 
       {/* Testing Section */}
-       {/* Sample Collection Section - Z Pattern 3 */}
-      <section id="sample-collection" className="py-16 bg-white">
+      <section id="testing" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 ">
+          <div className="grid md:grid-cols-2 gap-4 ">
              {/* Image Left */}
             <div>
               <Image
-                src="/images/sample-collection.avif"
+                src="/images/lab4.avif"
                 alt="Healthcare professional with laptop and medical equipment"
-                className="w-full h-96 object-cover rounded-lg shadow-md"
+                className="w-full h-96 object-cover shadow-md"
                 width={500}
                 height={400}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg0IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiPkhlYWx0aGNhcmUgUHJvZmVzc2lvbmFsPC90ZXh0Pgo8L3N2Zz4K';
-                }}
               />
             </div>
             {/* Content Right */}
             <div>
-              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-color)' }}>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
                 Testing
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className=" mb-15">
                We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
               </p>
-              <a
+              <Link
                 href="mailto:info@medilab.je"
-                className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                className="inline-block bg-[#1FB9B9] hover:bg-[#27C2C2] text-white font-semibold py-4 px-8  transition-colors duration-200"
               >
                 CONTACT US
-              </a>
+              </Link>
 
             </div>
            
@@ -190,7 +174,23 @@ const ServicesPage: FC = () => {
         </div>
       </section>
 
-      <ServicesOverviewSection/>
+      {/* <ServicesOverviewSection/> */}
+      <FeaturesSection/>
+
+       {/* Contact Section */}
+       <div className="py-10 text-center" style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(30, 182, 185, 0.9), rgba(31, 151, 185, 0.9))",
+          }}>
+            <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto px-4">
+              <h2 className="text-white text-2xl lg:text-3xl font-light mb-6 lg:mb-0 lg:flex-1">
+              Where your health check is our priority
+              </h2>
+              <div className="lg:flex-1 flex justify-center ">
+                <Image src={"/images/medilab-logo.png"} alt='MediLab Logo' width={180} height={90} className="object-contain" />
+              </div>
+            </div>
+          </div>
     </>
   );
 };
