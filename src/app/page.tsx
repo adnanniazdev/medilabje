@@ -25,7 +25,7 @@ export default function Home() {
               <h2 className="text-white text-2xl lg:text-3xl font-light">
                 For any enquiries please contact us by email
               </h2>
-              <Link href={"mailto:info@medilabje.com"} className="bg-primary hover:bg-primary-light cursor-pointer text-white px-8 py-4  text-lg font-medium transition-colors">
+              <Link href={"mailto:info@medilabje.com"} className="bg-[#5db8cd] hover:bg-[#84C8DA] cursor-pointer text-white px-8 py-4  text-lg font-medium transition-colors">
                 CONTACT NOW
               </Link>
             </div>
