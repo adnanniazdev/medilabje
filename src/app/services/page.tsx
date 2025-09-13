@@ -37,8 +37,8 @@ const ServicesPage: FC = () => {
               <p className=" mb-4">
                 For private patients, please contact us directly.
               </p>
-              <p className="text-gray-600">
-                For more information please contact us at <a href="mailto:info@medilab.je" className="text-blue-600 hover:underline">info@medilab.je</a>
+              <p >
+                For more information please contact us at: <a href="mailto:info@medilab.je" className="font-bold hover:underline">info@medilab.je</a>
               </p>
             </div>
             {/* Image Right */}
