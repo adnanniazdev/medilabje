@@ -3,7 +3,8 @@
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import Image from 'next/image';
-import ServicesOverviewSection from '@/components/ServicesOverviewSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
+import HighlightSection from '@/components/HighlightSection';
 
 const ServicesPage: FC = () => {
   return (
@@ -151,11 +152,11 @@ const ServicesPage: FC = () => {
       </section>
 
       {/* Testing Section */}
-       {/* Sample Collection Section - Z Pattern 3 */}
+      {/* Sample Collection Section - Z Pattern 3 */}
       <section id="sample-collection" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 ">
-             {/* Image Left */}
+            {/* Image Left */}
             <div>
               <Image
                 src="/images/sample-collection.avif"
@@ -175,7 +176,7 @@ const ServicesPage: FC = () => {
                 Testing
               </h2>
               <p className="text-gray-600 mb-6">
-               We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
+                We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
               </p>
               <a
                 href="mailto:info@medilab.je"
@@ -185,12 +186,13 @@ const ServicesPage: FC = () => {
               </a>
 
             </div>
-           
+
           </div>
         </div>
       </section>
 
-      <ServicesOverviewSection/>
+      <TestFeatureSection />
+      <HighlightSection slogan='Where your health check is our priority' />
     </>
   );
 };

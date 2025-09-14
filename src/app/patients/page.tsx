@@ -2,8 +2,8 @@
 
 import { FC } from 'react';
 import Image from 'next/image';
-import ServicesOverviewSection from '@/components/ServicesOverviewSection';
 import PageHero from '@/components/PageHero';
+import TestFeatureSection from '@/components/TestFeatureSection';
 
 const PatientsPage: FC = () => {
   return (
@@ -167,7 +167,7 @@ const PatientsPage: FC = () => {
         </div>
       </section>
 
-      <ServicesOverviewSection />
+      <TestFeatureSection/>
 
     </>
   );

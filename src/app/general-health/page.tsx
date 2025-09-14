@@ -1,4 +1,6 @@
 import HealthComponent from '@/components/HealthComponent';
+import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
 import { general_health_tests, GeneralHealthContent } from '@/utils/constans';
 import { FC } from 'react';
 
@@ -43,6 +45,8 @@ const GeneralHealthPage: FC = () => {
         </div>
       </div>
       <HealthComponent HealthContent={GeneralHealthContent} />
+      <TestFeatureSection />
+      <HighlightSection />
     </div>
   );
 };
