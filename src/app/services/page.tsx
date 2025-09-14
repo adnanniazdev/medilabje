@@ -79,11 +79,11 @@ const ServicesPage: FC = () => {
                 be sent off island using Royal Mail Tracked 24 and DHL Tracked.
               </p>
               {/* <div className="bg-blue-50 p-4 rounded-lg mb-6"> */}
-                <p className=" mb-6">
-                  Charges with Royal Mail mean that ALL pathology postal specimens now made up
-                  with Tracked 24 returns. This provides a particularly suitable method of transport
-                  for any healthcare organisation.
-                </p>
+              <p className=" mb-6">
+                Charges with Royal Mail mean that ALL pathology postal specimens now made up
+                with Tracked 24 returns. This provides a particularly suitable method of transport
+                for any healthcare organisation.
+              </p>
               {/* </div> */}
               <p className=" mb-6">
                 Postal pathology with Tracked 24 returns provides:
