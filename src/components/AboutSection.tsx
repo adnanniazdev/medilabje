@@ -9,9 +9,6 @@ const AboutSection: FC = () => {
 
       {/* Overlapping Content */}
       <div className="relative z-10">
-
-
-
         {/* Services Section */}
         <div className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
@@ -19,25 +16,23 @@ const AboutSection: FC = () => {
               {/* Understanding Your Health */}
               <div className="bg-white   overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/images/lab1.avif"
-                    alt="Understanding Your Health"
-                    fill
-                    className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                    }}
-                  />
+                  <h1>
+                    <Image
+                      src="/images/lab1.avif"
+                      alt="Understanding Your Health"
+                      fill
+                      className="object-cover"
+                    />
+                  </h1>
                 </div>
                 <div className="py-8">
-                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
+                  <h2 className="text-2xl text-secondary font-semibold  mb-5">
                     Understanding Your Health
-                  </h3>
+                  </h2>
                   <p className="text-secondary-light text-sm !font-secondary leading-relaxed">
-                    Here at MediLab we love to help you understand your health, 
-                    allowing you to make informed decisions and take control. 
-                    We offer a wide range of test profiles to cover every aspect of 
+                    Here at MediLab we love to help you understand your health,
+                    allowing you to make informed decisions and take control.
+                    We offer a wide range of test profiles to cover every aspect of
                     your health needs.
                   </p>
                 </div>
@@ -48,7 +43,7 @@ const AboutSection: FC = () => {
                 <div className="relative h-48">
                   <Image
                     src="/images/lab4.avif"
-                    alt="Our Laboratory"
+                    alt=" Microscope "
                     fill
                     className="object-cover"
                     onError={(e) => {
@@ -58,11 +53,11 @@ const AboutSection: FC = () => {
                   />
                 </div>
                 <div className="py-8">
-                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
+                  <h2 className="text-2xl text-secondary font-semibold  mb-5">
                     Our Laboratory
-                  </h3>
+                  </h2>
                   <p className="text-secondary-light text-sm leading-relaxed">
-                  Our new laboratory is fitted with all the latest equipment, with regular quality control checks, ensuring your testing is accurate and precise.
+                    Our new laboratory is fitted with all the latest equipment, with regular quality control checks, ensuring your testing is accurate and precise.
                   </p>
                 </div>
               </div>
@@ -74,7 +69,7 @@ const AboutSection: FC = () => {
                     Book your appointment today for free
                   </h3>
                 </div>
-                
+
                 {/* Dummy Booking Interface */}
                 <div className="bg-white rounded-lg p-4 text-gray-800">
                   <div className="mb-4">
@@ -86,7 +81,7 @@ const AboutSection: FC = () => {
                     </div>
                     <h4 className="font-medium">Select a Day</h4>
                   </div>
-                  
+
                   {/* Calendar Mock */}
                   <div className="border rounded p-3">
                     <div className="flex justify-between items-center mb-3 text-sm">
@@ -94,7 +89,7 @@ const AboutSection: FC = () => {
                       <span className="font-medium">September 2025</span>
                       <button className="text-gray-400">›</button>
                     </div>
-                    
+
                     <div className="grid grid-cols-7 gap-1 text-xs text-center">
                       <div className="text-gray-500 p-1">MON</div>
                       <div className="text-gray-500 p-1">TUE</div>
@@ -103,7 +98,7 @@ const AboutSection: FC = () => {
                       <div className="text-gray-500 p-1">FRI</div>
                       <div className="text-gray-500 p-1">SAT</div>
                       <div className="text-gray-500 p-1">SUN</div>
-                      
+
                       {/* Sample dates */}
                       <div className="p-1">1</div>
                       <div className="p-1">2</div>
@@ -133,9 +128,9 @@ const AboutSection: FC = () => {
                       <div className="p-1">26</div>
                       <div className="p-1">27</div>
                       <div className="text-white rounded p-1" style={{ backgroundColor: 'var(--primary-color)' }}>28</div>
-                    </div>  
+                    </div>
                   </div>
-                  
+
                   <div className="mt-4 text-center">
                     <button
                       className="text-white px-4 py-2 rounded text-sm font-medium transition-colors"

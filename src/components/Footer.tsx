@@ -53,7 +53,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/health-safety-statement" 
+                  href="/corporate-information" 
                   className="text-white hover:underline transition-colors duration-200"
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'white'}

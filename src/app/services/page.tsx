@@ -1,10 +1,27 @@
-'use client';
+
 
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import FeaturesSection from '@/components/FeaturesSection';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Medical Laboratory Services - MediLab Jersey',
+  description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, sample collection, and professional medical analysis with accurate results.',
+  keywords: 'medical laboratory services, blood tests jersey, diagnostic testing, sample collection, medical analysis, lab services',
+  openGraph: {
+    title: 'Medical Laboratory Services - MediLab Jersey',
+    description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, and professional medical analysis.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Medical Laboratory Services - MediLab Jersey',
+    description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, and professional medical analysis.',
+  },
+};
 
 const ServicesPage: FC = () => {
   return (

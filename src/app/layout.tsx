@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "MediLab - Medical Laboratory Services in Jersey",
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
   creator: "MediLab Jersey",
   publisher: "MediLab Jersey",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://medilab.je",
+  },
   openGraph: {
     title: "MediLab - Medical Laboratory Services in Jersey",
     description: "Professional medical laboratory services with a reputation for excellence in Jersey and beyond.",
@@ -19,11 +23,23 @@ export const metadata: Metadata = {
     siteName: "MediLab Jersey",
     type: "website",
     locale: "en_GB",
+    images: [
+      {
+        url: "https://medilab.je/images/medilab-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "MediLab Jersey - Medical Laboratory Services",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "MediLab - Medical Laboratory Services in Jersey",
     description: "Professional medical laboratory services with a reputation for excellence in Jersey and beyond.",
+    images: ["https://medilab.je/images/medilab-logo.png"],
+  },
+  verification: {
+    google: "your-google-verification-code",
   },
 };
 
@@ -41,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <StructuredData type="organization" />
         <Header />
         <main className="min-h-screen">
           {children}
