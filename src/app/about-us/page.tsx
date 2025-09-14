@@ -5,6 +5,8 @@ import Link from 'next/link';
 import ConsultantsCustomersSection from '@/components/ConsultantsCustomersSection';
 import SectionComponent from '@/components/SectionComponent';
 import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
+import { Facebook, Linkedin } from 'lucide-react';
 
 const AboutPage: FC = () => {
   return (
@@ -39,7 +41,7 @@ const AboutPage: FC = () => {
               <div>
                 <h2 className="text-3xl font-bold text-primary-light mb-4">Contact</h2>
                 <p className="text-gray-700 mb-6">
-                  Email: <a href="mailto:info@medilab.je" className="text-primary-light hover:underline">info@medilab.je</a>
+                  Email: <Link href="mailto:info@medilab.je" className=" hover:underline">info@medilab.je</Link>
                 </p>
 
                 {/* Social Media Icons */}
@@ -49,14 +51,14 @@ const AboutPage: FC = () => {
                     className="w-10 h-10 bg-[#1FB9B9] rounded-full flex items-center justify-center text-white hover:bg-[#27C2C2] transition-colors"
                     aria-label="Facebook"
                   >
-                    <span className="text-sm font-bold">f</span>
+                    <span className="text-sm font-bold"><Facebook /></span>
                   </a>
                   <a
                     href="#"
                     className="w-10 h-10 bg-[#1FB9B9] rounded-full flex items-center justify-center text-white hover:bg-[#27C2C2] transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <span className="text-sm font-bold">in</span>
+                    <span className="text-sm font-bold"><Linkedin /></span>
                   </a>
                 </div>
               </div>
@@ -64,11 +66,14 @@ const AboutPage: FC = () => {
               {/* Opening Times */}
               <div>
                 <h2 className="text-3xl font-bold text-primary-light mb-4">Opening Times</h2>
-                <p className="text-gray-700">
+                <p className="text-secondary-light mb-4">
                   Consultation times vary
                 </p>
+                <Link href={"https://strive.je"} target='_blank' rel="noreferrer nofollow" >
+                  <Image src={"/images/strive-logo.png"} width={170} height={40} alt='strive logo' />
+                </Link>
+                <p className='text-secondary-light mt-4'>VISIT THE SITE</p>
               </div>
-
             </div>
 
             {/* Right Column - Google Maps Embed */}
@@ -76,17 +81,18 @@ const AboutPage: FC = () => {
               <div className="w-full h-[500px] overflow-hidden shadow-lg">
 
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3092.088543568801!2d-2.1883923232281735!3d49.205827676193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480dad584842aa59%3A0xb6de9bd7c1a24924!2sStrive%20Health%20Club!5e1!3m2!1sen!2s!4v1757850828310!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d41703.515805127776!2d-2.203072!3d49.210618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480dad584842aa59%3A0xb6de9bd7c1a24924!2sStrive%20Health%20Club!5e0!3m2!1sen!2sus!4v1757884516683!5m2!1sen!2sus"
                   className="w-full h-full border-0"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
+      <TestFeatureSection />
 
       {/* Consultants and Customers Section with Booking */}
       <ConsultantsCustomersSection />
