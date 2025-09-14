@@ -2,9 +2,9 @@
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import SectionComponent from '@/components/SectionComponent';
-import ServicesOverviewSection from '@/components/ServicesOverviewSection';
 import Image from 'next/image';
 import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
 
 const NewsPage: FC = () => {
   return (
@@ -67,7 +67,7 @@ const NewsPage: FC = () => {
         <p className='text-secondary-light mb-4'>This allows MediLab to digitise, streamline and improve the day to day management of quality and compliance providing us with the tools to meet our regulatory compliance requirements. </p>
       </SectionComponent>
 
-      <ServicesOverviewSection />
+      <TestFeatureSection />
       <HighlightSection/>
       
 

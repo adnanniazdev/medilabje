@@ -1,30 +1,34 @@
 'use client';
 
 import { FC } from 'react';
-import {  Clock, HeartPulse, Sun } from 'lucide-react';
+import { Clock, HeartPulse, Sun } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const ServicesOverviewSection: FC = () => {
+  const router = useRouter()
   const services = [
     {
-      icon: HeartPulse,
+      icon: '/images/service-images/heart.png',
+      hover_icon: '/images/service-images/hover-heart.png',
       title: "Medical Laboratory",
-      description: "State-of-the-art medical testing and diagnostics",
-      bgColor: "#E8F6F6"
+      bgColor: "#E8F6F6",
+      herf: '/tests'
     },
     {
-      icon: Clock,
-      title: "Quality Assurance", 
-      description: "Rigorous quality control and accurate results",
-      bgColor: "#DBF1F1"
+      icon: '/images/service-images/clock.png',
+      hover_icon: '/images/service-images/hover-clock.png',
+      title: "Quality Assurance",
+      bgColor: "#DBF1F1",
+      herf: '/about-us/#QualityAssurance'
     },
     {
-      icon: Sun,
+      icon: '/images/service-images/sun.png',
+      hover_icon: '/images/service-images/hover-sun.png',
       title: "Range of Services",
-      description: "Comprehensive testing solutions for all your needs",
-      bgColor: "#CDECEC"
+      bgColor: "#CDECEC",
+      herf: '/services'
     }
   ];
-
   return (
     <>
       {/* Services Overview Section */}
@@ -33,18 +37,29 @@ const ServicesOverviewSection: FC = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="text-center py-20 px-8 w-full hover:bg-primary-color cursor-pointer"
                 style={{ backgroundColor: service.bgColor }}
               >
                 {/* Icon Circle */}
-                 <div className="w-[120px] h-[120px] mx-auto mb-8 bg-white hover:bg-[#1F97B9] rounded-full flex items-center justify-center shadow-sm group transition-colors duration-300">
-                  <IconComponent 
-                    className="w-15 h-15 text-teal-500 group-hover:text-white transition-colors duration-300"
+                <div onClick={() => {
+                  router.push(service?.herf)
+                }} className="w-[120px] h-[120px] mx-auto mb-8 bg-white hover:bg-[#1F97B9] rounded-full flex items-center justify-center shadow-sm group transition-colors duration-300">
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-[120px] h-[120px] object-contain transition-opacity duration-300 group-hover:opacity-0"
+                  />
+
+                  {/* Hover Icon */}
+                  <img
+                    src={service.hover_icon}
+                    alt={service.title}
+                    className="w-[120px] h-[120px] object-contain absolute transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                   />
                 </div>
-                
+
                 {/* Title */}
                 <h3 className="text-xl font-semibold text-gray-700 mb-4">
                   {service.title}
