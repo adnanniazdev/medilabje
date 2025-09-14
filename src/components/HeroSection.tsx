@@ -93,7 +93,7 @@ const HeroSection: FC = () => {
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
+          className="absolute left-4 top-1/2 cursor-pointer transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
           aria-label="Previous slide"
         >
           <ChevronLeft size={24} className='text-[#1F97B9]' />
@@ -101,7 +101,7 @@ const HeroSection: FC = () => {
 
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
+          className="absolute right-4 top-1/2 cursor-pointer transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
           aria-label="Next slide"
         >
           <ChevronRight size={24} className='text-[#1F97B9]' />

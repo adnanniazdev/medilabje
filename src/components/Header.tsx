@@ -262,7 +262,7 @@ const Header: FC = () => {
             <button
               onClick={toggleMenu}
               type="button"
-              className="text-gray-700 focus:outline-none transition-colors duration-200"
+              className="text-gray-700 focus:outline-none cursor-pointer transition-colors duration-200"
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '')}
               onFocus={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
@@ -275,65 +275,96 @@ const Header: FC = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
-              {navItems.map((item) => (
-                <div key={item.label}>
-                  {item.dropdown ? (
-                    <div>
-                      <button
-                        onClick={() => handleDropdownToggle(item.label)}
-                        className="flex items-center justify-between w-full text-left text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
+        <div className={`md:hidden border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+            {navItems.map((item, index) => (
+              <div 
+                key={item.label}
+                className={`transition-all duration-300 ease-in-out ${
+                  isMenuOpen 
+                    ? 'opacity-100 transform translate-y-0' 
+                    : 'opacity-0 transform -translate-y-2'
+                }`}
+                style={{
+                  transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
+                }}
+              >
+                {item.dropdown ? (
+                  <div>
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href!}
+                        className="flex-1 text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
                         onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = activeDropdown === item.label ? 'var(--primary-color)' : '')}
-                        style={{ color: activeDropdown === item.label ? 'var(--primary-color)' : '' }}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         {item.label}
-                        {/* <ChevronDown
+                      </Link>
+                      <button
+                        onClick={() => handleDropdownToggle(item.label)}
+                        className="px-3 cursor-pointer py-2 text-gray-700 transition-colors duration-200"
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                        aria-label={`Toggle ${item.label} dropdown`}
+                      >
+                        <ChevronDown
                           size={16}
-                          className={`transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''
+                          className={`transition-transform duration-300 ease-in-out ${activeDropdown === item.label ? 'rotate-180' : ''
                             }`}
-                        /> */}
+                        />
                       </button>
-                      {activeDropdown === item.label && (
-                        <div className="pl-4 space-y-1">
-                          {item.dropdown.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              target={dropdownItem.external ? '_blank' : undefined}
-                              rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
-                              className="block text-gray-600 px-3 py-2 text-sm transition-colors duration-200"
-                              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                              onMouseLeave={(e) => (e.currentTarget.style.color = '')}
-                              onClick={() => {
-                                setActiveDropdown(null);
-                                setIsMenuOpen(false);
-                              }}
-                            >
-                              {dropdownItem.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
                     </div>
-                  ) : (
-                    <Link
-                      href={item.href!}
-                      className="block text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
-                      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '')}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
+                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      activeDropdown === item.label 
+                        ? 'max-h-96 opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}>
+                      <div className="pl-4 space-y-1">
+                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                          <Link
+                            key={dropdownItem.label}
+                            href={dropdownItem.href}
+                            target={dropdownItem.external ? '_blank' : undefined}
+                            rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
+                            className={`block text-gray-600 px-3 py-2 text-sm transition-all duration-300 ease-in-out ${
+                              activeDropdown === item.label 
+                                ? 'opacity-100 transform translate-x-0' 
+                                : 'opacity-0 transform -translate-x-2'
+                            }`}
+                            style={{
+                              transitionDelay: activeDropdown === item.label ? `${dropdownIndex * 30}ms` : '0ms'
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+                            onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href!}
+                    className="block text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </header >
   );

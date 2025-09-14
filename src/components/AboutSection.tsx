@@ -13,11 +13,11 @@ const AboutSection: FC = () => {
 
 
         {/* Services Section */}
-        <div className="bg-gray-50 py-16 px-4">
+        <div className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Understanding Your Health */}
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white   overflow-hidden">
                 <div className="relative h-48">
                   <Image
                     src="/images/lab1.avif"
@@ -30,11 +30,11 @@ const AboutSection: FC = () => {
                     }}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                <div className="py-8">
+                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
                     Understanding Your Health
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-secondary-light text-sm !font-secondary leading-relaxed">
                     Here at MediLab we love to help you understand your health, 
                     allowing you to make informed decisions and take control. 
                     We offer a wide range of test profiles to cover every aspect of 
@@ -44,7 +44,7 @@ const AboutSection: FC = () => {
               </div>
 
               {/* Our Laboratory */}
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-white overflow-hidden">
                 <div className="relative h-48">
                   <Image
                     src="/images/lab4.avif"
@@ -57,14 +57,12 @@ const AboutSection: FC = () => {
                     }}
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                <div className="py-8">
+                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
                     Our Laboratory
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    Our new laboratory is fitted with all the latest equipment, with 
-                    regular quality control checks, ensuring your testing is 
-                    accurate and precise.
+                  <p className="text-secondary-light text-sm leading-relaxed">
+                  Our new laboratory is fitted with all the latest equipment, with regular quality control checks, ensuring your testing is accurate and precise.
                   </p>
                 </div>
               </div>

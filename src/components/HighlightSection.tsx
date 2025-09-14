@@ -19,7 +19,7 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({slogan}) => {
           </div>
 
           {/* Image */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
+          <div className="lg:w-1/2 flex justify-center ">
             <Image
               src="/images/medilab-logo.png"
               alt="MediLab Logo"

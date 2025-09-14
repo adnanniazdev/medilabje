@@ -5,6 +5,7 @@ interface SectionComponentProps {
   id?:string;
   title: string;
   titleColor?: string;
+  titleSize: string;
   image: string;
   imageAlt?: string;
   children: ReactNode;
@@ -15,7 +16,8 @@ interface SectionComponentProps {
 const SectionComponent: React.FC<SectionComponentProps> = ({
   id,
   title,
-  titleColor = "text-[#1F97B9]",
+  titleColor = "text-primary-light",
+  titleSize = "text-[25px]",
   image,
   imageAlt = "",
   children,
@@ -23,23 +25,23 @@ const SectionComponent: React.FC<SectionComponentProps> = ({
   className = ""
 }) => {
   return (
-    <section id={id} className={`w-full max-w-6xl mx-auto p-10 ${className}`}>
-      <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}  gap-8 lg:gap-12`}>
+    <section id={id} className={`w-full max-w-6xl mx-auto py-10 ${className}`}>
+      <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}  gap-5 px-[10px]`}>
         
         {/* Content Section */}
         <div className="flex-1 space-y-4">
-          <h2 className={`text-2xl lg:text-3xl font-light ${titleColor}`}>
+          <h2 className={`${titleSize} font-semibold ${titleColor} `}>
             {title}
           </h2>
           
-          <div className="text-gray-600 leading-relaxed space-y-4">
+          <div className="text-secondary-light leading-relaxed space-y-4">
             {children}
           </div>
         </div>
         
         {/* Image Section */}
         <div className="flex-1">
-          <div className="w-full aspect-[4/3]  overflow-hidden shadow-lg">
+          <div className="w-full aspect-[550/365]  overflow-hidden shadow-lg">
             <Image
               src={image} 
               alt={imageAlt}
