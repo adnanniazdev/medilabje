@@ -16,6 +16,7 @@ interface Testimonial {
 
 const TestimonialsSection: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const testimonials: Testimonial[] = [
     
@@ -43,25 +44,40 @@ const TestimonialsSection: FC = () => {
     },
   ];
 
+  // Check if mobile on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Calculate max slides based on screen size
+  const maxSlides = isMobile ? testimonials.length : testimonials.length - 1;
+
   // Auto-slide functionality - changes every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % (testimonials.length - 1));
+      setCurrentSlide((prev) => (prev + 1) % maxSlides);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [maxSlides]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
   const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + (testimonials.length - 1)) % (testimonials.length - 1));
+    setCurrentSlide((prev) => (prev - 1 + maxSlides) % maxSlides);
   };
 
   const goToNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % (testimonials.length - 1));
+    setCurrentSlide((prev) => (prev + 1) % maxSlides);
   };
 
   return (
@@ -87,10 +103,10 @@ const TestimonialsSection: FC = () => {
     <div className="flex-1 flex items-center justify-center">
       <div className="relative max-w-7xl mx-auto w-full overflow-hidden">
         <div className="flex transition-transform duration-500 ease-in-out" style={{
-          transform: `translateX(-${currentSlide * 50}%)`
+          transform: `translateX(-${currentSlide * (isMobile ? 100 : 50)}%)`
         }}>
           {testimonials.map((testimonial, index) => (
-            <div key={testimonial.id} className="w-1/2 flex-shrink-0 mr-4">
+            <div key={testimonial.id} className={`${isMobile ? 'w-full' : 'w-1/2'} flex-shrink-0 ${isMobile ? 'mr-0' : 'mr-4'}`}>
               <div className="bg-white py-13 px-11 max-w-2xl mx-auto max-h-[70vh] overflow-y-auto">
                 <div className="text-center mb-6">
                   {testimonial.avatar ? (
@@ -146,7 +162,7 @@ const TestimonialsSection: FC = () => {
     {/* Slide Indicators - Fixed at bottom */}
     <div className="flex justify-center pb-8 flex-shrink-0">
       <div className="flex space-x-2">
-        {Array.from({ length: testimonials.length - 1 }, (_, index) => (
+        {Array.from({ length: maxSlides  }, (_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
