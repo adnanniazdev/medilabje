@@ -6,6 +6,7 @@ import ConsultantsCustomersSection from '@/components/ConsultantsCustomersSectio
 import SectionComponent from '@/components/SectionComponent';
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
+import FeedbackForm from '@/components/FeedbackForm';
 import { Facebook, Linkedin } from 'lucide-react';
 
 const AboutPage: FC = () => {
@@ -187,6 +188,14 @@ const AboutPage: FC = () => {
           </ul>
         </p>
       </SectionComponent>
+
+      {/* =Uncomment when API is created */}
+      {/* <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FeedbackForm />
+        </div>
+      </section> */}
+
       {/* Contact Section */}
       <HighlightSection slogan='Where your health check is our priority' />
 
