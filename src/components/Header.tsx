@@ -30,13 +30,14 @@ const Header: FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    {
-      label: 'Health Packages',
-      href: '/tests',
-      // dropdown: [
+    // TODO: Uncomment when page will be created
+    // {
+    //   label: 'Health Packages',
+    //   href: '/tests',
+    //   // dropdown: [
        
-      // ]
-    },
+    //   // ]
+    // },
     {
       label: 'Tests',
       href: '/tests',
