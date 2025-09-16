@@ -30,7 +30,7 @@ const AboutPage: FC = () => {
                   <p>Medilab Ltd<br />
                     Medical Suite 2<br />
                     Strive Health Club<br />
-                    L'Avenue de la Reine Elizabeth II<br />
+                    L&apos;Avenue de la Reine Elizabeth II<br />
                     St Peter<br />
                     Jersey<br />
                     JE3 7BP</p>

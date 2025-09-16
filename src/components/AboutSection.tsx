@@ -9,9 +9,6 @@ const AboutSection: FC = () => {
 
       {/* Overlapping Content */}
       <div className="relative z-10">
-
-
-
         {/* Services Section */}
         <div className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
@@ -24,10 +21,6 @@ const AboutSection: FC = () => {
                     alt="Understanding Your Health"
                     fill
                     className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                    }}
                   />
                 </div>
                 <div className="py-8">

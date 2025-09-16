@@ -16,7 +16,6 @@ interface HeroSlide {
 const HeroSection: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Dummy slides - you can replace these with your actual images
   const slides: HeroSlide[] = [
     {
       id: 1,
