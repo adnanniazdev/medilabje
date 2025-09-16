@@ -14,6 +14,19 @@ const AboutPage: FC = () => {
       {/* Hero Section */}
       <PageHero heading="About Us" />
 
+      {/* Intro Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-primary-light mb-4">About MediLab</h2>
+          <p className="text-secondary-light mb-4">
+            MediLab Ltd is an independent medical laboratory based in Jersey, Channel Islands, providing high-quality diagnostic testing for private individuals, healthcare professionals, and organizations. Located within the Strive Health Club in St Peter, MediLab offers a modern, consultant-led service with a strong focus on accuracy, speed, and patient care. Whether you&#39;re seeking routine health checks, specialized blood tests, or corporate wellness support, MediLab delivers trusted results with quick turnaround time.
+          </p>
+          <p className="text-secondary-light">
+            Supported by experienced consultants in haematology and biochemistry, MediLab combines expert insight with cutting-edge laboratory technology, helping patients and clinicians make informed health decisions quickly and confidently.
+          </p>
+        </div>
+      </section>
+
       {/* Contact & Location Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

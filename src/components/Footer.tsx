@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from 'react';
+import { Facebook, Linkedin, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +9,7 @@ const Footer: FC = () => {
   return (
     <footer className="text-white py-12 px-4" style={{backgroundColor: '#3e4144'}}>
       <div className=" max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Left Section - Logo and Description */}
           <div className="md:col-span-1">
             <p className='font-bold'>MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond</p>
@@ -88,6 +89,22 @@ const Footer: FC = () => {
               <div className="mt-4">
                 <p>Email: <a href="mailto:info@medilab.je" className="hover:text-white transition-colors duration-200">info@medilab.je</a></p>
               </div>
+            </div>
+          </div>
+
+          {/* Social - Follow Us */}
+          <div className="md:col-span-1">
+            <h3 className="text-lg font-semibold mb-6">Follow Us</h3>
+            <div className="flex items-center space-x-4">
+              <Link href="https://www.facebook.com/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-[#3b5998] transition-colors">
+                <Facebook />
+              </Link>
+              <Link href="https://www.linkedin.com/company/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-[#0a66c2] transition-colors">
+                <Linkedin />
+              </Link>
+              <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-[#E1306C] transition-colors">
+                <Instagram />
+              </Link>
             </div>
           </div>
         </div>
