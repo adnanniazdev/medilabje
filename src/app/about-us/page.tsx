@@ -6,6 +6,7 @@ import ConsultantsCustomersSection from '@/components/ConsultantsCustomersSectio
 import SectionComponent from '@/components/SectionComponent';
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
+import FeedbackForm from '@/components/FeedbackForm';
 import { Facebook, Linkedin } from 'lucide-react';
 
 const AboutPage: FC = () => {
@@ -14,8 +15,21 @@ const AboutPage: FC = () => {
       {/* Hero Section */}
       <PageHero heading="About Us" />
 
+      {/* Intro Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-primary-light mb-4">About MediLab</h2>
+          <p className="text-secondary-light mb-4">
+            MediLab Ltd is an independent medical laboratory based in Jersey, Channel Islands, providing high-quality diagnostic testing for private individuals, healthcare professionals, and organizations. Located within the Strive Health Club in St Peter, MediLab offers a modern, consultant-led service with a strong focus on accuracy, speed, and patient care. Whether you&#39;re seeking routine health checks, specialized blood tests, or corporate wellness support, MediLab delivers trusted results with quick turnaround time.
+          </p>
+          <p className="text-secondary-light">
+            Supported by experienced consultants in haematology and biochemistry, MediLab combines expert insight with cutting-edge laboratory technology, helping patients and clinicians make informed health decisions quickly and confidently.
+          </p>
+        </div>
+      </section>
+
       {/* Contact & Location Section */}
-      <section className="py-16 bg-white">
+      <section id='Location' className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Left Column - Contact Information */}
@@ -38,7 +52,7 @@ const AboutPage: FC = () => {
               </div>
 
               {/* Contact */}
-              <div>
+              <div id="Contact">
                 <h2 className="text-3xl font-bold text-primary-light mb-4">Contact</h2>
                 <p className="text-gray-700 mb-6">
                   Email: <Link href="mailto:info@medilab.je" className=" hover:underline">info@medilab.je</Link>
@@ -97,6 +111,7 @@ const AboutPage: FC = () => {
       {/* Consultants and Customers Section with Booking */}
       <ConsultantsCustomersSection />
       <SectionComponent
+        id='quality-assurance'
         title='Quality Assurance & Management'
         titleColor='text-primary-light'
         titleSize='text-4xl'
@@ -174,6 +189,14 @@ const AboutPage: FC = () => {
           </ul>
         </p>
       </SectionComponent>
+
+      {/* =Uncomment when API is created */}
+      {/* <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FeedbackForm />
+        </div>
+      </section> */}
+
       {/* Contact Section */}
       <HighlightSection slogan='Where your health check is our priority' />
 

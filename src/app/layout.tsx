@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ScrollToTop from "@/components/ScrollToTop";
 import StructuredData from "@/components/StructuredData";
 
@@ -62,8 +63,10 @@ export default function RootLayout({
         <main className="min-h-screen">
           {children}
         </main>
+        {/* <PreFooter /> */}
         <Footer />
         <ScrollToTop />
+        <WhatsAppFloat />
       </body>
     </html>
   );

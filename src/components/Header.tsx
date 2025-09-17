@@ -2,8 +2,9 @@
 
 import { FC, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin, ChevronRight, ChevronLeft, Search } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface DropdownItem {
   label: string;
@@ -24,8 +25,19 @@ const Header: FC = () => {
   const [activeNestedDropdown, setActiveNestedDropdown] = useState<string | null>(null);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   let closeTimeout: NodeJS.Timeout;
+  const router = useRouter();
+  const [query, setQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navItems: NavItem[] = [
+    // TODO: Uncomment when page will be created
+    // {
+    //   label: 'Health Packages',
+    //   href: '/tests',
+    //   // dropdown: [
+       
+    //   // ]
+    // },
     {
       label: 'Tests',
       href: '/tests',
@@ -52,8 +64,13 @@ const Header: FC = () => {
         { label: 'Haematology', href: '/specialities#haematology' },
         { label: 'Chemistry', href: '/specialities#chemistry' },
         { label: 'Virology', href: '/specialities#virology' },
+        {label:"Immunology", href:"/specialities#immunology"}
       ]
     },
+    // {
+    //   label:"Consultation",
+    //   href:"/consultation"
+    // },
     {
       label: 'Services',
       href: '/services',
@@ -62,18 +79,22 @@ const Header: FC = () => {
         { label: 'Postal Services', href: '/services#postal-services' },
         { label: 'Sample Collection', href: '/services#sample-collection' },
         { label: 'Testing', href: '/services#testing' },
+        {label:"MediLab Home Phlebotomy Services", href:'/services#home-phelabotomy'}
       ]
     },
     {
       label: 'About Us',
       href: '/about-us',
       dropdown: [
-        { label: 'About MediLab', href: '/abou-ust#about-medilab' },
-        { label: 'Our Team', href: '/about-us#our-team' },
-        { label: 'Quality Assurance', href: '/about-us#quality-assurance' },
-        { label: 'Accreditation', href: '/about-us#accreditation' },
+        { label: 'Location', href: '/about-us#Location' },
+        { label: 'About MediLab', href: '/about-us#about-medilab' },
+        { label: 'Contact Us', href: '/about-us#Contact' },
         { label: 'News', href: '/news' },
-        { label: 'Strive Health Club', href: 'https://strive.je/', external: true },
+        { label: 'Visit Strive', href: 'https://strive.je/', external: true },
+        { label: 'Our Consultants', href: '/about-us#OurConsultants' },
+        { label: 'Our Customers', href: '/about-us#OurCustomers' },
+        { label: 'Quality Assurance', href: '/about-us#quality-assurance' },
+        { label: 'Core Values', href: '/about-us#CoreValues' },
         { label: 'Corporate Information', href: '/corporate-information' },
       ]
     },
@@ -126,6 +147,21 @@ const Header: FC = () => {
     };
   }, []);
 
+  // Close search modal with Escape
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsSearchOpen(false);
+      }
+    };
+    if (isSearchOpen) {
+      document.addEventListener('keydown', onKeyDown);
+    }
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [isSearchOpen]);
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,7 +174,7 @@ const Header: FC = () => {
           </div>
 
           {/* Desktop Navigation Menu */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8 mt-4">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -229,36 +265,33 @@ const Header: FC = () => {
 
           </nav>
 
-          {/* Social Media Icons */}
-          < div className="flex items-center space-x-4" >
-            <Link
-              href="https://www.facebook.com/medilabjersey"
-              className="transition-colors duration-200"
-              style={{ color: 'var(--primary-color)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Facebook size={20} />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/medilabjersey"
-              className="transition-colors duration-200"
-              style={{ color: 'var(--primary-color)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-color)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin size={20} />
-            </Link>
-          </div>
+          {/* TODO: Uncomment when search functionality will be done */}
+          {/* <button
+            type="button"
+            className="hidden md:flex cursor-pointer mt-3 items-center justify-center w-9 h-9 rounded-md border border-gray-300 text-gray-600 hover:text-primary-light hover:border-primary-light mr-2"
+            aria-label="Open search"
+            onClick={() => setIsSearchOpen(true)}
+          >
+            <Search size={18} />
+          </button> */}
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Right spacer */}
+          <div className="hidden md:block w-2" />
+
+          {/* Mobile actions: search + menu */}
+          <div className="md:hidden flex items-center gap-3">
+            {/* <button
+              type="button"
+              className="text-gray-700 focus:outline-none cursor-pointer transition-colors duration-200"
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+              onFocus={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
+              onBlur={(e) => (e.currentTarget.style.color = '')}
+              aria-label="Open search"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <Search size={22} />
+            </button> */}
             <button
               onClick={toggleMenu}
               type="button"
@@ -366,6 +399,37 @@ const Header: FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Search Modal (UI only) */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[60]" aria-modal="true" role="dialog">
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 flex items-center justify-center p-4" onClick={() => setIsSearchOpen(false)}>
+            <div className="w-full max-w-lg bg-white shadow-2xl p-6 relative" onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                className="absolute cursor-pointer top-3 right-3 text-gray-500 hover:text-primary-light"
+                aria-label="Close search"
+                onClick={() => setIsSearchOpen(false)}
+              >
+                <X size={20} />
+              </button>
+              <h3 className="text-lg font-semibold text-secondary mb-4">Search</h3>
+              <div className="flex items-center gap-2 border border-gray-300 rounded-md px-3 py-2">
+                <Search size={18} className="text-gray-500" />
+                <input
+                  type="search"
+                  placeholder="Type to search..."
+                  className="w-full outline-none text-sm"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+                <button type="button" className="bg-primary-light cursor-pointer text-white px-3 py-1 text-sm">Search</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header >
   );
 };

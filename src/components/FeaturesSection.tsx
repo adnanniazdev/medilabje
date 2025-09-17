@@ -1,13 +1,14 @@
 'use client';
 
 import { FC } from 'react';
+import Link from 'next/link';
 
 const FeaturesSection: FC = () => {
   const features = [
     {
       icon: '/images/user.png',
       title: "Superior Service",
-      description: "We offer on-site appointments with results within 2 working days",
+      description: "We offer on-site and home service phlebotomy appointments with same day urgent results",
     },
     {
       icon: '/images/smile.png',
@@ -32,7 +33,7 @@ const FeaturesSection: FC = () => {
     {
       icon: '/images/test-profile.png',
       title: "Test Profiles",
-      description: "We offer a wide range of test profiles to suit your needs",
+      description: "We offer a wide range of test profiles to suit your needs Please see Tests options for more info:",
     }
   ];
 
@@ -62,6 +63,14 @@ const FeaturesSection: FC = () => {
                   </h3>
                   <p className='text-secondary-light'>
                     {feature.description}
+                    {feature.title === 'Test Profiles' && (
+                      <>
+                        {' '}
+                        <Link href={'/tests#TestsA-Z'} className="text-primary-light font-semibold underline">
+                          Test A-Z
+                        </Link>
+                      </>
+                    )}
                   </p>
                 </div>
 
