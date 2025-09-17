@@ -262,22 +262,22 @@ const Header: FC = () => {
 
           </nav>
 
-          {/* Search popup trigger */}
-          <button
+          {/* TODO: Uncomment when search functionality will be done */}
+          {/* <button
             type="button"
             className="hidden md:flex cursor-pointer mt-3 items-center justify-center w-9 h-9 rounded-md border border-gray-300 text-gray-600 hover:text-primary-light hover:border-primary-light mr-2"
             aria-label="Open search"
             onClick={() => setIsSearchOpen(true)}
           >
             <Search size={18} />
-          </button>
+          </button> */}
 
           {/* Right spacer */}
           <div className="hidden md:block w-2" />
 
           {/* Mobile actions: search + menu */}
           <div className="md:hidden flex items-center gap-3">
-            <button
+            {/* <button
               type="button"
               className="text-gray-700 focus:outline-none cursor-pointer transition-colors duration-200"
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
@@ -288,7 +288,7 @@ const Header: FC = () => {
               onClick={() => setIsSearchOpen(true)}
             >
               <Search size={22} />
-            </button>
+            </button> */}
             <button
               onClick={toggleMenu}
               type="button"

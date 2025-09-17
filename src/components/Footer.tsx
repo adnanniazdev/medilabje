@@ -1,7 +1,7 @@
 'use client';
 
 import { FC } from 'react';
-import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import { Facebook, Linkedin, Instagram, Twitter, Clock } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -88,23 +88,39 @@ const Footer: FC = () => {
               <p>JE3 7BH</p>
               <div className="mt-4">
                 <p>Email: <a href="mailto:info@medilab.je" className="hover:text-white transition-colors duration-200">info@medilab.je</a></p>
+                <p>Mobile: <a href="tel:+447797818021" className="hover:text-white transition-colors duration-200">07797 818021</a></p>
               </div>
             </div>
           </div>
 
-          {/* Social - Follow Us */}
+          {/* Opening Times + Social - Follow Us */}
           <div className="md:col-span-1">
-            <h3 className="text-lg font-semibold mb-6">Follow Us</h3>
-            <div className="flex items-center space-x-4">
-              <Link href="https://www.facebook.com/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-[#3b5998] transition-colors">
-                <Facebook />
-              </Link>
-              <Link href="https://www.linkedin.com/company/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-[#0a66c2] transition-colors">
-                <Linkedin />
-              </Link>
-              <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-[#E1306C] transition-colors">
-                <Instagram />
-              </Link>
+            <div>
+              <h3 className="text-lg font-semibold mb-6">Opening Times</h3>
+              <div className="text-sm mb-8">
+                <ul className="space-y-1">
+                  <li className="flex items-center gap-2"><Clock className="text-white/90" size={16} /><span>Mon-Fri 9am-9pm</span></li>
+                  <li className="flex items-center gap-2"><Clock className="text-white/90" size={16} /><span>Sat-Sun 9am-6pm</span></li>
+                  <li className="flex items-center gap-2"><Clock className="text-white/90" size={16} /><span>Bank Holidays 9am-4pm</span></li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-auto">
+              <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+              <div className="flex items-center space-x-4">
+                <Link href="https://www.facebook.com/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-white hover:text-[#3b5998] transition-colors">
+                  <Facebook />
+                </Link>
+                <Link href="https://www.linkedin.com/company/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white hover:text-[#0a66c2] transition-colors">
+                  <Linkedin />
+                </Link>
+                <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white hover:text-[#E1306C] transition-colors">
+                  <Instagram />
+                </Link>
+                <Link href="https://x.com/medilabjersey" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" className="text-white hover:text-[#1DA1F2] transition-colors">
+                  <Twitter />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
