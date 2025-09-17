@@ -1,6 +1,8 @@
 import CustomBulled from '@/components/CustomBulled';
 import HealthComponent from '@/components/HealthComponent';
-import { AtheleteHealthContent, athlete_health_tests, athletePackage, male_health_tests, mediManPackage } from '@/utils/constans';
+import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
+import { AtheleteHealthContent, athlete_health_tests} from '@/utils/constans';
 import { FC } from 'react';
 
 const AthleteHealthPage: FC = () => {
@@ -44,6 +46,8 @@ const AthleteHealthPage: FC = () => {
         </div>
       </div>
       <HealthComponent HealthContent={AtheleteHealthContent} />
+      <TestFeatureSection/>
+      <HighlightSection />
     </div>
   );
 };

@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     description: 'Comprehensive range of medical tests and diagnostic services in Jersey with accurate results and fast turnaround.',
   },
 };
+import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
 
 const TestsPage: FC = () => {
   return (
@@ -90,11 +92,11 @@ const TestsPage: FC = () => {
 
       {/* Test Profiles Section */}
       <section id="test-profiles" className="py-16 bg-white">
-      <div className="object-contain py-10" style={{ backgroundColor: '#E8F6F6' }}>
-            <div className="mx-auto px-4 text-center">
-              <h1 className="text-4xl text-primary-light font-bold mb-4">Test Profiles</h1>
-            </div>
+        <div className="object-contain py-10" style={{ backgroundColor: '#E8F6F6' }}>
+          <div className="mx-auto px-4 text-center">
+            <h1 className="text-4xl text-primary-light font-bold mb-4">Test Profiles</h1>
           </div>
+        </div>
 
         <div className="px-4 py-12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -314,6 +316,8 @@ const TestsPage: FC = () => {
       {/* Test Categories Section */}
       <section className="py-16 bg-white">
       </section>
+      <TestFeatureSection />
+      <HighlightSection slogan='Where your health check is our priority' />
     </div>
   );
 };

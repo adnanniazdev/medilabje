@@ -1,5 +1,7 @@
 import CustomBulled from '@/components/CustomBulled';
 import HealthComponent from '@/components/HealthComponent';
+import HighlightSection from '@/components/HighlightSection';
+import TestFeatureSection from '@/components/TestFeatureSection';
 import { female_health_tests, FemaleHealthContent, femaleHealthTests, male_health_tests, mediManPackage, MediMenopauseTests, PCOSPackage } from '@/utils/constans';
 import { FC } from 'react';
 
@@ -44,6 +46,8 @@ const FemaleHealthPage: FC = () => {
         </div>
       </div>
       <HealthComponent HealthContent={FemaleHealthContent} />
+      <TestFeatureSection/>
+      <HighlightSection />
     </div>
   );
 };

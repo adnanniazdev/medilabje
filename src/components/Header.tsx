@@ -66,12 +66,12 @@ const Header: FC = () => {
     },
     {
       label: 'About Us',
-      href: '/about',
+      href: '/about-us',
       dropdown: [
-        { label: 'About MediLab', href: '/about#about-medilab' },
-        { label: 'Our Team', href: '/about#our-team' },
-        { label: 'Quality Assurance', href: '/about#quality-assurance' },
-        { label: 'Accreditation', href: '/about#accreditation' },
+        { label: 'About MediLab', href: '/abou-ust#about-medilab' },
+        { label: 'Our Team', href: '/about-us#our-team' },
+        { label: 'Quality Assurance', href: '/about-us#quality-assurance' },
+        { label: 'Accreditation', href: '/about-us#accreditation' },
         { label: 'News', href: '/news' },
         { label: 'Strive Health Club', href: 'https://strive.je/', external: true },
         { label: 'Corporate Information', href: '/corporate-information' },

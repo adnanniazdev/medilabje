@@ -3,6 +3,8 @@
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import Image from 'next/image';
+import TestFeatureSection from '@/components/TestFeatureSection';
+import HighlightSection from '@/components/HighlightSection';
 import Link from 'next/link';
 import FeaturesSection from '@/components/FeaturesSection';
 import { Metadata } from 'next';
@@ -69,7 +71,6 @@ const ServicesPage: FC = () => {
           </div>
         </div>
       </section>
-
       {/* Postal Services Section - Z Pattern 2 */}
       <section id="postal-services" className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,11 +97,11 @@ const ServicesPage: FC = () => {
                 be sent off island using Royal Mail Tracked 24 and DHL Tracked.
               </p>
               {/* <div className="bg-blue-50 p-4 rounded-lg mb-6"> */}
-                <p className=" mb-6">
-                  Charges with Royal Mail mean that ALL pathology postal specimens now made up
-                  with Tracked 24 returns. This provides a particularly suitable method of transport
-                  for any healthcare organisation.
-                </p>
+              <p className=" mb-6">
+                Charges with Royal Mail mean that ALL pathology postal specimens now made up
+                with Tracked 24 returns. This provides a particularly suitable method of transport
+                for any healthcare organisation.
+              </p>
               {/* </div> */}
               <p className=" mb-6">
                 Postal pathology with Tracked 24 returns provides:
@@ -155,12 +156,11 @@ const ServicesPage: FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Testing Section */}
-      <section id="testing" className="py-16 bg-white">
+      {/* Sample Collection Section - Z Pattern 3 */}
+      <section id="sample-collection" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-4 ">
-             {/* Image Left */}
+          <div className="grid md:grid-cols-2 gap-12 ">
+            {/* Image Left */}
             <div>
               <Image
                 src="/images/lab4.avif"
@@ -175,8 +175,8 @@ const ServicesPage: FC = () => {
               <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
                 Testing
               </h2>
-              <p className=" mb-15">
-               We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
+              <p className="text-gray-600 mb-6">
+                We offer a wide range of test profiles and individual tests, please refer to the test profile pages for further information.
               </p>
               <Link
                 href="mailto:info@medilab.je"
@@ -186,28 +186,12 @@ const ServicesPage: FC = () => {
               </Link>
 
             </div>
-           
+
           </div>
         </div>
       </section>
-
-      {/* <ServicesOverviewSection/> */}
-      <FeaturesSection/>
-
-       {/* Contact Section */}
-       <div className="py-10 text-center" style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(30, 182, 185, 0.9), rgba(31, 151, 185, 0.9))",
-          }}>
-            <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto px-4">
-              <h2 className="text-white text-2xl lg:text-3xl font-light mb-6 lg:mb-0 lg:flex-1">
-              Where your health check is our priority
-              </h2>
-              <div className="lg:flex-1 flex justify-center ">
-                <Image src={"/images/medilab-logo.png"} alt='MediLab Logo' width={180} height={90} className="object-contain" />
-              </div>
-            </div>
-          </div>
+      <TestFeatureSection />
+      <HighlightSection slogan='Where your health check is our priority' />
     </>
   );
 };
