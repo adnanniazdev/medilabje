@@ -1,7 +1,8 @@
 'use client';
 
 import { FC } from 'react';
-import { Clock, HeartPulse, Sun } from 'lucide-react';
+import { Clock, HeartPulse,  Sun } from 'lucide-react';
+import Link from 'next/link';
 
 
 const TestFeatureSection: FC = () => {
@@ -15,13 +16,13 @@ const TestFeatureSection: FC = () => {
     {
       icon: '/images/smile.png',
       title: "Superior Service",
-      description: "We offer on-site appointments with results within 2 working days",
+      description: "We offer on-site and home service phlebotomy appointments with same day urgent results",
       bgColor: "#DBF1F1"
     },
     {
       icon: '/images/test.png',
       title: "Test Profiles",
-      description: "We offer a wide range of test profiles to suit your needs",
+      description: "We offer a wide range of test profiles to suit your needs Please see Tests options for more info:",
       bgColor: "#CDECEC"
     }
   ];
@@ -54,6 +55,14 @@ const TestFeatureSection: FC = () => {
                   </h3>
                   <p className='text-secondary-light'>
                     {service.description}
+                    {service.title === 'Test Profiles' && (
+                      <>
+                        {' '}
+                        <Link href={'/tests#TestsA-Z'} className="text-primary-light font-semibold underline">
+                          Test A-Z
+                        </Link>
+                      </>
+                    )}
                   </p>
                 </div>
 

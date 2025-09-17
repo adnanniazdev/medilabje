@@ -172,6 +172,42 @@ const ServicesPage: FC = () => {
           </div>
         </div>
       </section>
+      <section id="home-phelabotomy" className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 ">
+           
+            {/* Content Right */}
+            <div>
+              <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>
+                Your Health, Our Priority – Right at Your Doorstep
+              </h2>
+              <p className="text-gray-600 mb-6">
+                At MediLab, we understand that travelling to a clinic or lab isn’t always easy. That’s why we
+                offer professional home phlebotomy services, bringing safe and reliable blood collection to
+                the comfort of your home.
+              </p>
+              <Link
+                href="mailto:info@medilab.je"
+                className="inline-block bg-[#1FB9B9] hover:bg-[#27C2C2] text-white font-semibold py-4 px-8  transition-colors duration-200"
+              >
+                CONTACT US
+              </Link>
+
+            </div>
+             {/* Image Left */}
+             <div>
+              <Image
+                src="/images/lab4.avif"
+                alt="Healthcare professional with laptop and medical equipment"
+                className="w-full h-96 object-cover shadow-md"
+                width={500}
+                height={400}
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
       <TestFeatureSection />
       <HighlightSection slogan='Where your health check is our priority' />
     </>
