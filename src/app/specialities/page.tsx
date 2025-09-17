@@ -89,7 +89,7 @@ const SpecialitiesPage: FC = () => {
         titleSize="text-[35px]"
         id='immunology'
         title="Immunology"
-        image="/images/patients-reception.avif"
+        image="/images/helpful-information.jpg"
         reverse
         imageAlt="New Advanced Testing Equipment Installed">
         <p className="text-secondary-light mb-8">

@@ -29,7 +29,7 @@ const AboutPage: FC = () => {
       </section>
 
       {/* Contact & Location Section */}
-      <section className="py-16 bg-white">
+      <section id='Location' className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Left Column - Contact Information */}
@@ -52,7 +52,7 @@ const AboutPage: FC = () => {
               </div>
 
               {/* Contact */}
-              <div>
+              <div id="Contact">
                 <h2 className="text-3xl font-bold text-primary-light mb-4">Contact</h2>
                 <p className="text-gray-700 mb-6">
                   Email: <Link href="mailto:info@medilab.je" className=" hover:underline">info@medilab.je</Link>
@@ -111,6 +111,7 @@ const AboutPage: FC = () => {
       {/* Consultants and Customers Section with Booking */}
       <ConsultantsCustomersSection />
       <SectionComponent
+        id='quality-assurance'
         title='Quality Assurance & Management'
         titleColor='text-primary-light'
         titleSize='text-4xl'

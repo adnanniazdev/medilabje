@@ -4,7 +4,7 @@ import BookingWidget from './BookingWidget';
 
 const ConsultantsCustomersSection: FC = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section id='OurConsultants' className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                 {/* Top Images */}
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -97,7 +97,7 @@ const ConsultantsCustomersSection: FC = () => {
                     {/* Middle Column - Our Customers and Core Values */}
                     <div className="lg:col-span-1 space-y-6">
                         {/* Our Customers */}
-                        <div>
+                        <div id="OurCustomers">
                             <div className="relative h-64 overflow-hidden mb-5">
                                 <Image
                                     src="/images/patients-reception.avif"
@@ -170,7 +170,7 @@ const ConsultantsCustomersSection: FC = () => {
                         </div>
 
                         {/* Core Values */}
-                        <div>
+                        <div id="CoreValues">
                             <h2 className="text-3xl font-bold text-secondary-light mb-6">Core Values</h2>
                             <div className="space-y-4 text-secondary-light">
                                 <p>
