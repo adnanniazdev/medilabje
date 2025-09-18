@@ -42,7 +42,7 @@ const NewsPage: FC = () => {
       <SectionComponent
         titleSize="text-[25px]"
         title="March 2024"
-        image="/images/calendar.avif"
+        image="/images/calendar.png"
         imageAlt="New Advanced Testing Equipment Installed"
       >
         <p className='text-secondary-light mb-4'> We listened to customer feedback and wanted to make our booking process easier! We have now built in an online booking calendar to our website to make booking your health check even easier. </p>
