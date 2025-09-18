@@ -7,6 +7,7 @@ import SectionComponent from '@/components/SectionComponent';
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import FeedbackForm from '@/components/FeedbackForm';
+import HealthDaysCard from '@/components/HealthDaysCard';
 import { Facebook, Linkedin } from 'lucide-react';
 
 const AboutPage: FC = () => {
@@ -127,6 +128,7 @@ const AboutPage: FC = () => {
         </p>
 
       </SectionComponent>
+
       <SectionComponent
         title=' '
         titleColor=' '
@@ -189,6 +191,52 @@ const AboutPage: FC = () => {
           </ul>
         </p>
       </SectionComponent>
+            {/* Health Days 2025 */}
+            <section id='health-days-2025' className="py-16 ">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className=" mb-12">
+            <h2 className="text-3xl font-bold text-primary-light mb-4">Health Days 2025</h2>
+            <p className="text-secondary-light text-lg">Key upcoming health awareness dates to mark on your calendar</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <HealthDaysCard
+              month="September"
+              events={[
+                { title: "Urology Awareness Month" },
+                { title: "Blood Pressure Awareness Week", date: "8–14" },
+                { title: "Sepsis Awareness Day", date: "13 Sep" }
+              ]}
+            />
+            <HealthDaysCard
+              month="October"
+              events={[
+                { title: "National Cholesterol Month" },
+                { title: "Breast Cancer Awareness Month" },
+                { title: "World Mental Health Day", date: "10 Oct" },
+                { title: "World Menopause Day", date: "18 Oct" },
+                { title: "National Pharmacy Week" }
+              ]}
+            />
+            <HealthDaysCard
+              month="November"
+              events={[
+                { title: "Men's Health Awareness Month" },
+                { title: "Stress Awareness Week", date: "3–7" },
+                { title: "Malnutrition Awareness Week", date: "10-14" },
+                { title: "National Self Care Week", date: "17–23" },
+                { title: "International Men's Day", date: "19 Nov" },
+              ]}
+            />
+            <HealthDaysCard
+              month="December"
+              events={[
+                { title: "World AIDS Day", date: "1 Dec" }
+              ]}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* =Uncomment when API is created */}
       {/* <section className="py-16 bg-gray-50">

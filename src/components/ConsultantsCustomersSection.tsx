@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import BookingWidget from './BookingWidget';
+import AppointmentCalendar from './AppointmentCalendar';
+
 
 const ConsultantsCustomersSection: FC = () => {
     return (
@@ -75,20 +76,20 @@ const ConsultantsCustomersSection: FC = () => {
                                 <h3 className="text-2xl font-bold  mb-4">Consultant Clinical Biochemist</h3>
                                 {/* <div className=" md:flex-row gap-4"> */}
                                 <div className="relative flex-shrink-0 w-[250px] h-[250px] mb-5">
-                                        <Image
-                                            src="/images/dr-daren.jpg"
-                                            alt="Dr. Darren Powell"
-                                            fill
-                                            className="object-cover "
-                                        />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-bold text-xl text-secondary-light mb-2">Dr. Darren Powell FRCPath Clinical Biochemistry, PhD, MSc, BSc Hons.</h4>
-                                        <p className="text-secondary-light text-sm">
-                                            Dr. Powell brings many years of experience across all aspects of clinical biochemistry,
-                                            both paediatric and adult, ensuring comprehensive and accurate analysis of biochemical parameters.
-                                        </p>
-                                    </div>
+                                    <Image
+                                        src="/images/dr-daren.jpg"
+                                        alt="Dr. Darren Powell"
+                                        fill
+                                        className="object-cover "
+                                    />
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-xl text-secondary-light mb-2">Dr. Darren Powell FRCPath Clinical Biochemistry, PhD, MSc, BSc Hons.</h4>
+                                    <p className="text-secondary-light text-sm">
+                                        Dr. Powell brings many years of experience across all aspects of clinical biochemistry,
+                                        both paediatric and adult, ensuring comprehensive and accurate analysis of biochemical parameters.
+                                    </p>
+                                </div>
                                 {/* </div> */}
                             </div>
                         </div>
@@ -189,7 +190,17 @@ const ConsultantsCustomersSection: FC = () => {
 
                     {/* Right Column - Booking Widget */}
                     <div className="lg:col-span-1">
-                        <BookingWidget />
+                        {/* Booking Card */}
+                        <div className='w-full flex justify-center'>
+                            <div className="bg-white rounded-lg shadow-lg max-w-[400px]">
+                                <div className="bg-primary p-4 w-full rounded-t-md">
+                                    <h3 className="text-2xl font-bold text-center md:text-left text-white">Book your Appointment today for free</h3>
+                                </div>
+                                <div className="flex justify-center">
+                                    <AppointmentCalendar />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
