@@ -35,7 +35,7 @@ const Header: FC = () => {
     //   label: 'Health Packages',
     //   href: '/tests',
     //   // dropdown: [
-       
+
     //   // ]
     // },
     {
@@ -64,7 +64,7 @@ const Header: FC = () => {
         { label: 'Haematology', href: '/specialities#haematology' },
         { label: 'Chemistry', href: '/specialities#chemistry' },
         { label: 'Virology', href: '/specialities#virology' },
-        {label:"Immunology", href:"/specialities#immunology"}
+        { label: "Immunology", href: "/specialities#immunology" }
       ]
     },
     // {
@@ -79,7 +79,7 @@ const Header: FC = () => {
         { label: 'Postal Services', href: '/services#postal-services' },
         { label: 'Sample Collection', href: '/services#sample-collection' },
         { label: 'Testing', href: '/services#testing' },
-        {label:"MediLab Home Phlebotomy Services", href:'/services#home-phelabotomy'}
+        { label: "MediLab Home Phlebotomy Services", href: '/services#home-phelabotomy' }
       ]
     },
     {
@@ -97,6 +97,7 @@ const Header: FC = () => {
         { label: 'Quality Assurance', href: '/about-us#quality-assurance' },
         { label: 'Core Values', href: '/about-us#CoreValues' },
         { label: 'Corporate Information', href: '/corporate-information' },
+        { label: 'Feedback', href: '/feedback' },
       ]
     },
     {
@@ -243,7 +244,7 @@ const Header: FC = () => {
                               <Link
                                 key={nestedItem.label}
                                 href={nestedItem.href}
-                                style={{ color: '#7e7e7e'}}
+                                style={{ color: '#7e7e7e' }}
                                 onMouseEnter={(e) => {
                                   e.currentTarget.style.color = 'white';
                                 }}
@@ -309,18 +310,16 @@ const Header: FC = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`md:hidden border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        <div className={`md:hidden border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
             {navItems.map((item, index) => (
-              <div 
+              <div
                 key={item.label}
-                className={`transition-all duration-300 ease-in-out ${
-                  isMenuOpen 
-                    ? 'opacity-100 transform translate-y-0' 
+                className={`transition-all duration-300 ease-in-out ${isMenuOpen
+                    ? 'opacity-100 transform translate-y-0'
                     : 'opacity-0 transform -translate-y-2'
-                }`}
+                  }`}
                 style={{
                   transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms'
                 }}
@@ -351,11 +350,10 @@ const Header: FC = () => {
                         />
                       </button>
                     </div>
-                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      activeDropdown === item.label 
-                        ? 'max-h-96 opacity-100' 
+                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${activeDropdown === item.label
+                        ? 'max-h-96 opacity-100'
                         : 'max-h-0 opacity-0'
-                    }`}>
+                      }`}>
                       <div className="pl-4 space-y-1">
                         {item.dropdown.map((dropdownItem, dropdownIndex) => (
                           <Link
@@ -363,11 +361,10 @@ const Header: FC = () => {
                             href={dropdownItem.href}
                             target={dropdownItem.external ? '_blank' : undefined}
                             rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
-                            className={`block text-gray-600 px-3 py-2 text-sm transition-all duration-300 ease-in-out ${
-                              activeDropdown === item.label 
-                                ? 'opacity-100 transform translate-x-0' 
+                            className={`block text-gray-600 px-3 py-2 text-sm transition-all duration-300 ease-in-out ${activeDropdown === item.label
+                                ? 'opacity-100 transform translate-x-0'
                                 : 'opacity-0 transform -translate-x-2'
-                            }`}
+                              }`}
                             style={{
                               transitionDelay: activeDropdown === item.label ? `${dropdownIndex * 30}ms` : '0ms'
                             }}
