@@ -2,9 +2,15 @@
 
 import { FC, useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const ScrollToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
@@ -37,7 +43,7 @@ const ScrollToTop: FC = () => {
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl transform hover:scale-110"
-          style={{ 
+          style={{
             backgroundColor: 'var(--primary-color)',
             color: 'white'
           }}

@@ -29,7 +29,9 @@ const AboutPage: FC = () => {
       </section>
 
       {/* Contact & Location Section */}
-      <section id='Location' className="py-16 bg-white">
+      <div id='Location' className='mt-10 mb-20'>
+      </div>
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Left Column - Contact Information */}
@@ -191,7 +193,9 @@ const AboutPage: FC = () => {
       </SectionComponent>
 
       {/* =Uncomment when API is created */}
-      {/* <section className="py-16 bg-gray-50">
+      {/* <div id='feedback' className='mt-10 mb-20'>
+      </div>
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FeedbackForm />
         </div>
