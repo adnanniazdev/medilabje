@@ -89,6 +89,7 @@ const Header: FC = () => {
         { label: 'Location', href: '/about-us#Location' },
         { label: 'About MediLab', href: '/about-us#about-medilab' },
         { label: 'Contact Us', href: '/about-us#Contact' },
+        { label: 'NewsFeed/NewsLetter', href: '/about-us#health-days-2025' },
         { label: 'News', href: '/news' },
         { label: 'Visit Strive', href: 'https://strive.je/', external: true },
         { label: 'Our Consultants', href: '/about-us#OurConsultants' },
