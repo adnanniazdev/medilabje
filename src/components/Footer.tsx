@@ -33,7 +33,7 @@ const Footer: FC = () => {
             <ul className="space-y-3 text-white">
               <li>
                 <Link 
-                  href="/medilab-t&cs" 
+                  href="/corporate-information" 
                   className="text-white hover:underline transition-colors duration-200"
                   style={{ '--hover-color': 'var(--primary-color)' } as React.CSSProperties}
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
