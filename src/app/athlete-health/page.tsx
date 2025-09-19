@@ -4,6 +4,9 @@ import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import { AtheleteHealthContent, athlete_health_tests} from '@/utils/constans';
 import { FC } from 'react';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.athleteHealth);
 
 const AthleteHealthPage: FC = () => {
   return (

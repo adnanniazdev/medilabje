@@ -4,11 +4,9 @@ import SectionComponent from '@/components/SectionComponent';
 import Image from 'next/image';
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
+import { generateMetadata, seoData } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Specialities - MediLab',
-  description: 'Specialities',
-}
+export const metadata = generateMetadata(seoData.specialities);
 
 const SpecialitiesPage: FC = () => {
   return (

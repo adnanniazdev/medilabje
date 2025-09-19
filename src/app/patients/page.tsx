@@ -1,10 +1,10 @@
-'use client';
-
 import { FC } from 'react';
 import Image from 'next/image';
 import PageHero from '@/components/PageHero';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import Link from 'next/link';
+import { generateMetadata, seoData } from '@/utils/seo';
+export const metadata = generateMetadata(seoData.privacy);
 
 const PatientsPage: FC = () => {
   return (

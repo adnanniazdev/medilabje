@@ -4,6 +4,9 @@ import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import { female_health_tests, FemaleHealthContent, femaleHealthTests, male_health_tests, mediManPackage, MediMenopauseTests, PCOSPackage } from '@/utils/constans';
 import { FC } from 'react';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.femaleHealth);
 
 const FemaleHealthPage: FC = () => {
   return (

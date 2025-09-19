@@ -2,23 +2,10 @@
 import { FC } from 'react';
 import TestsSection from '@/components/TestsSection';
 import { sample_tube_selection, test_profiles, tests_list } from '@/utils/constans';
-import { Metadata } from 'next';
+import { generateMetadata, seoData } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: 'Medical Tests & Diagnostics - MediLab Jersey',
-  description: 'Comprehensive range of medical tests and diagnostic services in Jersey. Blood tests, health screenings, specialized testing with accurate results and fast turnaround.',
-  keywords: 'medical tests jersey, blood tests, health screening, diagnostic tests, lab tests, medical diagnostics, health check',
-  openGraph: {
-    title: 'Medical Tests & Diagnostics - MediLab Jersey',
-    description: 'Comprehensive range of medical tests and diagnostic services in Jersey with accurate results and fast turnaround.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Medical Tests & Diagnostics - MediLab Jersey',
-    description: 'Comprehensive range of medical tests and diagnostic services in Jersey with accurate results and fast turnaround.',
-  },
-};
+export const metadata = generateMetadata(seoData.tests);
+
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 

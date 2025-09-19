@@ -7,23 +7,9 @@ import TestFeatureSection from '@/components/TestFeatureSection';
 import HighlightSection from '@/components/HighlightSection';
 import Link from 'next/link';
 import FeaturesSection from '@/components/FeaturesSection';
-import { Metadata } from 'next';
+import { generateMetadata, seoData } from '@/utils/seo';
 
-export const metadata: Metadata = {
-  title: 'Medical Laboratory Services - MediLab Jersey',
-  description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, sample collection, and professional medical analysis with accurate results.',
-  keywords: 'medical laboratory services, blood tests jersey, diagnostic testing, sample collection, medical analysis, lab services',
-  openGraph: {
-    title: 'Medical Laboratory Services - MediLab Jersey',
-    description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, and professional medical analysis.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Medical Laboratory Services - MediLab Jersey',
-    description: 'Comprehensive medical laboratory services in Jersey including blood tests, diagnostic testing, and professional medical analysis.',
-  },
-};
+export const metadata = generateMetadata(seoData.services);
 
 const ServicesPage: FC = () => {
   return (

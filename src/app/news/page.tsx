@@ -1,10 +1,16 @@
-"use client"
+
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
 import SectionComponent from '@/components/SectionComponent';
-import Image from 'next/image';
+// import Image from 'next/image';
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata({
+  ...seoData.news,
+  tags: ["health days 2025", "health awareness", "medical news", "laboratory updates", "health information"]
+});
 
 const NewsPage: FC = () => {
   return (
