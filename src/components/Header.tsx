@@ -49,6 +49,8 @@ const Header: FC = () => {
             { label: 'Female Health', href: '/female-health' },
             { label: 'General Health', href: '/general-health' },
             { label: 'Athlete Health', href: '/athlete-health' },
+            { label: 'Health Check Over 60s', href: '/over-60s' },
+
           ]
         },
         { label: 'Specimens', href: '/tests#specimens' },

@@ -32,7 +32,7 @@ const FemaleHealthPage: FC = () => {
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold text-primary-light mb-2">{test.title}</h3>
                 <p className="text-sm text-gray-600 mb-3 flex-1">{test.description}</p>
-                <p className="text-4xl font-semibold text-secondary mb-4">{test.fees}</p>
+                {test.fees !== '£0' && <p className="text-4xl font-semibold text-secondary mb-4">{test.fees}</p>}
 
                 <a
                   href={test.href}
@@ -46,7 +46,7 @@ const FemaleHealthPage: FC = () => {
         </div>
       </div>
       <HealthComponent HealthContent={FemaleHealthContent} />
-      <TestFeatureSection/>
+      <TestFeatureSection />
       <HighlightSection />
     </div>
   );

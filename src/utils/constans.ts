@@ -225,11 +225,11 @@ export const male_health_tests: HealthTest[] = [
 
     },
     {
-        title: "MEDIMALE BASIC",
+        title: "TESTOSTERONE CHECK",
         image: "/images/test-images/ML-male.avif",
         description: "Male hormone test to measure your Testosterone level, find out about how this can affect your health and take control",
         fees: "£120",
-        href: "/male-health/#MediMaleBasic"
+        href: "/male-health/#TestosteroneCheck"
     },
     {
         title: "MEDIMAN",
@@ -251,21 +251,21 @@ export const female_health_tests: HealthTest[] = [
 
     },
     {
-        title: "THYROID",
+        title: "THYROID FUNCTION CHECK",
         image: "/images/test-images/ML-thy.avif",
         description: "Disorders of the Thyroid can have an impact on your sleep, energy, weight, getting pregnant and more. Understand your Thyroid health with our basic blood test",
-        fees: "£120",
+        fees: "£0",
         href: "/female-health/#Thyroid"
     },
     {
-        title: "MEDIFEMALE BASIC",
+        title: "FEMALE HORMONES CHECK",
         image: "/images/test-images/ML-fem.avif",
         description: "Measure key female hormones and discover if you have a hormone imbalance which can affect your weight, energy or mood",
         fees: "£160",
-        href: "/female-health/#MediFemaleBasic"
+        href: "/female-health/#FemaleHormonesCheck"
     },
     {
-        title: "POLYCYSTIC OVARY SYNDROME (PCOS)",
+        title: "POLYCYSTIC OVARY SYNDROME (PCOS) PANEL",
         image: "/images/test-images/ML-ovary.avif",
         description: "Our simple blood test will measure the key hormones which play a role in PCOS and help you take control and understand your health better",
         fees: "£325",
@@ -289,7 +289,7 @@ export const female_health_tests: HealthTest[] = [
         title: "BETA-HCG EARLY PREGNANCY",
         image: "/images/test-images/ML-early.avif",
         description: "This hormone is produced as soon as 10 days after conception. In healthy pregnancies, levels of hCG increase rapidly in early pregnancy. An above-normal level can confirm pregnancy before a urine test",
-        fees: "£45",
+        fees: "£60",
         href: "/female-health/#BetaHCG"
     },
     {
@@ -336,10 +336,10 @@ export const general_health_tests: HealthTest[] = [
         href: "/general-health/#MediWoman"
     },
     {
-        title: "THYROID",
+        title: "THYROID FUNCTION CHECK",
         image: "/images/test-images/ML-thy.avif",
         description: "Disorders of the Thyroid can have an impact on your sleep, energy, weight, getting pregnant and more. Understand your Thyroid health with our basic blood test",
-        fees: "£120",
+        fees: "£0",
         href: "/general-health/#Thyroid"
     },
     {
@@ -370,7 +370,7 @@ export const general_health_tests: HealthTest[] = [
         title: "MEDIDISCOVER",
         image: "/images/test-images/ML-disc.avif",
         description: "Discover key health insights relating to your full body well-being with a simple blood test and take action to help protect your future health",
-        fees: "£245",
+        fees: "£295",
         href: "/general-health/#MediDiscover"
     },
     {
@@ -379,6 +379,39 @@ export const general_health_tests: HealthTest[] = [
         description: "Understand your health baseline by reviewing vital health areas including heart health and diabetes",
         fees: "£95",
         href: "/general-health/#MediEssential"
+    },
+    {
+        title: "TIRED ALL THE TIME TEST",
+        image: "/images/test-images/ML-vita.avif",
+        description: "Measure the levels of essential vitamins and minerals to help prevent or manage deficiencies",
+        fees: "£145",
+        href: "/general-health/#TiredAllTheTime"
+    },
+    {
+        title: "CANCER / TUMOUR MARKER CHECK",
+        image: "/images/test-images/ML-meno.avif",
+        description: "Gain insights into important tumour markers that can support early detection and help safeguard your long-term health",
+        fees: "£210",
+        href: "/general-health/#CancerMarkerCheck"
+    },
+
+];
+export const over60s_health_tests: HealthTest[] = [
+    {
+        title: "MEDIMAN OVER OVER 60s",
+        image: "/images/test-images/ML-man.avif",
+        description: "Get a deep insight into your health and wellbeing with our simple blood test. This allows you to take control and invest in the future of your health to prevent future illnesses. We recommend repeat testing 6 monthly to track data trends and identify areas of improvement",
+        fees: "£345",
+        href: "/over-60s/#MediMan"
+
+    },
+    {
+        title: "MEDIWOMAN OVER 60s",
+        image: "/images/test-images/ML-woman.avif",
+        description: "Get a deep insight into your health and wellbeing with our simple blood test. This allows you to take control and invest in the future of your health to prevent future illnesses. We recommend repeat testing 6 monthly to track data trends and identify areas of improvement",
+        fees: "£345",
+        href: "/over-60s/#MediWoman"
+
     },
 
 ];
@@ -492,7 +525,6 @@ export const mediManPackage: Package[] = [
             "Rheumatoid Factor (RF)",
             "Albumin",
             "Ferritin",
-            "Antistreptolysin O (ASO)"
         ]
     },
     {
@@ -512,7 +544,6 @@ export const mediManPackage: Package[] = [
         tests: ["Total Prostate Specific Antigen (TPSA)"]
     }
 ];
-
 export const femaleHealthTests: FemaleHealthTest[] = [
     {
         category: "Diabetes Health",
@@ -746,7 +777,6 @@ export const femaleHealthTests: FemaleHealthTest[] = [
         ],
     },
 ];
-
 export const PCOSPackage: Package[] = [
     {
         title: "Full Blood Count",
@@ -815,12 +845,11 @@ export const MediMenopauseTests: Package[] = [
             "Progesterone",
             "Prolactin",
             "Testosterone",
-            "SHBG",
         ],
     },
     {
         title: "Thyroid Health",
-        tests: ["TSH", "FT4 – optional", "FT3 – optional"],
+        tests: ["TSH"],
     },
     {
         title: "Iron Status",
@@ -856,7 +885,7 @@ export const MediFertilityFemale: Package[] = [
     },
     {
         title: "THYROID HEALTH",
-        tests: ["TSH", "FT4", "FT3"],
+        tests: ["TSH"],
     },
     {
         title: "FULL BLOOD COUNT",
@@ -1168,7 +1197,7 @@ export const MediDiscover: Package[] = [
     },
     {
         title: "DIABETES HEALTH",
-        tests: ["Glucose", "HbA1c", "Insulin"],
+        tests: ["Glucose", "HbA1c"],
     },
     {
         title: "METABOLIC SYNDROME",
@@ -1228,7 +1257,6 @@ export const MediDiscover: Package[] = [
             "Calcium (adjusted)",
             "Phosphate",
             "Vitamin D",
-            "Parathyroid Hormone (PTH)",
         ],
     },
     {
@@ -1244,8 +1272,6 @@ export const MediDiscover: Package[] = [
         title: "THYROID HEALTH",
         tests: [
             "Thyroid Stimulating Hormone (TSH)",
-            "Free Thyroxine (FT4)",
-            "Free Tri-iodothyronine (FT3)",
         ],
     },
     {
@@ -1292,6 +1318,296 @@ export const MediEssential: Package[] = [
         tests: ["HbA1c"],
     },
 ];
+export const TiredAllTheTime: Package[] = [
+    {
+        title: "FULL BLOOD COUNT",
+        tests: [
+            "Haemoglobin",
+            "Haematocrit",
+            "Mean Cell Haemoglobin (MCH)",
+            "Mean Cell Haemoglobin Concentration (MCHC)",
+            "Red Blood Cell Mean Cell Volume (MCV)",
+            "Red Blood Cell Count",
+            "Basophil Count",
+            "Eosinophil Count",
+            "Lymphocyte Count",
+            "Monocyte Count",
+            "Neutrophil Count",
+            "White Blood Cell Count",
+            "Platelet Count",
+        ],
+    },
+    {
+        title: "IRON STATUS",
+        tests: [
+            "Iron",
+            "Ferritin",
+            "Iron Total Saturation",
+            "Transferrin",
+        ],
+    },
+
+    {
+        title: "NUTRITIONAL HEALTH",
+        tests: [
+            "Albumin",
+            "Calcium (adjusted)",
+            "Magnesium",
+            "Iron",
+            "Folic acid",
+            "Vitamin B12",
+            "Vitamin D",
+        ],
+    },
+    {
+        title: "BONE HEALTH",
+        tests: [
+            "Alkaline Phosphatase (ALP)",
+            "Calcium (adjusted)",
+            "Phosphate",
+            "Vitamin D",
+        ],
+    },
+];
+export const MediWomanOver60s: Package[] = [
+    {
+        title: "FULL BLOOD COUNT",
+        tests: [
+            "Haemoglobin",
+            "Haematocrit",
+            "Mean Cell Haemoglobin (MCH)",
+            "Mean Cell Haemoglobin Concentration (MCHC)",
+            "Red Blood Cell Mean Cell Volume (MCV)",
+            "Red Blood Cell Count",
+            "Basophil Count",
+            "Eosinophil Count",
+            "Lymphocyte Count",
+            "Monocyte Count",
+            "Neutrophil Count",
+            "White Blood Cell Count",
+            "Platelet Count",
+        ],
+    },
+    {
+        title: "Lipid panel",
+        tests: [
+            "Total LDL",
+            "HDL cholesterol",
+            "Triglycerides",
+            "Cholesterol ratio",
+        ],
+    },
+    {
+        title: "DIABETES HEALTH",
+        tests: ["HbA1c"],
+    },
+    {
+        title: "METABOLIC MARKERS",
+        tests: ["Glucose", "Insulin"],
+    },
+    {
+        title: "KIDNEY HEALTH",
+        tests: [
+            "Creatinine",
+            "Estimated Glomerular Filtration Rate (eGFR)",
+            "Calcium (adjusted)",
+            "Chloride",
+            "Magnesium",
+            "Phosphate",
+            "Potassium",
+            "Sodium",
+            "Urea",
+            "Uric Acid",
+        ],
+    },
+    {
+        title: "LIVER HEALTH",
+        tests: [
+            "Alanine Aminotransferase (ALT)",
+            "Alkaline Phosphatase (ALP)",
+            "Aspartate Aminotransferase (AST)",
+            "Gamma-Glutamyltransferase (GGT)",
+            "Total Bilirubin",
+            "Albumin",
+            "Ferritin",
+        ],
+    },
+    {
+        title: "PANCREATIC HEALTH",
+        tests: ["Pancreatic Amylase"],
+    },
+    {
+        title: "NUTRITIONAL HEALTH",
+        tests: [
+            "Albumin",
+            "Calcium (adjusted)",
+            "Magnesium",
+            "Iron",
+            "Folic acid",
+            "Vitamin B12",
+            "Vitamin D",
+        ],
+    },
+    {
+        title: "BONE HEALTH",
+        tests: [
+            "Alkaline Phosphatase (ALP)",
+            "Calcium (adjusted)",
+            "Phosphate",
+            "Vitamin D",
+            "Parathyroid Hormone (PTH) – optional",
+        ],
+    },
+    {
+        title: "INFECTION & INFLAMMATION",
+        tests: [
+            "C-Reactive Protein (CRP)",
+            "Rheumatoid Factor (RF)",
+            "Albumin",
+            "Ferritin",
+        ],
+    },
+    {
+        title: "THYROID HEALTH",
+        tests: [
+            "Thyroid Stimulating Hormone (TSH)",
+            "Free Thyroxine (FT4) – optional",
+            "Free Tri-iodothyronine (FT3) – optional",
+        ],
+    },
+    {
+        title: "HORMONAL HEALTH",
+        tests: [
+            "Testosterone",
+            "Cortisol",
+            "FSH",
+            "LH",
+            "Oestradiol",
+            "Progesterone",
+            "Prolactin",
+        ],
+    },
+]
+export const MediManOver60s: Package[] = [
+    {
+        title: "FULL BLOOD COUNT",
+        tests: [
+            "Haemoglobin",
+            "Haematocrit",
+            "Mean Cell Haemoglobin (MCH)",
+            "Mean Cell Haemoglobin Concentration (MCHC)",
+            "Red Blood Cell Mean Cell Volume (MCV)",
+            "Red Blood Cell Count",
+            "Basophil Count",
+            "Eosinophil Count",
+            "Lymphocyte Count",
+            "Monocyte Count",
+            "Neutrophil Count",
+            "White Blood Cell Count",
+            "Platelet Count",
+        ],
+    },
+    {
+        title: "Lipid panel",
+        tests: [
+            "Total LDL",
+            "HDL cholesterol",
+            "Triglycerides",
+            "Cholesterol ratio",
+        ],
+    },
+    {
+        title: "DIABETES HEALTH",
+        tests: ["HbA1c"],
+    },
+    {
+        title: "METABOLIC MARKERS",
+        tests: ["Glucose", "Insulin"],
+    },
+    {
+        title: "KIDNEY HEALTH",
+        tests: [
+            "Creatinine",
+            "Estimated Glomerular Filtration Rate (eGFR)",
+            "Calcium (adjusted)",
+            "Chloride",
+            "Magnesium",
+            "Phosphate",
+            "Potassium",
+            "Sodium",
+            "Urea",
+            "Uric Acid",
+        ],
+    },
+    {
+        title: "LIVER HEALTH",
+        tests: [
+            "Alanine Aminotransferase (ALT)",
+            "Alkaline Phosphatase (ALP)",
+            "Aspartate Aminotransferase (AST)",
+            "Gamma-Glutamyltransferase (GGT)",
+            "Total Bilirubin",
+            "Albumin",
+            "Ferritin",
+        ],
+    },
+    {
+        title: "PANCREATIC HEALTH",
+        tests: ["Pancreatic Amylase"],
+    },
+    {
+        title: "NUTRITIONAL HEALTH",
+        tests: [
+            "Albumin",
+            "Calcium (adjusted)",
+            "Magnesium",
+            "Iron",
+            "Folic acid",
+            "Vitamin B12",
+            "Vitamin D",
+        ],
+    },
+    {
+        title: "BONE HEALTH",
+        tests: [
+            "Alkaline Phosphatase (ALP)",
+            "Calcium (adjusted)",
+            "Phosphate",
+            "Vitamin D",
+            "Parathyroid Hormone (PTH) – optional",
+        ],
+    },
+    {
+        title: "INFECTION & INFLAMMATION",
+        tests: [
+            "C-Reactive Protein (CRP)",
+            "Rheumatoid Factor (RF)",
+            "Albumin",
+            "Ferritin",
+        ],
+    },
+    {
+        title: "THYROID HEALTH",
+        tests: [
+            "Thyroid Stimulating Hormone (TSH)",
+            "Free Thyroxine (FT4) – optional",
+            "Free Tri-iodothyronine (FT3) – optional",
+        ],
+    },
+    {
+        title: "HORMONAL HEALTH",
+        tests: [
+            "Testosterone",
+            "Cortisol",
+            "FSH",
+            "LH",
+            "Oestradiol",
+            "Progesterone",
+            "Prolactin",
+            "Prostate Specific Antigen (PSA)"
+        ],
+    },
+];
 
 export const MaleHealthContent: Content[] = [
     {
@@ -1313,7 +1629,7 @@ export const MaleHealthContent: Content[] = [
     },
     {
         image: "/images/ML-male-01.png",
-        title: "MEDIMALE BASIC",
+        title: "TESTOSTERONE CHECK",
         fees: "£120",
         detail: "Hormone balance is essential for energy levels, regulating mood, sports performance and sex drive. With our simple blood test you can find out if your hormone levels are in balance, and be in control of your health. We test for male testosterone to give you a comprehensive overview of your hormonal health.",
         points: [
@@ -1326,12 +1642,12 @@ export const MaleHealthContent: Content[] = [
         results_mean: [
             'Levels will begin to decrease naturally after the age of 30. Other potential causes of low testosterone include; alcohol abuse, obesity, uncontrolled diabetes, medication and over training.'
         ],
-        key: "MediMaleBasic"
+        key: "TestosteroneCheck"
     },
     {
         image: "/images/ML-man-01.png",
         fees: '£345',
-        title: " MEDIMAN",
+        title: "MEDIMAN",
         detail: "Hormone balance is essential for energy levels, regulating mood, sports performance and sex drive. With our simple blood test you can find out if your hormone levels are in balance, and be in control of your health. We test for male testosterone to give you a comprehensive overview of your hormonal health.",
         points: [
             'Results in 2 working days from sample taken',
@@ -1342,7 +1658,7 @@ export const MaleHealthContent: Content[] = [
             'Male hormones such as testosterone support many bodily functions which play an essential role in the production of sperm, having a health libido and also building and maintaining muscle mass and strength, which is vitally important for any man in training. A lower testosterone level can therefore result in lack of energy and sex drive, feeling tired, loss of hair, erectile dysfunction, anxiety/depression and increased body fat.',
         ],
         results_mean: [
-            ' Levels will begin to decrease naturally after the age of 30. Other potential causes of low testosterone include; alcohol abuse, obesity, uncontrolled diabetes, medication and over training.'
+            'Levels will begin to decrease naturally after the age of 30. Other potential causes of low testosterone include; alcohol abuse, obesity, uncontrolled diabetes, medication and over training.'
         ],
         slice: 6,
         packages: mediManPackage,
@@ -1401,13 +1717,14 @@ export const FemaleHealthContent: Content[] = [
     },
     {
         image: "/images/ML-thy-01.png",
-        fees: '£120',
-        title: "THYROID",
+        fees: '£0',
+        title: "THYROID FUNCTION CHECK",
         detail: "Disorders of the Thyroid can have an impact on your sleep, energy, weight, getting pregnant and more. Understand your Thyroid health with our basic blood test.",
         points: [
             'Results in 2 working days from sample taken',
             'Understand your Thyroid health',
-            'Thyroid Stimulating Hormone, Free T4, Free T3'
+            'Thyroid Antibodies (£120)',
+            'FULL THYROID CHECK  (£199)'
         ],
         Why_get_tested: [
             'Thyroid issues are often common in women, but males can also be affected. Thyroid disorders often go misdiagnosed or not treated. An underactive thyroid, where your thyroid gland does not produce enough hormones is associated with the following symptoms; tiredness, weight gain, depression, hair loss and sensitivity to cold temperatures. An overactive thyroid on the other hand, a condition where the thyroid produces too many hormones can cause weight loss, anxiety, mood swings, difficulty sleeping, sensitivity to heat, muscle weakness, itchiness and a frequent need to urinate.',
@@ -1420,7 +1737,7 @@ export const FemaleHealthContent: Content[] = [
     {
         image: "/images/ML-fem-01.png",
         fees: '£160',
-        title: "MEDIFEMALE BASIC",
+        title: "FEMALE HORMONES CHECK",
         detail: "Find out if you have a hormone imbalance that could be affecting your fertility, mood, weight and energy levels with our Female Hormone Test. We test for 6 key markers, including oestradiol, progesterone, follicle-stimulating hormone, luteinising hormone, prolactin, testosterone to give you a comprehensive overview of your hormonal health.",
         points: [
             'Results in 2 working days from sample taken',
@@ -1432,7 +1749,7 @@ export const FemaleHealthContent: Content[] = [
         results_mean: [
             'MediLabs simple blood test will help identify any hormone balance, allowing you to be in control and act on your own health.'
         ],
-        key: "MediFemaleBasic"
+        key: "FemaleHormonesCheck"
     },
     {
         image: "/images/ML-ovary-01.png",
@@ -1498,7 +1815,7 @@ export const FemaleHealthContent: Content[] = [
     },
     {
         image: "/images/ML-early-01.png",
-        fees: '£45',
+        fees: '£60',
         title: "BETA-HCG EARLY PREGNANCY",
         detail: "This hormone is produced as soon as 10 days after conception. In healthy pregnancies, levels of hCG increase rapidly in early pregnancy. An above-normal level can confirm pregnancy before a urine test. Detect if you are possibly pregnancy before an at home urine pregnancy test.",
         points: [
@@ -1589,8 +1906,8 @@ export const GeneralHealthContent: Content[] = [
     },
     {
         image: "/images/ML-thy-01.png",
-        fees: '£120',
-        title: "THYROID",
+        fees: '£0',
+        title: "THYROID FUNCTION CHECK",
         detail: "Disorders of the Thyroid can have an impact on your sleep, energy, weight, getting pregnant and more. Understand your Thyroid health with our basic blood test.",
         points: [
             'Results in 2 working days from sample taken',
@@ -1662,7 +1979,7 @@ export const GeneralHealthContent: Content[] = [
     },
     {
         image: "/images/ML-disc-01.png",
-        fees: '£245',
+        fees: '£295',
         title: "MEDIDISCOVER",
         detail: "Being in control of your health matters. It's time to listen to your body. The MediDiscover comprehensive health package covers all the tests you need to take a proactive approach to help monitor and improve your health and prevent future illness.",
         points: [
@@ -1696,5 +2013,82 @@ export const GeneralHealthContent: Content[] = [
         key: "MediEssential",
         packages: MediEssential,
         slice: 1
+    },
+    {
+        image: "/images/ML-vita-02-01.png",
+        fees: '£145',
+        title: "TIRED ALL THE TIME TEST",
+        detail: "Measure the levels of essential vitamins and minerals to help prevent or manage deficiencies. A vitamin or mineral deficiency can have wide ranging effects including fatigue, low energy and depression",
+        points: [
+            'Results in 2 working days from sample taken',
+            'Vitamin B12, Vitamin D, Folic Acid, Magnesium, Iron, Calcium, Ferritin, Transferrin, Transferrin Saturation, Total Iron Binding Capacity, Albumin',
+        ],
+        Why_get_tested: [
+            'Knowing your vitamin and mineral status are essential in all parts of life. Understanding if you are deficient allows you to take control and prevent any further deficiencies.',
+        ],
+        results_mean: [
+            'A vitamin or mineral deficiency can have varied effects on the body and is linked to low energy levels, weakness, heart palpitations, irritability, depression, mouth ulcers and frequent colds.',
+            'Vegans and vegetarians are at greater risk of certain deficiencies including Vitamin B12, while many in the UK will be deficient in Vitamin D. If you are concerned about your diet or think you may have a deficiency the MediVitamin Health Vitamin and Mineral Profile provides a comprehensive overview of your nutritional health.'
+        ],
+        key: "TiredAllTheTime",
+        packages: TiredAllTheTime,
+        slice: 2
+    },
+    {
+        image: "/images/ML-meno-01.png",
+        fees: '£210',
+        title: "CANCER / TUMOUR MARKER CHECK",
+        detail: "Check key tumour markers in your blood to support early detection, monitor treatment effectiveness, and gain clearer insights into your long-term health.",
+        points: [
+            'Results in 2 working days from sample taken',
+            'AFP (Alpha-fetoprotein), CEA (Carcinoembryonic Antigen), CA125, CA153, CA199, tPSA, Beta-HCG',
+        ],
+        Why_get_tested: [
+            'Tumor marker tests measure specific substances in your blood that may indicate the presence or growth of cancer. These tests are often recommended if you have a family history of cancer, unexplained symptoms, or are undergoing treatment. Early testing helps in timely detection, monitoring therapy effectiveness, and supporting better treatment outcomes for long-term health.',
+        ],
+        results_mean: [
+            'Results from tumor marker tests provide valuable insights into your health. Elevated levels may indicate cancer, but they can also rise due to non-cancerous conditions. Normal levels don’t always rule out disease, so results are interpreted alongside other medical findings. At Medilab, our specialists explain your results clearly and recommend further investigations or follow-up care if necessary.'
+        ],
+        key: "CancerMarkerCheck",
+    },
+]
+export const Over60sHealthContent: Content[] = [
+    {
+        title: "MEDIMAN OVER OVER 60s",
+        image: "/images/ML-man-01.png",
+        fees: "£345",
+        detail: "Establish foundational health metrics and screen for key risk areas such as cardiovascular health, diabetes risk, and basic metabolic function. Address male-specific health considerations, especially hormonal and prostate health.",
+        points: [
+            'Results in 2 working days from sample taken',
+            'Get a deep insight into your health and wellbeing',
+            'Up to 100 data points linked to key health areas are measured from a simple blood test'
+        ],
+        Why_get_tested: [
+            'Male hormones such as testosterone support many bodily functions which play an essential role in the production of sperm, having a health libido and also building and maintaining muscle mass and strength, which is vitally important for any man in training. A lower testosterone level can therefore result in lack of energy and sex drive, feeling tired, loss of hair, erectile dysfunction, anxiety/depression and increased body fat.',
+        ],
+        results_mean: [
+            ' Levels will begin to decrease naturally after the age of 30. Other potential causes of low testosterone include; alcohol abuse, obesity, uncontrolled diabetes, medication and over training.'
+        ],
+        key: "MediMan",
+        packages: MediManOver60s,
+        slice: 6
+    },
+    {
+        image: "/images/ML-woman-01.png",
+        fees: '£345',
+        title: "MEDIWOMAN",
+        detail: "Establish foundational health metrics and screen for key risk areas such as cardiovascular health, diabetes risk, and basic metabolic function.  addressing hormonal balance, thyroid function, and bone metabolism.",
+        points: [
+            'Results in 2 working days from sample taken',
+            'Up to 100 data points linked to key health areas are measured from a simple blood test'
+        ],
+        Why_get_tested: [
+            'Reviewing your health regularly is key to ensuring monitoring and prevention of future illnesses.'
+        ],
+        results_mean: ['With our blood test, you are provided with a wealth of knowledge and data about your health to help you understand and take control of your heart, kidney, liver, hormones, thryoid and much more.', 'Be empowered to be in control of your own health. By tracking your health data in this way you are empowered to take control of your health and make informed decisions to help prevent illness.'],
+        key: "MediWoman",
+        packages: MediWomanOver60s,
+        slice: 6
     }
+
 ]

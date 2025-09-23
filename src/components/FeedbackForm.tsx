@@ -1,12 +1,13 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Star, CheckCircle } from 'lucide-react';
 import { DateCalendar, DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import dayjs, { Dayjs } from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import axios from 'axios';
 import CustomToast from './CustomToast';
+import { usePathname } from 'next/navigation';
 
 interface FeedbackFormData {
   name: string;
@@ -26,6 +27,10 @@ interface FeedbackFormData {
 }
 
 const FeedbackForm: FC = () => {
+  const pathname = usePathname();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [formData, setFormData] = useState<FeedbackFormData>({
     name: '',
     contactNumber: '',

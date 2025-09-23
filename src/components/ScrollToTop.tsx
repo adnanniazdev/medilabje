@@ -2,15 +2,9 @@
 
 import { FC, useState, useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 
 const ScrollToTop: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {

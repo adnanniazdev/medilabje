@@ -11,7 +11,7 @@ const HealthComponent: FC<HealthProps> = ({ HealthContent }) => {
                 return <div key={key}>  <div id={item.key} className='mt-10 mb-10'>
                     <hr className="border-t-1 border-black w-80 mx-auto" />
                 </div>
-                    <section >
+                    <section>
                         <div className="max-w-7xl mx-auto px-4 py-16">
                             <div className="flex flex-col md:flex-row items-start md:space-x-8">
                                 {/* Left Column: Test Details */}
@@ -20,10 +20,9 @@ const HealthComponent: FC<HealthProps> = ({ HealthContent }) => {
                                         <h2 className="text-2xl md:text-2xl font-bold mb-4 text-secondary">
                                             {item?.title}
                                         </h2>
-                                        <span className="absolute -top-10  md:-top-3 right-2 bg-black text-white md:text-md font-semibold p-3 rounded-4xl z-10">
+                                        {item?.fees !== '£0' && <span className="absolute -top-10  md:-top-3 right-2 bg-black text-white md:text-md font-semibold p-3 rounded-4xl z-10">
                                             {item?.fees}
-                                        </span>
-
+                                        </span>}
                                     </div>
                                     <p className="mb-4 text-sm md:text-base">
                                         {item.detail}
@@ -32,10 +31,32 @@ const HealthComponent: FC<HealthProps> = ({ HealthContent }) => {
                                     <h3 className="font-semibold mb-2">Points:</h3>
                                     <ul className="space-y-2 mb-16">
                                         {item.points.map((point, pid: number) => {
-                                            return <li className="flex items-center" key={pid}>
-                                                <CustomBulled />
-                                                {point}
-                                            </li>
+                                            const isThyroid = point.includes("Thyroid Antibodies");
+                                            const isFullThyroidCheck = point.includes("FULL THYROID CHECK")
+                                            return (
+                                                <li className="flex flex-col" key={pid}>
+                                                    <div className="flex items-center">
+                                                        <CustomBulled />
+                                                        {point}
+                                                    </div>
+
+                                                    {isThyroid && (
+                                                        <ul className="ml-6 mt-2 space-y-1 text-sm">
+                                                            <li>Anti-Thyroglobulin (Anti-Tg)</li>
+                                                            <li>Anti-Thyroid Peroxidase (Anti-TPO)</li>
+                                                        </ul>
+                                                    )}
+                                                    {isFullThyroidCheck && (
+                                                        <ul className="ml-6 mt-2 space-y-1 text-sm">
+                                                            <li>TSH</li>
+                                                            <li>Free Thyroxine (FT4)</li>
+                                                            <li>Free Tri-iodothyronine (FT3)</li>
+                                                            <li>Anti-Tg</li>
+                                                            <li>Anti-TPO</li>
+                                                        </ul>
+                                                    )}
+                                                </li>
+                                            );
                                         })}
                                     </ul>
 
@@ -85,8 +106,8 @@ const HealthComponent: FC<HealthProps> = ({ HealthContent }) => {
                             </div>
                             {item.packages ? <div className="flex flex-col md:flex-row items-start md:space-x-8">
                                 <div className="md:w-1/2 w-full  text-secondary-light">   <h2 className='text-xl font-bold mb-4'>What tests are included?</h2>
-                                    {item.packages.slice(0, item.slice).map((section) => (
-                                        <div key={section?.title || section?.category} className='mb-3'>
+                                    {item.packages.slice(0, item.slice).map((section, sectionIdx) => (
+                                        <div key={`${section.title || section.category}-${sectionIdx}`} className='mb-3'>
                                             <h3 className='font-semibold'>{section?.title || section?.category}</h3>
                                             {section?.stages ? section.stages.map((stage: any, idx: number) => (
                                                 <div key={idx} className="mb-4">
@@ -110,8 +131,8 @@ const HealthComponent: FC<HealthProps> = ({ HealthContent }) => {
                                         </div>
                                     ))}</div>
                                 <div className="md:w-1/2 w-full  text-secondary-light">
-                                    {item.packages.slice(item.slice).map((section) => (
-                                        <div key={section.title} className='mb-3'>
+                                    {item.packages.slice(item.slice).map((section, index) => (
+                                        <div key={`${section.title}-${index}`} className='mb-3'>
                                             <h3 className='font-semibold'>{section?.title || section?.category}</h3>
                                             {section?.stages ? section.stages.map((stage: any, idx: number) => (
                                                 <div key={idx} className="mb-4">
