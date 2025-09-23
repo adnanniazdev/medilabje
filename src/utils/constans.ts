@@ -394,7 +394,13 @@ export const general_health_tests: HealthTest[] = [
         fees: "£210",
         href: "/general-health/#CancerMarkerCheck"
     },
-
+    {
+        title: "ALLERGY TEST",
+        image: "/images/test-images/ML-disc.avif",
+        description: "Identify potential allergies early to help manage symptoms and improve overall well-being.",
+        fees: "£0",
+        href: "/general-health/#AllergyTest"
+    },
 ];
 export const over60s_health_tests: HealthTest[] = [
     {
@@ -1057,7 +1063,6 @@ export const MediWoman: Package[] = [
         ],
     },
 ]
-
 export const athletePackage: Package[] = [
     {
         title: "Full Blood Count",
@@ -1282,6 +1287,56 @@ export const MediDiscover: Package[] = [
         title: "PROSTATE HEALTH",
         tests: ["Total Prostate Specific Antigen (TPSA) 2"],
     },
+];
+export const allergyTests = [
+    {
+        category: "Individual Allergy Tests",
+        note: "All prices TBC; individual and profile options available",
+        items: [
+            "Single Allergen Test",
+            "5 × Single Individual Allergens",
+            "10 × Single Individual Allergens"
+        ]
+    },
+    {
+        category: "Allergy Profiles",
+        items: [
+            "Food & Inhalants",
+            "UK Aero Allergen",
+            "Food",
+            "Nuts & Seeds",
+            "Children’s Panel",
+            "Shellfish",
+            "Finfish",
+            "Cereal (singles)",
+            "Antibiotics",
+            "Insects",
+            "Combined Shellfish/Finfish",
+            "Milk & Milk Proteins",
+            "Stone Fruit / Rosaceae Family"
+        ]
+    },
+    {
+        category: "Specialised Allergy Tests",
+        items: [
+            "ALEX² Allergy Test",
+            "ISAC Panel",
+            "Allergic Rhinitis / Asthma Profile",
+            "Atopic Dermatitis / Eczema Profile (14 allergens)",
+            "Gluten Sensitivity Profile",
+            "Histamine Releasing Urticaria Test",
+            "Prealbumin",
+            "Total IgE",
+            "Tryptase",
+            "Alpha-Gal Components (red meat allergy)"
+        ]
+    },
+    {
+        category: "Component-Resolved Diagnostics",
+        items: [
+            "Alternaria, Apple, Aspergillus, Birch, Brazil Nut, Cashew, Cat, Celery, Cow’s Milk, Dog, Egg, Fish, Glycan Determinants, Hazelnut, Horse, House Dust Mite, Kiwi, Latex, Lipid Transfer Proteins, Lipocalins, Olive, Parvalbumins, Peach, Peanut, Polcalcins, PR-10 Proteins, Profilins, Seed Storage Proteins, Serum Albumins, Sesame, Shrimp, Soybean, Timothy Grass, Tropomyosins, Venom, Wall Pellitory, Walnut, Wheat"
+        ]
+    }
 ];
 
 export const MediEssential: Package[] = [
@@ -2050,6 +2105,21 @@ export const GeneralHealthContent: Content[] = [
             'Results from tumor marker tests provide valuable insights into your health. Elevated levels may indicate cancer, but they can also rise due to non-cancerous conditions. Normal levels don’t always rule out disease, so results are interpreted alongside other medical findings. At Medilab, our specialists explain your results clearly and recommend further investigations or follow-up care if necessary.'
         ],
         key: "CancerMarkerCheck",
+    },
+    {
+        image: "/images/ML-disc-01.png",
+        fees: '£0',
+        title: "ALLERGY TEST",
+        detail: "",
+        points: [
+        ],
+        Why_get_tested: [
+        ],
+        results_mean: [
+        ],
+        key: "AllergyTest",
+        packages: allergyTests,
+        slice: 2
     },
 ]
 export const Over60sHealthContent: Content[] = [
