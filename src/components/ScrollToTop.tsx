@@ -37,7 +37,7 @@ const ScrollToTop: FC = () => {
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl transform hover:scale-110"
-          style={{ 
+          style={{
             backgroundColor: 'var(--primary-color)',
             color: 'white'
           }}
