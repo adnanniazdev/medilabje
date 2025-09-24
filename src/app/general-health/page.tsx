@@ -10,7 +10,7 @@ const GeneralHealthPage: FC = () => {
       {/* Hero Section */}
       <section className="bg-[url('/images/test-bg-img.jpg')] object-contain text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Female Health</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">General Health</h1>
         </div>
       </section>
       <div className="px-4 py-12 max-w-7xl mx-auto">
@@ -31,7 +31,8 @@ const GeneralHealthPage: FC = () => {
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold text-primary-light mb-2">{test.title}</h3>
                 <p className="text-sm text-gray-600 mb-3 flex-1">{test.description}</p>
-                <p className="text-4xl font-semibold text-secondary mb-4">{test.fees}</p>
+                {test.fees !== '£0' && <p className="text-4xl font-semibold text-secondary mb-4">{test.fees}</p>}
+
 
                 <a
                   href={test.href}
