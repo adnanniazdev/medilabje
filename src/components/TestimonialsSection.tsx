@@ -30,7 +30,7 @@ const TestimonialsSection: FC = () => {
     {
       id: 2,
       name: "Nick Campbell,Nick Campbell, boxer and current Scottish Heavyweight Champion. Nick is also a former Scotland Club XV international rugby union player, playing rugby union for the Glasgow Warriors and the Jersey Reds.",
-      content: "I wanted to take a moment to express my utmost satisfaction with my recent experience at Medilab, located at Strive. The service was incredibly professional and went above and beyond to assist me. They took time to explain all the information on the blood report and patiently answered all questions I had. It's an impressive service. Based on my experience I am going to try and make it a regular occurrence, I really feel it will make a massive difference in my training. I wouldn't hesitate to recommend MediLab to family and friends who are in need or interested in having their blood work done. <br> Thanks again to all the team at MediLab.",
+      content: "I wanted to take a moment to express my utmost satisfaction with my recent experience at Medilab, located at Strive. The service was incredibly professional and went above and beyond to assist me. They took time to explain all the information on the blood report and patiently answered all questions I had. It's an impressive service. Based on my experience I am going to try and make it a regular occurrence, I really feel it will make a massive difference in my training. I wouldn't hesitate to recommend MediLab to family and friends who are in need or interested in having their blood work done. Thanks again to all the team at MediLab.",
       tagline:"Absolutely the best ever",
       rating: 5,
       avatar: "/images/nick.png"
@@ -162,16 +162,16 @@ const TestimonialsSection: FC = () => {
     {/* Slide Indicators - Fixed at bottom */}
     <div className="flex justify-center pb-8 flex-shrink-0">
       <div className="flex space-x-2">
-        {Array.from({ length: maxSlides  }, (_, index) => (
-          <button
+        {Array.from({ length: testimonials.length - 1 }, (_, index) => (
+          <span
             key={index}
-            onClick={() => goToSlide(index)}
+            // onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
               index === currentSlide
                 ? "bg-white"
                 : "bg-white bg-opacity-50 hover:bg-opacity-75"
             }`}
-            aria-label={`Go to testimonial ${index + 1}`}
+            aria-label={`testimonial indicator`}
           />
         ))}
       </div>

@@ -217,6 +217,7 @@ const ConsultantsCustomersSection: FC = () => {
                         </div>
                     </div>
                 </div>
+                </div>
             </section></>
     );
 };

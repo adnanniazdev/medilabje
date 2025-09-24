@@ -1,4 +1,4 @@
-'use client';
+
 
 import { FC } from 'react';
 import PageHero from '@/components/PageHero';
@@ -6,6 +6,10 @@ import Image from 'next/image';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import HighlightSection from '@/components/HighlightSection';
 import Link from 'next/link';
+import FeaturesSection from '@/components/FeaturesSection';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.services);
 
 const ServicesPage: FC = () => {
   return (

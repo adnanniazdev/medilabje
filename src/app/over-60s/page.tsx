@@ -3,6 +3,14 @@ import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import { general_health_tests, GeneralHealthContent, over60s_health_tests, Over60sHealthContent } from '@/utils/constans';
 import { FC } from 'react';
+import { generateMetadata } from '@/utils/seo';
+
+export const metadata = generateMetadata({
+    title: 'Over 60s Health Testing - MediLab Jersey',
+    description: 'Specialized health tests and wellness profiles for over 60s at MediLab Jersey. Comprehensive screening tailored for seniors.',
+    keywords: 'over 60s health, senior health testing, elderly screening, wellness for seniors, MediLab Jersey',
+    path: '/over-60s'
+});
 
 const Over60sPage: FC = () => {
     return (

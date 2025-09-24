@@ -33,7 +33,7 @@ const Footer: FC = () => {
             <ul className="space-y-3 text-white">
               <li>
                 <Link 
-                  href="/medilab-t&cs" 
+                  href="/corporate-information" 
                   className="text-white hover:underline transition-colors duration-200"
                   style={{ '--hover-color': 'var(--primary-color)' } as React.CSSProperties}
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
@@ -54,7 +54,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/health-safety-statement" 
+                  href="/corporate-information" 
                   className="text-white hover:underline transition-colors duration-200"
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
@@ -64,7 +64,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <Link 
-                  href="/website-t&cs-policies" 
+                  href="/corporate-information" 
                   className="text-white hover:underline transition-colors duration-200"
                   onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary-color)'}
                   onMouseLeave={(e) => e.currentTarget.style.color = 'white'}

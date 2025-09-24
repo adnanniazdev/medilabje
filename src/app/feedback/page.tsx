@@ -1,5 +1,13 @@
 import FeedbackForm from '@/components/FeedbackForm'
 import React from 'react'
+import { generateMetadata } from '@/utils/seo'
+
+export const metadata = generateMetadata({
+    title: 'Feedback - MediLab Jersey',
+    description: 'Share your feedback with MediLab Jersey. We value your input to improve our medical laboratory services.',
+    keywords: 'feedback, contact, MediLab Jersey, reviews, suggestions, laboratory feedback',
+    path: '/feedback'
+})
 
 const Feedback = () => {
     return (

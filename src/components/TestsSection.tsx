@@ -92,7 +92,7 @@ const TestsSection: FC = () => {
       <div className="w-40 h-40 flex items-center justify-center mb-3">
         <Image
           src={test.icon}
-          alt={test.name}
+          alt={`${test.name}-icon`}
           width={160}
           height={160}
           className="object-contain"

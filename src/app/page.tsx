@@ -6,6 +6,9 @@ import FeaturesSection from '@/components/FeaturesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ServicesOverviewSection from '@/components/ServicesOverviewSection';
 import Link from "next/link";
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.home);
 
 export default function Home() {
   return (

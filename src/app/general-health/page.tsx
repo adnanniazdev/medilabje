@@ -3,6 +3,9 @@ import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 import { general_health_tests, GeneralHealthContent } from '@/utils/constans';
 import { FC } from 'react';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.generalHealth);
 
 const GeneralHealthPage: FC = () => {
   return (

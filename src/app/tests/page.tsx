@@ -1,7 +1,11 @@
-'use client'
+
 import { FC } from 'react';
 import TestsSection from '@/components/TestsSection';
 import { sample_tube_selection, test_profiles, tests_list } from '@/utils/constans';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata(seoData.tests);
+
 import HighlightSection from '@/components/HighlightSection';
 import TestFeatureSection from '@/components/TestFeatureSection';
 

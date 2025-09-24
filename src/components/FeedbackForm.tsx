@@ -8,6 +8,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import axios from 'axios';
 import CustomToast from './CustomToast';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 interface FeedbackFormData {
   name: string;
@@ -146,12 +147,12 @@ const FeedbackForm: FC = () => {
             Your feedback has been submitted successfully.
           </p>
 
-          <a
+          <Link
             href="/"
             className="inline-block bg-primary-light hover:bg-primary-dark text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
 

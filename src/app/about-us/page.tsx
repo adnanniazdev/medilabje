@@ -9,6 +9,12 @@ import TestFeatureSection from '@/components/TestFeatureSection';
 import FeedbackForm from '@/components/FeedbackForm';
 import HealthDaysCard from '@/components/HealthDaysCard';
 import { Facebook, Linkedin } from 'lucide-react';
+import { generateMetadata, seoData } from '@/utils/seo';
+
+export const metadata = generateMetadata({
+  ...seoData.about,
+  tags: ["health days 2025", "health awareness", "medical laboratory", "Jersey", "Strive Health Club"]
+});
 
 const AboutPage: FC = () => {
   return (
@@ -144,7 +150,7 @@ const AboutPage: FC = () => {
         <p className='text-secondary-light'>
           The laboratory may be able to rectify a situation and although turnaround times may be affected, it avoids having to arrange for samples to be taken again.
         </p>
-        <p className='text-secondary-light'>
+        {/* <p className='text-secondary-light'> */}
           <ul>
             <li className="flex items-start">
               <span className="w-2 h-2 bg-secondary-light rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -191,7 +197,7 @@ const AboutPage: FC = () => {
               Samples that are received in expired tubes
             </li>
           </ul>
-        </p>
+        {/* </p> */}
       </SectionComponent>
             {/* Health Days 2025 */}
             <section id='health-days-2025' className="py-16 ">

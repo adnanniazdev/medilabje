@@ -16,17 +16,19 @@ const AboutSection: FC = () => {
               {/* Understanding Your Health */}
               <div className="bg-white   overflow-hidden">
                 <div className="relative h-48">
-                  <Image
-                    src="/images/lab1.avif"
-                    alt="Understanding Your Health"
-                    fill
-                    className="object-cover"
-                  />
+                  <h1>
+                    <Image
+                      src="/images/lab1.avif"
+                      alt="Understanding Your Health"
+                      fill
+                      className="object-cover"
+                    />
+                  </h1>
                 </div>
                 <div className="py-8">
-                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
+                  <h2 className="text-2xl text-secondary font-semibold  mb-5">
                     Understanding Your Health
-                  </h3>
+                  </h2>
                   <p className="text-secondary-light text-sm !font-secondary leading-relaxed">
                     Here at MediLab we love to help you understand your health,
                     allowing you to make informed decisions and take control.
@@ -41,7 +43,7 @@ const AboutSection: FC = () => {
                 <div className="relative h-48">
                   <Image
                     src="/images/lab4.avif"
-                    alt="Our Laboratory"
+                    alt=" Microscope "
                     fill
                     className="object-cover"
                     onError={(e) => {
@@ -51,9 +53,9 @@ const AboutSection: FC = () => {
                   />
                 </div>
                 <div className="py-8">
-                  <h3 className="text-2xl text-secondary font-semibold  mb-5">
+                  <h2 className="text-2xl text-secondary font-semibold  mb-5">
                     Our Laboratory
-                  </h3>
+                  </h2>
                   <p className="text-secondary-light text-sm leading-relaxed">
                     Our new laboratory is fitted with all the latest equipment, with regular quality control checks, ensuring your testing is accurate and precise.
                   </p>
