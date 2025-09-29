@@ -25,7 +25,7 @@ export default function Home() {
               "linear-gradient(to right, rgba(30, 182, 185, 0.9), rgba(31, 151, 185, 0.9))",
           }}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-              <h2 className="text-white text-2xl lg:text-3xl font-light">
+              <h2 className="text-white text-2xl lg:text-4xl font-light !font-secondary">
                 For any enquiries please contact us by email
               </h2>
               <Link href={"mailto:info@medilabje.com"} className="bg-[#5db8cd] hover:bg-[#84C8DA] cursor-pointer text-white px-8 py-4  text-lg font-medium transition-colors">

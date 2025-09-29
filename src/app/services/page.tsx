@@ -19,8 +19,8 @@ const ServicesPage: FC = () => {
 
       {/* Requesting & Reporting Options Section - Z Pattern 1 */}
       <section id="requesting-reporting" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-4 items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-4 ">
             {/* Content Left */}
             <div className='text-secondary-light'>
               <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--primary-light)' }}>

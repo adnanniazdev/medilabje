@@ -13,9 +13,9 @@ const HighlightSection: React.FC<HighlightSectionProps> = ({slogan}) => {
         <div className="flex flex-col lg:flex-row items-center">
           {/* Text Content */}
           <div className="lg:w-1/2 text-white mt-5 lg:mb-0 p-2 text-center sm:text-left">
-            <p className="text-3xl lg:text-4xl font-secondary font-light mb-6 leading-tight">
+            <h1 className="text-3xl lg:text-4xl font-secondary font-light mb-6 leading-tight">
               {slogan ?? "MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond"}
-            </p>
+            </h1>
           </div>
 
           {/* Image */}

@@ -67,7 +67,7 @@ export function generateMetadata({
 // Common SEO data for different page types
 export const seoData = {
   home: {
-    title: "MediLab - Medical Laboratory Services in Jersey",
+    title: "Home - Medical Laboratory Services in Jersey",
     description: "MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond. Professional medical testing and diagnostics with accurate, reliable results.",
     keywords: "medical laboratory, Jersey, medical testing, diagnostics, health check, blood tests, laboratory services, medical analysis",
     path: "/",
@@ -85,13 +85,13 @@ export const seoData = {
     path: "/tests",
   },
   services: {
-    title: "Medical Laboratory Services - MediLab Jersey",
+    title: "Services - MediLab Jersey",
     description: "Professional medical laboratory services including sample collection, testing, postal services, and home phlebotomy. Quality diagnostic services for individuals and healthcare professionals.",
     keywords: "laboratory services, sample collection, medical testing, postal services, home phlebotomy, diagnostic services, healthcare professionals",
     path: "/services",
   },
   news: {
-    title: "Medical News & Health Awareness - MediLab Jersey",
+    title: "News & Health Awareness - MediLab Jersey",
     description: "Stay updated with the latest medical news, health awareness days, and laboratory updates from MediLab Jersey. Important health information and awareness campaigns.",
     keywords: "medical news, health awareness, laboratory updates, health information, awareness campaigns, health days 2025",
     path: "/news",
@@ -103,7 +103,7 @@ export const seoData = {
     path: "/patients",
   },
   specialities: {
-    title: "Medical Specialities - MediLab Jersey",
+    title: "Specialities - MediLab Jersey",
     description: "Expert medical laboratory services across multiple specialities including haematology, chemistry, virology, and immunology. Professional diagnostic testing with accurate results.",
     keywords: "medical specialities, haematology, chemistry, virology, immunology, diagnostic testing, laboratory specialities",
     path: "/specialities",

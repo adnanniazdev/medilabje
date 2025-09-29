@@ -4,7 +4,7 @@ import { FC, useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Facebook, Twitter, ChevronDown, Menu, X, Linkedin, ChevronRight, ChevronLeft, Search } from 'lucide-react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface DropdownItem {
   label: string;
@@ -26,8 +26,17 @@ const Header: FC = () => {
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   let closeTimeout: NodeJS.Timeout;
   const router = useRouter();
+  const pathname = usePathname();
   const [query, setQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Helper function to check if a nav item is active
+  const isActiveNavItem = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
 
   const navItems: NavItem[] = [
     // TODO: Uncomment when page will be created
@@ -178,7 +187,7 @@ const Header: FC = () => {
           </div>
 
           {/* Desktop Navigation Menu */}
-          <nav className="hidden md:flex space-x-8 mt-4">
+          <nav className="hidden md:flex space-x-8 ">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -199,14 +208,10 @@ const Header: FC = () => {
                 {/* Parent Link */}
                 <Link
                   href={item.href!}
-                  className="flex items-center text-secondary px-3 py-2 text-md font-bold transition-colors duration-200"
+                  className={`flex items-center px-3 py-2 text-md font-bold transition-colors duration-200 hover:text-primary ${
+                    isActiveNavItem(item.href!) ? 'text-primary' : 'text-secondary'
+                  }`}
                   onMouseEnter={() => handleMouseEnter(item.label)}
-                  style={{
-                    color:
-                      activeDropdown === item.label
-                        ? "var(--primary-color)"
-                        : "var(--secondary-color)",
-                  }}
                 >
                   {item.label}
                 </Link>
@@ -221,14 +226,9 @@ const Header: FC = () => {
                           href={dropdownItem.href}
                           target={dropdownItem.external ? "_blank" : undefined}
                           rel={dropdownItem.external ? "noopener noreferrer" : undefined}
-                          style={{ color: '#7e7e7e' }}
-                          className="flex justify-between px-4 py-2 text-sm transition-colors duration-200"
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.color = 'white';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.color = '#7e7e7e';
-                          }}
+                          className={`flex justify-between px-4 py-2 text-sm transition-colors duration-200 hover:text-white hover:bg-primary ${
+                            isActiveNavItem(dropdownItem.href) ? 'text-white bg-primary' : 'text-gray-500'
+                          }`}
                         >
                           {dropdownItem.label}
                           {dropdownItem?.dropdown && <ChevronLeft
@@ -246,14 +246,9 @@ const Header: FC = () => {
                               <Link
                                 key={nestedItem.label}
                                 href={nestedItem.href}
-                                style={{ color: '#7e7e7e' }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.color = 'white';
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.color = '#7e7e7e';
-                                }}
-                                className="block px-4 py-2 text-sm hover:bg-primary transition-colors duration-200"
+                                className={`block px-4 py-2 text-sm transition-colors duration-200 hover:text-white hover:bg-primary ${
+                                  isActiveNavItem(nestedItem.href) ? 'text-white bg-primary' : 'text-gray-500'
+                                }`}
                               >
                                 {nestedItem.label}
                               </Link>
@@ -331,9 +326,9 @@ const Header: FC = () => {
                     <div className="flex items-center">
                       <Link
                         href={item.href!}
-                        className="flex-1 text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
-                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                        className={`flex-1 px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-primary ${
+                          isActiveNavItem(item.href!) ? 'text-primary' : 'text-gray-700'
+                        }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {item.label}
@@ -363,15 +358,15 @@ const Header: FC = () => {
                             href={dropdownItem.href}
                             target={dropdownItem.external ? '_blank' : undefined}
                             rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
-                            className={`block text-gray-600 px-3 py-2 text-sm transition-all duration-300 ease-in-out ${activeDropdown === item.label
+                            className={`block px-3 py-2 text-sm transition-all duration-300 ease-in-out hover:text-primary ${
+                              isActiveNavItem(dropdownItem.href) ? 'text-primary' : 'text-gray-600'
+                            } ${activeDropdown === item.label
                                 ? 'opacity-100 transform translate-x-0'
                                 : 'opacity-0 transform -translate-x-2'
                               }`}
                             style={{
                               transitionDelay: activeDropdown === item.label ? `${dropdownIndex * 30}ms` : '0ms'
                             }}
-                            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                            onMouseLeave={(e) => (e.currentTarget.style.color = '')}
                             onClick={() => {
                               setActiveDropdown(null);
                               setIsMenuOpen(false);
@@ -386,9 +381,9 @@ const Header: FC = () => {
                 ) : (
                   <Link
                     href={item.href!}
-                    className="block text-gray-700 px-3 py-2 text-base font-medium transition-colors duration-200"
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--primary-color)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                    className={`block px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-primary ${
+                      isActiveNavItem(item.href!) ? 'text-primary' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

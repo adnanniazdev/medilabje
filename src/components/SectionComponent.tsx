@@ -26,8 +26,6 @@ const SectionComponent: React.FC<SectionComponentProps> = ({
 }) => {
   return (
     <>
-      <div id={id} className='mt-10 mb-20'>
-      </div>
       <section id={id} className={`w-full max-w-6xl mx-auto py-10 ${className}`}>
         <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}  gap-5 px-[10px]`}>
           {/* Content Section */}

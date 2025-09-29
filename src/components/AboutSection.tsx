@@ -15,7 +15,7 @@ const AboutSection: FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {/* Understanding Your Health */}
               <div className="bg-white   overflow-hidden">
-                <div className="relative h-48">
+                <div className="relative h-60">
                   <h1>
                     <Image
                       src="/images/lab1.avif"
@@ -40,7 +40,7 @@ const AboutSection: FC = () => {
 
               {/* Our Laboratory */}
               <div className="bg-white overflow-hidden">
-                <div className="relative h-48">
+                <div className="relative h-60">
                   <Image
                     src="/images/lab4.avif"
                     alt=" Microscope "

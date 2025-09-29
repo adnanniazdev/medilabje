@@ -20,8 +20,8 @@
   --section-gradient-primary: linear-gradient(to right, #1EB6B9, #1F97B9);
 
   /* Font Variables */
-  --font-primary: 'Open Sans', sans-serif;
-  --font-secondary: 'Roboto', sans-serif;
+  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* Removed @theme directive to prevent conflicts with custom fonts */
@@ -37,6 +37,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-primary) !important; /* Open Sans as default */
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *, *::before, *::after {
@@ -50,6 +53,12 @@ body {
 
 .font-secondary {
   font-family: var(--font-secondary) !important;
+}
+
+/* Roboto Light utility class - use when you want Roboto Light (300) */
+.font-roboto-light {
+  font-family: var(--font-secondary) !important;
+  font-weight: 300 !important;
 }
 
 /* Specific usage examples with higher specificity */
@@ -76,22 +85,36 @@ nav, .nav, .menu {
   font-family: var(--font-primary) !important;
 }
 
-/* Ensure all text elements use our custom fonts */
-.text-xs, .text-sm, .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl, .text-6xl {
-  font-family: inherit !important;
+/* Ensure headings with text size classes use Roboto */
+h1.text-xs, h1.text-sm, h1.text-base, h1.text-lg, h1.text-xl, h1.text-2xl, h1.text-3xl, h1.text-4xl, h1.text-5xl, h1.text-6xl,
+h2.text-xs, h2.text-sm, h2.text-base, h2.text-lg, h2.text-xl, h2.text-2xl, h2.text-3xl, h2.text-4xl, h2.text-5xl, h2.text-6xl,
+h3.text-xs, h3.text-sm, h3.text-base, h3.text-lg, h3.text-xl, h3.text-2xl, h3.text-3xl, h3.text-4xl, h3.text-5xl, h3.text-6xl,
+h4.text-xs, h4.text-sm, h4.text-base, h4.text-lg, h4.text-xl, h4.text-2xl, h4.text-3xl, h4.text-4xl, h4.text-5xl, h4.text-6xl,
+h5.text-xs, h5.text-sm, h5.text-base, h5.text-lg, h5.text-xl, h5.text-2xl, h5.text-3xl, h5.text-4xl, h5.text-5xl, h5.text-6xl,
+h6.text-xs, h6.text-sm, h6.text-base, h6.text-lg, h6.text-xl, h6.text-2xl, h6.text-3xl, h6.text-4xl, h6.text-5xl, h6.text-6xl {
+  font-family: var(--font-secondary) !important; /* Roboto for headings */
+}
+
+/* Ensure body text elements with text size classes use Open Sans */
+p.text-xs, p.text-sm, p.text-base, p.text-lg, p.text-xl, p.text-2xl, p.text-3xl, p.text-4xl, p.text-5xl, p.text-6xl,
+span.text-xs, span.text-sm, span.text-base, span.text-lg, span.text-xl, span.text-2xl, span.text-3xl, span.text-4xl, span.text-5xl, span.text-6xl,
+div.text-xs, div.text-sm, div.text-base, div.text-lg, div.text-xl, div.text-2xl, div.text-3xl, div.text-4xl, div.text-5xl, div.text-6xl {
+  font-family: var(--font-primary) !important; /* Open Sans for body text */
 }
 
 /* Debug: Show which font is actually being used */
 /* Uncomment the line below to see font debugging info */
 /* * { font-family: var(--font-primary) !important; background: rgba(255,0,0,0.1) !important; } */
 
-/* Force Roboto on headings and navigation */
-h1, h2, h3, h4, h5, h6, nav a, .nav a, .menu a {
+/* Force Roboto on headings and navigation - higher specificity */
+h1, h2, h3, h4, h5, h6, nav a, .nav a, .menu a,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
   font-family: var(--font-secondary) !important; /* Roboto */
 }
 
-/* Force Open Sans on body text */
-p, span, div, li, td, th {
+/* Force Open Sans on body text - higher specificity */
+p, span, div, li, td, th,
+p *, span *, div *, li *, td *, th * {
   font-family: var(--font-primary) !important; /* Open Sans */
 }
 

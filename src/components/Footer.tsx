@@ -12,7 +12,7 @@ const Footer: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Left Section - Logo and Description */}
           <div className="md:col-span-1">
-            <p className='font-bold'>MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond</p>
+            <p className='font-normal'>MEDILAB is a Medical Laboratory with a reputation for excellence in providing quality service to Jersey and beyond</p>
             <div className="">
               <Image
                 src="/images/medilab-logo.png"

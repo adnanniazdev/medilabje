@@ -164,7 +164,7 @@ const TestsSection: FC = () => {
 
   return (
     <section className="py-18 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-normal text-secondary mb-4">Our Tests</h2>

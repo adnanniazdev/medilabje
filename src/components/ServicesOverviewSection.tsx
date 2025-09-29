@@ -61,7 +61,7 @@ const ServicesOverviewSection: FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                <h3 className="text-2xl font-semibold text-secondary-light mb-4">
                   {service.title}
                 </h3>
               </div>

@@ -81,7 +81,7 @@ const TestimonialsSection: FC = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
   {/* Background with Parallax */}
   <div
     className="absolute inset-0 bg-fixed bg-center bg-cover"
@@ -107,7 +107,7 @@ const TestimonialsSection: FC = () => {
         }}>
           {testimonials.map((testimonial, index) => (
             <div key={testimonial.id} className={`${isMobile ? 'w-full' : 'w-1/2'} flex-shrink-0 ${isMobile ? 'mr-0' : 'mr-4'}`}>
-              <div className="bg-white py-13 px-11 max-w-2xl mx-auto max-h-[70vh] overflow-y-auto">
+              <div className="bg-white py-13 px-11 max-w-2xl mx-auto  overflow-y-auto">
                 <div className="text-center mb-6">
                   {testimonial.avatar ? (
                     <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden">
@@ -160,7 +160,7 @@ const TestimonialsSection: FC = () => {
     </div>
 
     {/* Slide Indicators - Fixed at bottom */}
-    <div className="flex justify-center pb-8 flex-shrink-0">
+    <div className="flex justify-center pb-8 flex-shrink-0 mt-8">
       <div className="flex space-x-2">
         {Array.from({ length: testimonials.length - 1 }, (_, index) => (
           <span
