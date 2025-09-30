@@ -9,12 +9,6 @@ const ConsultantsCustomersSection: FC = () => {
             </div>
             <section className="py-16 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-                    {/* Top Images */}
-                    <div className="grid md:grid-cols-2 gap-8 mb-16">
-
-
-                    </div>
-
                     {/* Three Column Layout */}
                     <div className="grid lg:grid-cols-3 gap-8">
                         {/* Left Column - Our Consultants */}
@@ -47,7 +41,6 @@ const ConsultantsCustomersSection: FC = () => {
                                         </li>
                                     </ul>
                                 </div>
-
                                 {/* Consultant Haematologist */}
                                 <div className=" mb-6">
 
@@ -94,7 +87,7 @@ const ConsultantsCustomersSection: FC = () => {
                                 {/* </div> */}
                             </div>
                         </div>
-
+                        </div>
                         {/* Middle Column - Our Customers and Core Values */}
                         <div className="lg:col-span-1 space-y-6">
                             {/* Our Customers */}
@@ -187,24 +180,8 @@ const ConsultantsCustomersSection: FC = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Right Column - Booking Widget */}
-                        <div className="lg:col-span-1">
-                            <div className='w-full flex justify-center'>
-                                <div className="bg-white rounded-lg shadow-lg max-w-[400px]">
-                                    <div className="bg-primary p-4 w-full rounded-t-md">
-                                        <h3 className="text-2xl font-bold text-center md:text-left text-white">Book your Appointment today for free</h3>
-                                    </div>
-                                    <div className="flex justify-center">
-                                        <AppointmentCalendar />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     {/* Right Column - Booking Widget */}
-                    <div className="lg:col-span-1">
-                        {/* Booking Card */}
+                     <div className="lg:col-span-1">
                         <div className='w-full flex justify-center'>
                             <div className="bg-white rounded-lg shadow-lg max-w-[400px]">
                                 <div className="bg-primary p-4 w-full rounded-t-md">
@@ -215,7 +192,7 @@ const ConsultantsCustomersSection: FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                 </div>
                 </div>
             </section></>
