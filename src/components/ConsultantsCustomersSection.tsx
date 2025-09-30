@@ -67,7 +67,7 @@ const ConsultantsCustomersSection: FC = () => {
                                 </div>
                             {/* Consultant Clinical Biochemist */}
                             <div className=" ">
-                                <h3 className="text-2xl font-bold  mb-4">Consultant Clinical Biochemist</h3>
+                                <h3 className="text-2xl text-secondary-light font-bold  mb-4">Consultant Clinical Biochemist</h3>
                                 {/* <div className=" md:flex-row gap-4"> */}
                                 <div className="relative flex-shrink-0 w-[250px] h-[250px] mb-5">
                                     <Image
@@ -100,7 +100,7 @@ const ConsultantsCustomersSection: FC = () => {
                                         className="object-cover"
                                     />
                                 </div>
-                                <h2 className="text-3xl font-bold text-secondary-light mb-6">Our Customers</h2>
+                                <h2 className="text-2xl font-bold text-secondary-light mb-6">Our Customers</h2>
                                 <p className="text-secondary-light mb-6">
                                     Our customers cover the following areas:
                                 </p>
@@ -165,7 +165,7 @@ const ConsultantsCustomersSection: FC = () => {
 
                             {/* Core Values */}
                             <div id="CoreValues">
-                                <h2 className="text-3xl font-bold text-secondary-light mb-6">Core Values</h2>
+                                <h2 className="text-2xl font-bold text-secondary-light mb-6">Core Values</h2>
                                 <div className="space-y-4 text-secondary-light">
                                     <p>
                                         At MediLab, we are committed to providing confidential, efficient health checks that empower
