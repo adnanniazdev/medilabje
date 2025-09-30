@@ -7,7 +7,7 @@ const ConsultantsCustomersSection: FC = () => {
         <>
             <div id='OurConsultants' className='mt-10 mb-20'>
             </div>
-            <section className="py-16 bg-gray-50">
+            <section className="py-16 ">
                 <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
                     {/* Three Column Layout */}
                     <div className="grid lg:grid-cols-3 gap-8">
